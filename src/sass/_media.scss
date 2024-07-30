@@ -1,0 +1,83 @@
+@use '../sass/colors' as *;
+
+@mixin queries {
+	@media screen and (max-width: 1440px) {
+		
+		.questions {
+			&__container {
+				padding: 0 2em;
+			}
+
+			&__box {
+				height: 600px;
+			}
+
+			&__accordeon-box {
+				gap: 3em;
+			}
+
+			&__accordeon-box-content {
+				justify-content: center;
+				& span {
+					width: 65%;
+				}
+			}
+		}
+
+		.about-us {
+			&__container {
+				padding: 5em 3em 0;
+			}
+
+			&__content {
+				margin-top: 0em;
+			}
+
+			&__logo {
+				margin-top: 3em;
+			}
+		}
+
+		.why-us {
+			&__container {
+				padding: 5em 3em 0;
+				gap: 7em;
+			}
+
+			&__content-items {
+				margin-bottom: 5em;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1280px) {
+	
+
+		.news { 
+			&__box { 
+				padding: 0 2em;
+			}
+			&__carousel {
+				width: 75%;
+			}
+		}
+
+		.about-us {
+			&__container { 
+				padding: 5em 9em 0;
+			}
+		}
+		.questions {
+			&__container {
+				padding: 0 8em;
+			}
+		}
+	}
+	@media screen and (max-width: 1124px) {
+		.service {
+			&__title {
+				margin-bottom: 3em;
+			}
+		}
+	}
+}
