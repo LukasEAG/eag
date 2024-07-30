@@ -189,19 +189,19 @@ const realisationBtns = document.querySelectorAll('[data-realisation-btn]')
 
 const realisationObject = {
 	one: {
-		img: '../img/realisation1.png',
+		img: './dist/img/realisation1.png',
 	},
 	two: {
-		img: '../img/realisation2.png',
+		img: './dist/img/realisation2.png',
 	},
 	three: {
-		img: '../img/realisation3.png',
+		img: './dist/img/realisation3.png',
 	},
 	four: {
-		img: '../img/realisation4.png',
+		img: './dist/img/realisation4.png',
 	},
 	five: {
-		img: '../img/realisation5.png',
+		img: './dist/img/realisation5.png',
 	},
 }
 
