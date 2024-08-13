@@ -42,7 +42,7 @@
             </div>
             <div class="nav__web-menu-btn">
                 <button class="nav__menu-btn nav__mobile-menu-btn--open">
-                    Menu
+                    <i class="ti ti-menu-2"></i>
                 </button>
                 <!-- <button class="nav__menu-btn nav__mobile-menu-btn--close">
                     <i class="ti ti-x"></i>
@@ -227,34 +227,42 @@
 
         <section id="realisation-text">
             <div class="realisation-text">
-                <div class="wrapper-section">
-                    <div class="realisation-text__container">
+                <div class="realisation-text__container">
+                    <div class="realisation-text__box-l">
+                        <h3 class="realisation-text__title">W kilku zdaniach o nas.</h3>
                         <p class="realisation-text__text">
                             EAG Production, przekraczamy granice wyobraźni i kreujemy niezapomniane chwilę. Nasz team
                             współpracujący z klientami podczas organizacji wydarzeń zamkniętych, festiwali, koncertów,
                             imprez sportowych, kampanii marketingowych czy wydarzeń telewizyjnych, dostarcza dawkę
                             pozytywnych emocji i niezapomnianych chwil.
                         </p>
+                        <span class="realisation-text__span">Zobacz jak to robimy</span>
+                    </div>
+                    <div class="realisation-text__box-r">
+                        <div class="realisation-text__animation">
+                            <div class="realisation-text__animation-square"></div>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <section id="realisation">
             <div class="realisation">
-                <div class="wrapper-section">
-                    <div class="realisation__container">
-                        <div class="realisation__list">
-                            <span>Realizacje:</span>
-                            <button value="one" data-realisation-btn="true" class="realisation__btn">event</button>
-                            <button value="two" data-realisation-btn class="realisation__btn">kocnerty</button>
-                            <button value="three" data-realisation-btn class="realisation__btn">promocja</button>
-                            <button value="four" data-realisation-btn class="realisation__btn">gala</button>
-                            <button value="five" data-realisation-btn class="realisation__btn">bankiety</button>
+                <div class="realisation__container">
+                    <div class="realisation__list">
+                        <span><button value="one" class="realisation__btn"
+                                data-realisation-btn="true">Realizacje</button>:</span>
+                        <button value="two" class="realisation__btn" data-realisation-btn>event</button>
+                        <button value="three" data-realisation-btn class="realisation__btn">kocnerty</button>
+                        <button value="four" data-realisation-btn class="realisation__btn">promocja</button>
+                        <button value="five" data-realisation-btn class="realisation__btn">gala</button>
+                        <button value="six" data-realisation-btn class="realisation__btn">bankiety</button>
 
-                        </div>
-                        <div class="realisation__text-content">
-                            <h3>Nie rzucając się w oczy stoimy za emocjami wielu uczestników koncertów.</h3>
-                        </div>
+                    </div>
+                    <div class="realisation__text-content">
+                        <span><i class="ti ti-exclamation-mark"></i></span>
+                        <h3>Nie rzucając się w oczy stoimy za emocjami wielu uczestników koncertów.</h3>
                     </div>
                 </div>
             </div>
@@ -262,23 +270,27 @@
         </section>
         <section id="services-text">
             <div class="service-text">
-                <div class="wrapper-section">
-                    <div class="service-text__container">
-                        <div class="service-text__content-box">
-                            <p class="service-text__content-text">EAG production stawiamy na najnowsze technologie,
-                                sprawdzonych dostawców, najwyższej klasy sprzęt. Nas zespół specjalistów uważany jest za
-                                eventowych aniołów dostarczając fachowej, rzetelnej wiedzy ale także spokój na każdym
-                                etapie realizacji projektu. Dedykowany opiekun dostarczy Tobie najelpszą sceno technikę
-                                w kraju ale także na świecie, doskonałych artystów, ekipy techniczne, scenograficzne,
-                                ale także projektantów i projekty które zobaczysz w 3D za nim dojdzie do finału.
-                                Wszystko to po to by dać emocje, radość i znakomitą rozrywkę i choć na chwilę dać się
-                                porwać w spektakularne muzyczne i wizualne show.
+                <div class="service-text__container">
+                    <div class="service-text__content-box">
+                        <p class="service-text__content-text">EAG production stawia na najnowsze technologie,
+                            sprawdzonych dostawców, oraz najwyższej klasy sprzęt.Nasz zespół uważany jest za eventowych
+                            aniołów dostarczając fachowej, rzetelnej wiedzy spokoju i profesjonalizmu w realizowanych
+                            projektach. To producenci, projektanci, technicy i realizatorzy z wieloletnim
+                            doświadczeniem. Dlatego nasz dedykowany opiekun dostarczy Ci najlepszą, gwiazdę Polską lub
+                            zagraniczną oraz niezbędną sceno-technikę w kraju i na świecie,
 
-
-                            </p>
-                        </div>
-                        <div class="service-text__title-box">
-                            <h3 class="service-text__title">TYLKO NAJLEPSZE ROZWIĄZANIA.</h3>
+                        </p>
+                        <span class="service-text__content-span">
+                            O nas/
+                        </span>
+                    </div>
+                    <div class="service-text__title-box">
+                        <span class="service-text__title-tech">Technologicznie</span>
+                        <div class="service-text__title-row">
+                            <span class="service-text__title-span">01</span>
+                            <div class="service-text__title-row-border">
+                                <h3 class="service-text__title">TYLKO NAJLEPSZE ROZWIĄZANIA.</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -287,9 +299,16 @@
         </section>
         <section id="service-slides">
             <div class="service-slides">
-                <div class="wrapper-section">
+                <div>
                     <div class="service-slides__title">
-                        <h2>Usługi</h2>
+                        <span class="service-slides__title-you">Ty DECYDUJESZ</span>
+                        <div class="service-slides__title-row">
+                            <span>02</span>
+                            <div class="service-slides__title-row-border">
+                                <h2>Wybierz ,</h2>
+                            </div>
+                        </div>
+                        <span class="service-slides__title-more">Jedną lub wszystkie naraz></span>
                     </div>
                     <div class="service-slides__icons">
                         <div class="service-slides__icon-multimedia">
@@ -314,21 +333,20 @@
                                     alt=""></button>
                         </div>
                     </div>
-                    <div class="service-slides__span">
-                        <span>Wybierz pojedyńczą usługę albo cały pakiet.</span>
-                    </div>
+           
                 </div>
             </div>
         </section>
 
         <section id="news">
             <div class="news ">
-                <div class="wrapper-section">
 
                     <div class="news__box" data-observ>
 
                         <div class="news__title">
-                            <h2 data-lang="news-h2">Let’s make our vision <span>For dreaming EVENTS</span> </h2>
+                            <span class="news__title-span-so">SO, </span>
+                            <h2 class="news__title-h2" data-lang="news-h2">Let’s make our vision </h2>
+                            <span class="news__title-span-events">For dreaming EVENTS /</span>
                         </div>
                         <div class="news__content">
                             <div class="news__thumbnails">
@@ -385,10 +403,12 @@
                             </div>
                         </div>
                         <div class="news__socials">
-                            <button class="news__socials-btn">X</button>
+                            <div class="news__socials-box">
+
+                                <button class="news__socials-btn">X</button>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
         </section>
         <!-- <section>
@@ -839,20 +859,11 @@
                     <span></span>
                     <button data-btn-popup>Zakmnij</button>
                 </div>
-                <div class="contact__header">
-                    <div class="contact__header-logo">
-                        <img src="../dist/img/LogoEAGBiałe.svg" alt="">
-                    </div>
-                    <div class="contact__header-socials">
-                        <div class="contact__socials-box">
-                            <a href=""><i class="ti ti-brand-instagram"></i></a>
-                            <a href=""><i class="ti ti-brand-x"></i></a>
-                            <a href=""><i class="ti ti-brand-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="contact__body">
+                    <div class="contact__body-logo">
+                        <img src="../dist/img/LogoEAGBiałe.svg" alt="">
+                    </div>
                     <div class="contact__body-more">
                         <div class="contact__body-title">
                             <h2>Contact Us</h2>
@@ -874,7 +885,7 @@
                                 <li><a href="">Kontakt</a></li>
                             </ul>
                         </div>
-                        <div class="contact__body-socials">
+                        <div class="contact__body-more-socials">
                             <h3>Złap nas na socialach</h3>
                             <a href="">X</a>
                             <a href="">Instagram</a>
@@ -971,7 +982,7 @@
                                         <div class="contact__attachments-info-items" data-attachments-info-box>
                                             <button class="contact__attachments-close-btn
                                             " data-attachments-btns="close"><i class="ti ti-x"></i></button>
-                                            <div>
+                                            <!-- <div>
                                                 <span data-lang="contact-allowed-files">Dozwolone rozszerzenia
                                                     plików:</span><span>
                                                     .pdf
@@ -994,7 +1005,7 @@
                                                     prosimy o
                                                     skorzystanie
                                                     z WeTransfer i umieszczenie linku w wiadomości.</span>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -1010,6 +1021,18 @@
                             </button>
                             <button class="contact__form-btn contact__form-btn--clear"
                                 data-lang="btn-clear">Wyczyść</button>
+                        </div>
+                    </div>
+                    <div class="contact__body-span">
+                        <div class="contact__body-socials">
+                            <div class="contact__socials-box">
+                                <a href=""><i class="ti ti-brand-instagram"></i></a>
+                                <a href=""><i class="ti ti-brand-x"></i></a>
+                                <a href=""><i class="ti ti-brand-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="contact__body-span-box">
+                            <h3>Events artist stage technology</h3>
                         </div>
                     </div>
                 </div>

@@ -203,6 +203,9 @@ const realisationObject = {
 	five: {
 		img: './dist/img/realisation5.png',
 	},
+	six: {
+		img: './dist/img/realisation6.png',
+	},
 }
 
 const clearBtnCheck = btn => {
@@ -224,69 +227,94 @@ realisationBtns.forEach(btn => {
 	})
 })
 
-//Service slides 
+//Service slides
 
 const serivceSlideText = document.querySelector('.service-text__content-text')
 const serviceSlideTitle = document.querySelector('.service-text__title')
+const serviceSlideNumber = document.querySelector('.service-text__title-span')
+const serviceSlideTitleSpan = document.querySelector('.service-text__title-tech')
 const serviceSlideBtns = document.querySelectorAll('[data-service-slides-btn')
 const serviceSlides = document.querySelector('.service-slides')
 
-
- const serviceSliderObject  = { 
-    multimedia : {
-        title: "Multimedia",
-        text: "Tworzymy wielowymiarowe doznania poprzez zastosowanie nowoczesnych rozwiązań multimedialnych. Nasze projekcje, mappingi i prezentacje wideo są zaprojektowane tak, aby wzbudzać silne emocje i zaskakiwać uczestników.",
-		bgc: '#d2d61f'
-    }, 
-    scean: {
-        title: "Technika sceniczna",
-        text: "Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się spektakularne. Oferujemy doskonałe oświetlenie, nagłośnienie i efekty specjalne, dostosowane do charakteru danego eventu.",
-		bgc: '#20D4D4'
-    }, 
-    planning: {
-        title: "Planowanie i Produkcja",
-        text: "Oferujemy wsparcie organizacyjne na każdym etapie procesu planowania wydarzenia. Pomagamy w doborze lokalizacji, dostawców, planowaniu harmonogramu, co przekłada się na zmniejszenie obciążenia organizacyjnego dla klienta.",
-		bgc: '#F3E45B'
-    }, 
-    scenography: {
-        title: "Scenografia",
-        text: "Nasze zespoły projektowe pracują nad kreacją scenografii, która w pełni odzwierciedli charakter i tematykę imprezy. Dbamy o każdy detal, aby stworzyć przestrzeń, która przykuje uwagę i wywoła silne wrażenia.",
-		bgc: '#B289CB'
-    },
-    booking: {
-        title: "Booking, Hospitality",
-        text: "Współpracujemy z najbardziej utalentowanymi artystami, aby dostarczyć niezapomniane występy na każdej scenie. Od muzycznych gwiazd po utalentowanych performerów - zadbamy o to, by każdy artysta idealnie wpasował się w koncepcję wydarzenia.",
-		bgc: '#F2B65C'
-    }
-
+const serviceSliderObject = {
+	main: {
+		title: 'TYLKO NAJLEPSZE ROZWIĄZANIA.',
+		text: 'EAG production stawiamy na najnowsze technologie, sprawdzonych dostawców, najwyższej klasy sprzęt. Nas zespół specjalistów uważany jest za eventowych aniołów dostarczając fachowej, rzetelnej wiedzy ale także spokój na każdym etapie realizacji projektu. Dedykowany opiekun dostarczy Tobie najelpszą sceno technikę w kraju ale także na świecie, doskonałych artystów, ekipy techniczne, scenograficzne, ale także projektantów i projekty które zobaczysz w 3D za nim dojdzie do finału. Wszystko to po to by dać emocje, radość i znakomitą rozrywkę i choć na chwilę dać się porwać w spektakularne muzyczne i wizualne show.',
+		bgc: '#d2d61f',
+		number: '01',
+		tech: 'Technologicznie',
+	},
+	multimedia: {
+		title: 'Multimedia',
+		text: 'Tworzymy wielowymiarowe doznania poprzez zastosowanie nowoczesnych rozwiązań multimedialnych. Nasze projekcje, mappingi i prezentacje wideo są zaprojektowane tak, aby wzbudzać silne emocje i zaskakiwać uczestników.',
+		bgc: '#20D4D4',
+		number: '03',
+		tech: 'Technologicznie',
+	},
+	scean: {
+		title: 'Technika sceniczna',
+		text: 'Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się spektakularne. Oferujemy doskonałe oświetlenie, nagłośnienie i efekty specjalne, dostosowane do charakteru danego eventu.',
+		bgc: '#F3E45B',
+		number: '04',
+		tech : 'Technologicznie'
+	},
+	planning: {
+		title: 'Planowanie i Produkcja',
+		text: 'Oferujemy wsparcie organizacyjne na każdym etapie procesu planowania wydarzenia. Pomagamy w doborze lokalizacji, dostawców, planowaniu harmonogramu, co przekłada się na zmniejszenie obciążenia organizacyjnego dla klienta.',
+		bgc: '#B289CB',
+		number: '05',
+		tech : 'Koncepcyjnie'
+	},
+	scenography: {
+		title: 'Scenografia',
+		text: 'Nasze zespoły projektowe pracują nad kreacją scenografii, która w pełni odzwierciedli charakter i tematykę imprezy. Dbamy o każdy detal, aby stworzyć przestrzeń, która przykuje uwagę i wywoła silne wrażenia.',
+		bgc: '#F2B65C',
+		number: '06',
+		tech : 'Projekt i wykonanie'
+	},
+	booking: {
+		title: 'Booking, Hospitality',
+		text: 'Współpracujemy z najbardziej utalentowanymi artystami, aby dostarczyć niezapomniane występy na każdej scenie. Od muzycznych gwiazd po utalentowanych performerów - zadbamy o to, by każdy artysta idealnie wpasował się w koncepcję wydarzenia.',
+		bgc: '#F75465',
+		number: '07',
+		tech : 'Pełna opieka'
+	},
 }
 
 const btnRemoveClass = btn => {
- 
-	btn.forEach( btn => {
+	btn.forEach(btn => {
 		btn.classList.remove('active')
 	})
 }
 
-serviceSlideBtns.forEach( btn => {
+const defaultSlide = () => {
+	serviceSlideNumber.innerText = serviceSliderObject.main.number
+	serviceSlideTitle.innerText = serviceSliderObject.main.title
+	serivceSlideText.innerText = serviceSliderObject.main.text
+	serviceSlideTitleSpan.innerText = serviceSliderObject.main.tech
+	serviceSlides.style.backgroundColor = `${serviceSliderObject.main.bgc}`
+}
 
-	btn.addEventListener( 'click', () => {
-
+serviceSlideBtns.forEach(btn => {
+	btn.addEventListener('mouseover', () => {
 		btnRemoveClass(serviceSlideBtns)
-		
-		for (const [key, value] of Object.entries(serviceSliderObject)) {
 
+		for (const [key, value] of Object.entries(serviceSliderObject)) {
 			if (btn.value === key) {
 				serviceSlideTitle.innerText = value.title
 				serivceSlideText.innerText = value.text
+				serviceSlideNumber.innerText = value.number
+				serviceSlideTitleSpan.innerText = value.tech
 				serviceSlides.style.backgroundColor = `${value.bgc}`
 				btn.classList.add('active')
 			}
-
 		}
 	})
+	btn.addEventListener('mouseleave', () => {
+		defaultSlide()
+		console.log('test')
+	})
 })
-
 
 // Service carousel
 
