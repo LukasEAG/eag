@@ -472,7 +472,7 @@
                         </div>
                         <div class="news__socials">
                             <div class="news__socials-box">
-    
+
                                 <button class="news__socials-btn">X</button>
                             </div>
                         </div>
@@ -924,18 +924,12 @@
         </section> -->
         <section id="contact">
             <div class="contact">
-                <div class="contact__popup">
-                    <span></span>
-                    <button data-btn-popup>Zakmnij</button>
-                </div>
-                <div class="contact__body-logo-mobile">
-                    <img src="./dist/img/LogoEAGBiałe.svg" alt="">
-                </div>
-                <div class="contact__form-mobile" data-observ>
-                    <form action="">
+                <div id="contactForm">
+                    <form>
                         <div class="contact__form-row">
                             <div class="contact__form-row-item" data-form-validation>
-                                <label for="name" data-lang="contact-name" placeholder="">Imię i nazwisko</label>
+                                <label for="name" data-lang="contact-name" placeholder="">Imię i
+                                    nazwisko</label>
                                 <input type="text" id="name" name="name">
                             </div>
                             <div class="contact__form-row-item" data-form-validation>
@@ -1008,16 +1002,17 @@
                                 <div class="contact__attachments-box">
                                     <button class="contact__attachments-btn" data-lang="contact-add-file">Dodaj
                                     </button>
-                                    <ul class="contact__attachments-label" data-lang="contact-selected-files">Nie
+                                    <ul class="contact__attachments-label" data-lang="contact-selected-files">
+                                        Nie
                                         wybrano
                                         żadnych plików</ul>
                                     <a href="https://wetransfer.com/" target="_blank"
-                                        class="contact__attachments-wetransfer"><img src="./dist/img/weTransfer.svg"
-                                            alt="Logo strony WeTransfer"></a>
+                                        class="contact__attachments-wetransfer"><img
+                                            src="./dist/img/weTransfer.svg" alt="Logo strony WeTransfer"></a>
                                 </div>
                                 <div class="contact__attachments-info">
-                                    <button class="contact__attachments-info-btn" data-attachments-btns="open"><i
-                                            class="ti ti-info-circle"></i></button>
+                                    <button class="contact__attachments-info-btn"
+                                        data-attachments-btns="open"><i class="ti ti-info-circle"></i></button>
                                     <div class="contact__attachments-info-items" data-attachments-info-box>
                                         <button class="contact__attachments-close-btn
                                         " data-attachments-btns="close"><i class="ti ti-x"></i></button>
@@ -1062,6 +1057,17 @@
                             data-lang="btn-clear">Wyczyść</button>
                     </div>
                 </div>
+                <div class="contact__popup">
+                    <span></span>
+                    <button data-btn-popup>Zakmnij</button>
+                </div>
+                <div class="contact__body-logo-mobile">
+                    <img src="./dist/img/LogoEAGBiałe.svg" alt="">
+                </div>
+                <div id="mobileFormContainer" class="contact__form-mobile">
+
+                </div>
+
                 <div class="contact__body">
                     <div class="contact__body-logo">
                         <img src="./dist/img/LogoEAGBiałe.svg" alt="">
@@ -1094,143 +1100,18 @@
                             <a href="https://pl.linkedin.com/company/eagproduction" target="_blank">Linked in</a>
                         </div>
                     </div>
-                    <div class="contact__form" data-observ>
-                        <form action="">
-                            <div class="contact__form-row">
-                                <div class="contact__form-row-item" data-form-validation>
-                                    <label for="name" data-lang="contact-name" placeholder="">Imię i nazwisko</label>
-                                    <input type="text" id="name" name="name">
-                                </div>
-                                <div class="contact__form-row-item" data-form-validation>
-                                    <label for="email" data-lang="contact-email" placeholder=''>Adres email</label>
-                                    <input type="text" id="email" name="email">
-                                </div>
-                            </div>
+                    <div  data-observ id="desktopFormContainer">
 
-                            <div class="contact__form-checkbox">
-
-                                <label for="scope" data-lang="contact-scope">Zakres oferty</label>
-                                <div class="contact__form-checkbox-row">
-
-                                    <div class="contact__form-checkbox-item">
-                                        <input type="checkbox" id="plan" name='plan' data-check-field>
-                                        <label for="plan" data-lang="contact-plan"> Plany i projekty</label>
-                                    </div>
-                                    <div class="contact__form-checkbox-item">
-                                        <input type="checkbox" id="booking" name='booking' data-check-field>
-                                        <label for="booking" data-lang="contact-booking">Booking artystów</label>
-                                    </div>
-                                </div>
-                                <div class="contact__form-checkbox-row">
-
-                                    <div class="contact__form-checkbox-item">
-                                        <input type="checkbox" id="stage" name='stage' data-check-field>
-                                        <label for="stage" data-lang="contact-stage"> Technika sceniczna</label>
-                                    </div>
-                                    <div class="contact__form-checkbox-item">
-                                        <input type="checkbox" id="others" name='others' data-check-field>
-                                        <label for="others" data-lang="contact-other">Inne</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact__form-budget">
-                                <span data-lang="contact-budget-span">Zakładany budżet</span>
-                                <label for="budget" data-lang="contact-budget">Proszę podać przedział planowanego
-                                    budżetu w
-                                    zakresie:</label>
-
-                                <div class="contact__budget-input">
-                                    <div class="contact__budget-box contact__budget-box--from">
-
-                                        <span data-lang="contact-budget-from">Od</span>
-                                        <input type="number" id="budget-from" name="budget-from" placeholder="5 000"
-                                            min="5 000">
-                                        <span data-lang="contact-budget-currency" data-currency>zł</span>
-                                    </div>
-                                    <div class="contact__budget-box contact__budget-box--to">
-
-                                        <span data-lang="contact-budget-to">Do</span>
-                                        <input type="number" id="budget-to" name="budget-to" placeholder="1 000 000"
-                                            max="1 000 000">
-                                        <span data-lang="contact-budget-currency" data-currency>zł</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="contact__form-msg" data-form-validation>
-                                <label for="topic" data-lang="contact-topic">Temat</label>
-                                <input type="text" id="topic" name="topic" placeholder="">
-                                <label for="message" data-lang="contact-message">Wiadomość</label>
-                                <textarea name="message" id="message" placeholder=""></textarea>
-                            </div>
-                            <div class="contact__form-attachments">
-                                <div class="contact__attachments-container">
-                                    <label for="files" data-lang="contact-files">Załączniki</label>
-                                    <input class="contact__attachments-input" type="file" name="fileInput"
-                                        id="fileInput" multiple
-                                        accept='image/jpeg, image/png, application/pdf, application/vnd.ms-excel, audio/mpeg, video/mp4, audio/wav, image/x-dwg'>
-                                    <div class="contact__attachments-box">
-                                        <button class="contact__attachments-btn" data-lang="contact-add-file">Dodaj
-                                        </button>
-                                        <ul class="contact__attachments-label" data-lang="contact-selected-files">Nie
-                                            wybrano
-                                            żadnych plików</ul>
-                                        <a href="https://wetransfer.com/" target="_blank"
-                                            class="contact__attachments-wetransfer"><img src="./dist/img/weTransfer.svg"
-                                                alt="Logo strony WeTransfer"></a>
-                                    </div>
-                                    <div class="contact__attachments-info">
-                                        <button class="contact__attachments-info-btn" data-attachments-btns="open"><i
-                                                class="ti ti-info-circle"></i></button>
-                                        <div class="contact__attachments-info-items" data-attachments-info-box>
-                                            <button class="contact__attachments-close-btn
-                                            " data-attachments-btns="close"><i class="ti ti-x"></i></button>
-                                            <!-- <div>
-                                                <span data-lang="contact-allowed-files">Dozwolone rozszerzenia
-                                                    plików:</span><span>
-                                                    .pdf
-                                                    .xls .jpg .png
-                                                    .mp3 . mp4 .wav .dwg</span>
-                                            </div>
-                                            <div>
-                                                <span data-lang="contact-files-size">Maksymalna wilkość
-                                                    plików:</span><span>
-                                                    5mb</span>
-                                            </div>
-                                            <div>
-                                                <span data-lang="contact-files-number">Maksymalna ilość
-                                                    plików:</span><span>
-                                                    5
-                                                    szt.</span>
-                                            </div>
-                                            <div>
-                                                <span data-lang="contact-files-info">W przypadku większych plików
-                                                    prosimy o
-                                                    skorzystanie
-                                                    z WeTransfer i umieszczenie linku w wiadomości.</span>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="contact__attachments-popup" data-file-popup>
-                                    <button data-btn-filePopup><i class="ti ti-x"></i></button>
-                                    <span></span>
-                                </div>
-
-                            </div>
-                        </form>
-                        <div class="contact__form-btns">
-                            <button class="contact__form-btn contact__form-btn--send" data-lang="btn-send">Wyślij
-                            </button>
-                            <button class="contact__form-btn contact__form-btn--clear"
-                                data-lang="btn-clear">Wyczyść</button>
-                        </div>
                     </div>
                     <div class="contact__body-span">
                         <div class="contact__body-socials">
                             <div class="contact__socials-box">
-                                <a href="https://www.instagram.com/eagproduction/" target="_blank"><i class="ti ti-brand-instagram"></i></a>
-                                <a href="https://x.com/eagproduction?s=21" target="_blank"><i class="ti ti-brand-x"></i></a>
-                                <a href="https://pl.linkedin.com/company/eagproduction" target="_blank"><i class="ti ti-brand-linkedin"></i></a>
+                                <a href="https://www.instagram.com/eagproduction/" target="_blank"><i
+                                        class="ti ti-brand-instagram"></i></a>
+                                <a href="https://x.com/eagproduction?s=21" target="_blank"><i
+                                        class="ti ti-brand-x"></i></a>
+                                <a href="https://pl.linkedin.com/company/eagproduction" target="_blank"><i
+                                        class="ti ti-brand-linkedin"></i></a>
                             </div>
                         </div>
                         <div class="contact__body-span-box">
@@ -1239,7 +1120,9 @@
                     </div>
                 </div>
 
+
             </div>
+
         </section>
     </main>
 

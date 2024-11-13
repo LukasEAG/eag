@@ -1,5 +1,29 @@
 //Navbar
 
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('contactForm');
+    const desktopContainer = document.getElementById('desktopFormContainer');
+    const mobileContainer = document.getElementById('mobileFormContainer');
+
+    function moveForm() {
+       
+        if (window.innerWidth < 992) {
+            mobileContainer.appendChild(form);  
+			form.classList.add('contact__form-mobile')
+			form.classList.remove('contact__form')
+        } else {
+            desktopContainer.appendChild(form); 
+			form.classList.add('contact__form') 
+			form.classList.remove('contact__form-mobile') 
+        }
+    }
+
+    moveForm();
+
+    window.addEventListener("resize", moveForm);
+});
+
+
 const nav = document.querySelector('.nav')
 const logoScroll = document.querySelector('.nav__logo')
 const menuOpenBtns = document.querySelectorAll('.nav__mobile-menu-btn--open')
@@ -563,6 +587,9 @@ accordeonBtns.forEach(btn => {
 
 window.addEventListener('click', clickOutsideAccordeon)
 
+
+
+
 // Contact form budget
 
 const budgetBoxFrom = document.querySelector('.contact__budget-box--from')
@@ -655,6 +682,9 @@ attachmentsBtns.forEach(btn =>
 	})
 )
 
+
+
+
 // Contact validator
 
 const sendFormBtn = document.querySelector('.contact__form-btn--send')
@@ -677,6 +707,7 @@ const closeFormPopup = document.querySelector('[data-btn-popup]')
 const fileErrorPopup = document.querySelector('[data-file-popup]')
 const closeFilePopup = document.querySelector('[data-btn-filePopup]')
 const checkedArray = []
+
 
 const validatorError = (input, msg) => {
 	const formBox = input.parentElement
@@ -882,28 +913,30 @@ async function sendFormBackend(e) {
 }
 
 sendFormBtn.addEventListener('click', e => {
-	sendFormValidator(e)
-	if (checkErrors()) {
-		sendFormBackend(e)
-	}
-})
+		sendFormValidator(e)
+		if (checkErrors()) {
+			sendFormBackend(e)
+		}
+	})
 
 clearFormBtn.addEventListener('click', e => {
-	e.preventDefault()
+		e.preventDefault()
+	
+		clearForm()
+	})
 
-	clearForm()
-})
 
 closeFormPopup.addEventListener('click', () => {
-	contactForm.classList.remove('show')
-	contactFormPopup.classList.remove('show')
-	clearForm()
-})
+		contactForm.classList.remove('show')
+		contactFormPopup.classList.remove('show')
+		clearForm()
+	})
 
 closeFilePopup.addEventListener('click', e => {
-	e.preventDefault()
-	clearValidatorError(userFile)
-})
+		e.preventDefault()
+		clearValidatorError(userFile)
+	})
+
 
 //Section observer
 const sections = document.querySelectorAll('[data-observ]')
@@ -923,6 +956,9 @@ const observer = new IntersectionObserver(
 sections.forEach(section => {
 	observer.observe(section)
 })
+
+
+
 
 // Footer current year
 
