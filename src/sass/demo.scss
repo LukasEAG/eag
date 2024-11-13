@@ -1,0 +1,63 @@
+@use '../sass/media';
+@use '../sass/colors' as *;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	transition-delay: 1s;
+	height: 100%;
+}
+
+body {
+	font-family: "Manrope", sans-serif;
+	background-color: $eag-white;
+	overflow-x: hidden;
+	height: 100%;
+
+}
+main {
+    position: relative;
+
+}
+
+.demo {
+	position: relative;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: $eag-white;
+	transition: opacity .4s;
+
+	&__header {
+		display: block;
+		position: absolute;
+		top: 2em;
+		right: 4em;
+	}
+
+	&__headline {
+		display: block;
+		position: relative;
+		top: 5em;
+		font-family: "Roboto Mono";
+		
+		& h2 {
+			font-size: 4.8rem;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+
+}

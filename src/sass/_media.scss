@@ -1,0 +1,569 @@
+@use '../sass/colors' as *;
+
+@mixin queries {
+	@media (max-width: 1200px) {
+		.offer1 {
+			&__context-numb {
+				& p {
+					font-size: 10rem;
+				}
+			}
+
+			&__context-btns {
+				& button {
+					font-size: 1.4rem;
+				}
+			}
+			&__context-text {
+				& p {
+					font-size: 2.6rem;
+				}
+			}
+		}
+	}
+	@media (max-width: 1100px) {
+		.offer1 {
+			&__title-h2 {
+				& h2 {
+					font-size: 3.4rem;
+				}
+			}
+
+			&__title-text {
+				& p {
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+	@media (max-width: 1025px) {
+		.realisation {
+			height: 100%;
+
+			&__text-content {
+				padding: 10rem 0;
+			}
+		}
+	}
+	@media (max-width: 992px) {
+		.header {
+			&__title {
+				& h1 {
+					font-size: 3.2rem;
+				}
+
+				& span {
+					font-size: 1.6rem;
+				}
+			}
+		}
+
+		.realisation-text {
+			&__container {
+				margin: 4rem 3rem;
+				flex-direction: column;
+			}
+
+			&__box-r {
+				margin-top: 6rem;
+				width: 90%;
+			}
+		}
+
+		.realisation {
+			& button {
+				font-size: 1.2rem;
+			}
+
+			&__text-content {
+				& h3 {
+					margin-bottom: 5rem;
+					font-size: 2.6rem;
+				}
+
+				& span {
+					font-size: 1.6rem;
+				}
+			}
+		}
+
+		.offer1 {
+			&__title-h2 {
+				& h2 {
+					font-size: 2.6rem;
+				}
+			}
+
+			&__title-text {
+				& p {
+					font-size: 1.6rem;
+				}
+			}
+			&__context-btns {
+				margin-left: 0;
+			}
+
+			&__context-numb {
+				top: auto;
+				bottom: 0;
+				right: 0;
+			}
+
+			&__context-text {
+				& p {
+					padding: 5rem 0 20rem;
+				}
+			}
+		}
+
+		.news {
+			&__title {
+				margin: 5rem 2rem;
+				align-content: flex-start;
+			}
+			&__content {
+				padding: 0 2rem 10rem;
+				flex-direction: column-reverse;
+			}
+
+			&__thumbnails {
+				margin: 3rem 2rem 0;
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				max-width: 420px;
+			}
+
+			&__socials {
+				position: absolute;
+				bottom: 0;
+				right: 2rem;
+			}
+		}
+
+		.contact {
+			&__body {
+				padding: 2rem;
+				&::after {
+					background-size: 30%;
+				}
+			}
+			&__body-logo-mobile {
+				position: absolute;
+				top: 2rem;
+				left: 2rem;
+				display: block;
+				max-width: 200px;
+				width: 100%;
+
+				& img {
+					width: 100%;
+					height: auto;
+					max-width: 202px;
+				}
+			}
+			&__body-logo {
+				display: none;
+			}
+			&__form {
+				display: none;
+			}
+
+			&__form-mobile {
+				margin: 12rem 0 0;
+				display: flex;
+				padding-left: 0;
+				max-width: 952px;
+				width: 100%;
+
+				& form {
+					margin-top: 0;
+					width: 100%;
+				}
+			}
+
+			&__form-row-item,
+			&__form-checkbox,
+			&__form-budget,
+			&__form-msg,
+			&__attachments-container {
+				padding: 0 2rem;
+				max-width: 100%;
+			}
+
+			&__body-more {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				max-width: 720px;
+			}
+
+			&__body-title {
+				margin: 1rem 0 0;
+			}
+
+			&__body-span {
+				margin-right: 2rem;
+				max-width: 240px;
+			}
+
+			&__body-span-box {
+				margin-top: 2rem;
+			}
+
+			&__body-socials {
+				margin-right: 0;
+			}
+
+			&__form-btns {
+				width: 100%;
+			}
+		}
+	}
+
+	@media (max-width: 769px) {
+		.header {
+			&__title {
+				& h1 {
+					font-size: 2.6rem;
+				}
+
+				& span {
+					font-size: 1.4rem;
+				}
+			}
+		}
+		.realisation {
+			&__text-content {
+				flex-direction: column-reverse;
+			}
+
+			&__text-col1 {
+				margin-left: 0;
+				padding: 0 2rem;
+			}
+		}
+
+		.offer1 {
+			&__title {
+				padding: 10rem 0;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			&__title-h2 {
+				margin-bottom: 2rem;
+				margin-left: 0;
+				max-width: 360px;
+			}
+
+			&__title-text {
+				margin: 0;
+				padding: 0 2rem;
+				justify-content: center;
+				& p {
+					max-width: 680px;
+				}
+			}
+
+			&__gallery-box {
+				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+				grid-auto-rows: 150px;
+			}
+
+			&__context-btns {
+				& button {
+					padding: 0.5rem 1rem;
+					max-width: 185px;
+					font-size: 1.2rem;
+				}
+			}
+
+			&__context-text {
+				margin-left: 0;
+			}
+		}
+
+		.news {
+			height: auto;
+
+			&__box {
+				margin-bottom: 2rem;
+			}
+
+			&__position[data-news-1] {
+				transform: scale(0.5) translateX(-265%);
+			}
+
+			&__position[data-news-3] {
+				transform: scale(0.5) translateX(66%);
+			}
+
+			&__position[data-news-0] {
+				transform: scale(0.1) translateX(-120%);
+			}
+
+			&__position[data-news-4],
+			&__position[data-news-5] {
+				transform: scale(0.1) translateX(20%);
+			}
+		}
+
+		.contact {
+			&__body-logo-mobile {
+				& img {
+					max-width: 180px;
+				}
+			}
+
+			&__body {
+				flex-direction: column;
+			}
+
+			&__body-span {
+				margin-top: 2rem;
+				margin-right: 0;
+				align-items: center;
+				max-width: 100%;
+			}
+
+			&__body-socials {
+				align-self: center;
+			}
+		}
+	}
+	@media (max-width: 565px) {
+		.header {
+			&__title {
+				& h1 {
+					font-size: 2.2rem;
+				}
+
+				& span {
+					font-size: 1.2rem;
+				}
+			}
+		}
+
+		.offer1 {
+			&__context-numb {
+				top: 10%;
+				bottom: auto;
+			}
+
+			&__context-btns {
+				display: flex;
+				flex-direction: column;
+				padding: 0;
+				& button {
+					margin: 0.5rem 0;
+					padding: 0.5rem 1rem;
+					margin-left: 0;
+					font-size: 1.2rem;
+				}
+			}
+
+			&__context-btn-row1,
+			&__context-btn-row2 {
+				padding: 0;
+				flex-direction: column;
+			}
+
+			&__context-btn-row1 {
+				margin-bottom: 0;
+			}
+		}
+
+		.news {
+			&__title {
+				& h2 {
+					font-size: 2rem;
+				}
+
+				& span {
+					font-size: 1.6rem;
+				}
+			}
+
+			&__content {
+				margin-bottom: 3rem;
+			}
+
+			.news {
+				&__position[data-news-1] {
+					transform: scale(0.3) translateX(-400%);
+				}
+
+				&__position[data-news-3] {
+					transform: scale(0.3) translateX(66%);
+				}
+			}
+		}
+
+		.contact {
+			&__body-logo-mobile {
+				& img {
+					max-width: 150px;
+				}
+			}
+		}
+	}
+	@media (max-width: 480px) {
+		.header {
+			&__title {
+				& h1 {
+					white-space: normal;
+				}
+
+				& span {
+					text-align: center;
+				}
+			}
+		}
+
+		.realisation-text {
+			&__container {
+				margin: 4rem 2rem;
+			}
+			&__text,
+			&__span {
+				font-size: 1.2rem;
+			}
+
+			&__text {
+				line-height: 2.6rem;
+			}
+
+			&__animation {
+				font-size: 2.4rem;
+			}
+		}
+
+		.realisation {
+			&__list {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			&__btn:first-of-type {
+				margin-left: 0.2rem;
+			}
+
+			&__text-content {
+				padding: 5rem 0;
+				& h3 {
+					font-size: 2.2rem;
+					text-align: center;
+				}
+
+				& span {
+					font-size: 1.2rem;
+					line-height: 150%;
+				}
+			}
+		}
+
+		.offer1 {
+			&__gallery-box,
+			&__context {
+				margin: 0 1rem;
+			}
+
+			&__title {
+				padding: 5rem 0;
+			}
+			&__title-h2 {
+				& h2 {
+					font-size: 2.2rem;
+				}
+			}
+
+			&__title-text {
+				& p {
+					font-size: 1.4rem;
+				}
+			}
+			&__gallery-box {
+				grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+				grid-auto-rows: 100px;
+			}
+
+			&__context {
+				margin-top: 4rem;
+			}
+
+			&__context-numb {
+				border: 4px solid #e46c31;
+
+				& p {
+					font-size: 8rem;
+				}
+			}
+
+			&__context-btns {
+				& button {
+					padding: 0.5rem;
+					max-width: 171px;
+				}
+			}
+
+			&__context-text {
+				& p {
+					padding: 3rem 0 5rem;
+					font-size: 1.8rem;
+				}
+			}
+		}
+
+		.contact {
+			&__body-more {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+	@media (max-width: 300px) {
+		.offer1 {
+			&__title-h2 {
+				& h2 {
+					font-size: 2rem;
+				}
+			}
+
+			&__title-text {
+				& p {
+					font-size: 1.2rem;
+				}
+			}
+
+			&__context-numb {
+				& p {
+					font-size: 6rem;
+				}
+			}
+		}
+	}
+
+	@media (orientation: landscape) and (max-width: 1080px) {
+		.realisation {
+			& button {
+				font-size: 1.2rem;
+			}
+
+			&__text-content {
+				padding-top: 10rem;
+
+				& h3 {
+					font-size: 2.8rem;
+				}
+
+				& span {
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+	@media (orientation: landscape) and (max-width: 992px) {
+		.header {
+			height: 60dvw;
+		}
+	}
+}
