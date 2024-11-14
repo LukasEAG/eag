@@ -1475,6 +1475,11 @@ textarea::placeholder {
 			color: $eag-grey-light;
 			list-style: none;
 		}
+
+		& a { 
+			cursor: pointer;
+
+		}
 	}
 
 	&__body-title {
@@ -1507,6 +1512,8 @@ textarea::placeholder {
 			display: block;
 			font-size: 1.2rem;
 			color: $eag-grey-light;
+		
+			
 		}
 	}
 
@@ -1911,6 +1918,12 @@ textarea::placeholder {
 		border: none;
 		border-radius: 3px;
 		cursor: pointer;
+		transition: color ;
+
+		&:hover {
+			background-color: $eag-white;
+			color: $eag-black;
+		}
 	}
 
 	&__attachments-label {
@@ -1934,9 +1947,17 @@ textarea::placeholder {
 		align-self: center;
 		padding: 0.6em 1.6em;
 		background-color: $eag-white;
-		border: none;
+		border: 1px solid $eag-white;
 		border-radius: 5px;
+		filter: invert(0);
+		transition: filter .4s;
 		cursor: pointer;
+
+		&:hover {
+			filter: invert(100%);
+			border: 1px solid $eag-black;
+
+		}
 	}
 	&__attachments-info {
 		position: relative;
@@ -2088,6 +2109,13 @@ textarea::placeholder {
 		& a {
 			padding: 0.3em;
 			color: #b60732;
+			transition: filter .4s, color .4s;
+			
+
+			&:hover {
+				color: $eag-white;
+				filter: invert(100);
+			}
 		}
 
 		& i {

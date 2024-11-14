@@ -1,28 +1,26 @@
 //Navbar
 
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById('contactForm');
-    const desktopContainer = document.getElementById('desktopFormContainer');
-    const mobileContainer = document.getElementById('mobileFormContainer');
+document.addEventListener('DOMContentLoaded', function () {
+	const form = document.getElementById('contactForm')
+	const desktopContainer = document.getElementById('desktopFormContainer')
+	const mobileContainer = document.getElementById('mobileFormContainer')
 
-    function moveForm() {
-       
-        if (window.innerWidth < 992) {
-            mobileContainer.appendChild(form);  
+	function moveForm() {
+		if (window.innerWidth < 992) {
+			mobileContainer.appendChild(form)
 			form.classList.add('contact__form-mobile')
 			form.classList.remove('contact__form')
-        } else {
-            desktopContainer.appendChild(form); 
-			form.classList.add('contact__form') 
-			form.classList.remove('contact__form-mobile') 
-        }
-    }
+		} else {
+			desktopContainer.appendChild(form)
+			form.classList.add('contact__form')
+			form.classList.remove('contact__form-mobile')
+		}
+	}
 
-    moveForm();
+	moveForm()
 
-    window.addEventListener("resize", moveForm);
-});
-
+	window.addEventListener('resize', moveForm)
+})
 
 const nav = document.querySelector('.nav')
 const logoScroll = document.querySelector('.nav__logo')
@@ -56,7 +54,6 @@ menuCloseBtn.forEach(btn => {
 		mobileMenu.classList.remove('active')
 		aboutUs.classList.remove('active')
 		menuList.classList.remove('hide')
-
 	})
 })
 menuItems.forEach(item => {
@@ -66,7 +63,6 @@ menuItems.forEach(item => {
 			aboutUs.classList.add('active')
 			menuCloseBtn.forEach(btn => btn.classList.add('hide-btn'))
 			menuReturnBtn.classList.add('show-btn')
-
 		} else {
 			mobileMenu.classList.remove('active')
 			menuOpenBtns.forEach(btn => btn.classList.remove('hide-btn'))
@@ -259,6 +255,68 @@ realisationBtns.forEach(btn => {
 			if (btn.value === key) {
 				realisation.style.backgroundImage = `url(${value.img})`
 				btn.dataset.realisationBtn = true
+			}
+		}
+	})
+})
+
+//Offer1
+
+const offerContextText = document.querySelector('.offer1__context-text-p')
+const offerNumber = document.querySelector('.offer1__context-numb-p')
+const offerNumberBorder = document.querySelector('.offer1__context-numb')
+const offerBtns = document.querySelectorAll('.offer1__context-btn')
+
+const offerObject = {
+	main: {
+		color: '#b9b9c2',
+	},
+	multimedia: {
+		number: '01',
+		text: 'Tworzymy wielowymiarowe doznania poprzez zastosowanie nowoczesnych rozwiązań multimedialnych. Nasze projekcje, mappingi i prezentacje wideo są zaprojektowane tak, aby wzbudzać silne emocje i zaskakiwać uczestników.',
+		color: '#d61f32cc',
+	},
+
+	planning: {
+		number: '02',
+		text: 'Oferujemy wsparcie organizacyjne na każdym etapie procesu planowania wydarzenia. Pomagamy w doborze lokalizacji, dostawców, planowaniu harmonogramu, co przekłada się na zmniejszenie obciążenia organizacyjnego dla klienta.',
+		color: '#AC8BC7',
+	},
+	scean: {
+		number: '03',
+		text: 'Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się spektakularne. Oferujemy doskonałe oświetlenie, nagłośnienie i efekty specjalne, dostosowane do charakteru danego eventu.',
+		color: '#E46C31',
+	},
+	scenography: {
+		number: '04',
+		text: 'Nasze zespoły projektowe pracują nad kreacją scenografii, która w pełni odzwierciedli charakter i tematykę imprezy. Dbamy o każdy detal, aby stworzyć przestrzeń, która przykuje uwagę i wywoła silne wrażenia.',
+		color: '#E9B86B',
+	},
+	booking: {
+		number: '05',
+		text: 'Współpracujemy z najbardziej utalentowanymi artystami, aby dostarczyć niezapomniane występy na każdej scenie. Od muzycznych gwiazd po utalentowanych performerów - zadbamy o to, by każdy artysta idealnie wpasował się w koncepcję wydarzenia.',
+		color: '#6280C2',
+	},
+}
+
+// const defalutState = () => {
+// 	offerContextText.innerText = offerObject.multimedia.text
+// 	offerNumber.innerText = offerObject.multimedia.number
+// 	offerNumberBorder.style.border = `${offerObject.multimedia.color}`
+// 	btn.style.backgroundColor = `${offerObject.multimedia.color}`
+// }
+
+offerBtns.forEach(btn => {
+	btn.addEventListener('click', () => {
+		offerBtns.forEach(otherBtn => {
+			otherBtn.style.backgroundColor = `${offerObject.main.color}`
+		})
+		for (const [key, value] of Object.entries(offerObject)) {
+			if (btn.value === key) {
+				offerContextText.innerText = value.text
+				offerNumber.innerText = value.number
+				offerNumberBorder.style.border = `7px solid ${value.color}`
+				btn.style.backgroundColor = `${value.color}`
 			}
 		}
 	})
@@ -587,9 +645,6 @@ accordeonBtns.forEach(btn => {
 
 window.addEventListener('click', clickOutsideAccordeon)
 
-
-
-
 // Contact form budget
 
 const budgetBoxFrom = document.querySelector('.contact__budget-box--from')
@@ -682,9 +737,6 @@ attachmentsBtns.forEach(btn =>
 	})
 )
 
-
-
-
 // Contact validator
 
 const sendFormBtn = document.querySelector('.contact__form-btn--send')
@@ -707,7 +759,6 @@ const closeFormPopup = document.querySelector('[data-btn-popup]')
 const fileErrorPopup = document.querySelector('[data-file-popup]')
 const closeFilePopup = document.querySelector('[data-btn-filePopup]')
 const checkedArray = []
-
 
 const validatorError = (input, msg) => {
 	const formBox = input.parentElement
@@ -913,30 +964,28 @@ async function sendFormBackend(e) {
 }
 
 sendFormBtn.addEventListener('click', e => {
-		sendFormValidator(e)
-		if (checkErrors()) {
-			sendFormBackend(e)
-		}
-	})
+	sendFormValidator(e)
+	if (checkErrors()) {
+		sendFormBackend(e)
+	}
+})
 
 clearFormBtn.addEventListener('click', e => {
-		e.preventDefault()
-	
-		clearForm()
-	})
+	e.preventDefault()
 
+	clearForm()
+})
 
 closeFormPopup.addEventListener('click', () => {
-		contactForm.classList.remove('show')
-		contactFormPopup.classList.remove('show')
-		clearForm()
-	})
+	contactForm.classList.remove('show')
+	contactFormPopup.classList.remove('show')
+	clearForm()
+})
 
 closeFilePopup.addEventListener('click', e => {
-		e.preventDefault()
-		clearValidatorError(userFile)
-	})
-
+	e.preventDefault()
+	clearValidatorError(userFile)
+})
 
 //Section observer
 const sections = document.querySelectorAll('[data-observ]')
@@ -956,9 +1005,6 @@ const observer = new IntersectionObserver(
 sections.forEach(section => {
 	observer.observe(section)
 })
-
-
-
 
 // Footer current year
 

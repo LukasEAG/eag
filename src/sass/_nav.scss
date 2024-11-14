@@ -491,6 +491,10 @@
 			flex-wrap: wrap;
 			align-content: center;
 			height: 50%;
+
+			& a {
+			 font-size: 1.2rem;
+			}
 		}
 
 		&__menu-close-btn {
