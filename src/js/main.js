@@ -260,12 +260,12 @@ realisationBtns.forEach(btn => {
 	})
 })
 
-//Offer1
+//offer
 
-const offerContextText = document.querySelector('.offer1__context-text-p')
-const offerNumber = document.querySelector('.offer1__context-numb-p')
-const offerNumberBorder = document.querySelector('.offer1__context-numb')
-const offerBtns = document.querySelectorAll('.offer1__context-btn')
+const offerContextText = document.querySelector('.offer__context-text-p')
+const offerNumber = document.querySelector('.offer__context-numb-p')
+const offerNumberBorder = document.querySelector('.offer__context-numb')
+const offerBtns = document.querySelectorAll('.offer__context-btn')
 
 const offerObject = {
 	main: {

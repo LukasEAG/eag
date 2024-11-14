@@ -2,7 +2,7 @@
 
 @mixin queries {
 	@media (max-width: 1200px) {
-		.offer1 {
+		.offer {
 			&__context-numb {
 				& p {
 					font-size: 10rem;
@@ -22,7 +22,7 @@
 		}
 	}
 	@media (max-width: 1100px) {
-		.offer1 {
+		.offer {
 			&__title-h2 {
 				& h2 {
 					font-size: 3.4rem;
@@ -35,8 +35,6 @@
 				}
 			}
 		}
-	}
-	@media (max-width: 1025px) {
 		.realisation {
 			height: 100%;
 
@@ -45,6 +43,7 @@
 			}
 		}
 	}
+
 	@media (max-width: 992px) {
 		.header {
 			&__title {
@@ -91,7 +90,7 @@
 			}
 		}
 
-		.offer1 {
+		.offer {
 			&__title {
 				padding: 15rem 0;
 			}
@@ -260,7 +259,7 @@
 			}
 		}
 
-		.offer1 {
+		.offer {
 			&__title {
 				padding: 10rem 0;
 				flex-direction: column;
@@ -361,7 +360,7 @@
 			}
 		}
 
-		.offer1 {
+		.offer {
 			&__context-numb {
 				top: 10%;
 				bottom: auto;
@@ -484,7 +483,7 @@
 			}
 		}
 
-		.offer1 {
+		.offer {
 			&__gallery-box,
 			&__context {
 				margin: 0 1rem;
@@ -545,7 +544,7 @@
 	}
 
 	@media (max-width: 300px) {
-		.offer1 {
+		.offer {
 			&__title-h2 {
 				& h2 {
 					font-size: 2rem;
