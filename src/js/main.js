@@ -299,12 +299,6 @@ const offerObject = {
 	},
 }
 
-// const defalutState = () => {
-// 	offerContextText.innerText = offerObject.multimedia.text
-// 	offerNumber.innerText = offerObject.multimedia.number
-// 	offerNumberBorder.style.border = `${offerObject.multimedia.color}`
-// 	btn.style.backgroundColor = `${offerObject.multimedia.color}`
-// }
 
 offerBtns.forEach(btn => {
 	btn.addEventListener('click', () => {
@@ -322,153 +316,6 @@ offerBtns.forEach(btn => {
 	})
 })
 
-//Service slides
-
-const serivceSlideText = document.querySelector('.service-text__content-text')
-const serviceSlideTitle = document.querySelector('.service-text__title')
-const serviceSlideNumber = document.querySelector('.service-text__title-span')
-const serviceSlideTitleSpan = document.querySelector('.service-text__title-tech')
-const serviceSlideBtns = document.querySelectorAll('[data-service-slides-btn')
-const serviceSlides = document.querySelector('.service-slides')
-
-const serviceSliderObject = {
-	main: {
-		title: 'TYLKO NAJLEPSZE ROZWIĄZANIA.',
-		text: 'EAG production stawiamy na najnowsze technologie, sprawdzonych dostawców, najwyższej klasy sprzęt. Nas zespół specjalistów uważany jest za eventowych aniołów dostarczając fachowej, rzetelnej wiedzy ale także spokój na każdym etapie realizacji projektu. Dedykowany opiekun dostarczy Tobie najelpszą sceno technikę w kraju ale także na świecie, doskonałych artystów, ekipy techniczne, scenograficzne, ale także projektantów i projekty które zobaczysz w 3D za nim dojdzie do finału. Wszystko to po to by dać emocje, radość i znakomitą rozrywkę i choć na chwilę dać się porwać w spektakularne muzyczne i wizualne show.',
-		bgc: '#d61f32cc',
-		number: '01',
-		tech: 'Technologicznie',
-	},
-	multimedia: {
-		title: 'Multimedia',
-		text: 'Tworzymy wielowymiarowe doznania poprzez zastosowanie nowoczesnych rozwiązań multimedialnych. Nasze projekcje, mappingi i prezentacje wideo są zaprojektowane tak, aby wzbudzać silne emocje i zaskakiwać uczestników.',
-		bgc: '#20D4D4',
-		number: '03',
-		tech: 'Technologicznie',
-	},
-	scean: {
-		title: 'Technika sceniczna',
-		text: 'Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się spektakularne. Oferujemy doskonałe oświetlenie, nagłośnienie i efekty specjalne, dostosowane do charakteru danego eventu.',
-		bgc: '#f56214cc',
-		number: '04',
-		tech: 'Technologicznie',
-	},
-	planning: {
-		title: 'Planowanie i Produkcja',
-		text: 'Oferujemy wsparcie organizacyjne na każdym etapie procesu planowania wydarzenia. Pomagamy w doborze lokalizacji, dostawców, planowaniu harmonogramu, co przekłada się na zmniejszenie obciążenia organizacyjnego dla klienta.',
-		bgc: '#B289CB',
-		number: '05',
-		tech: 'Koncepcyjnie',
-	},
-	scenography: {
-		title: 'Scenografia',
-		text: 'Nasze zespoły projektowe pracują nad kreacją scenografii, która w pełni odzwierciedli charakter i tematykę imprezy. Dbamy o każdy detal, aby stworzyć przestrzeń, która przykuje uwagę i wywoła silne wrażenia.',
-		bgc: '#F2B65C',
-		number: '06',
-		tech: 'Projekt i wykonanie',
-	},
-	booking: {
-		title: 'Booking, Hospitality',
-		text: 'Współpracujemy z najbardziej utalentowanymi artystami, aby dostarczyć niezapomniane występy na każdej scenie. Od muzycznych gwiazd po utalentowanych performerów - zadbamy o to, by każdy artysta idealnie wpasował się w koncepcję wydarzenia.',
-		bgc: '#5981C7',
-		number: '07',
-		tech: 'Pełna opieka',
-	},
-}
-
-const btnRemoveClass = btn => {
-	btn.forEach(btn => {
-		btn.classList.remove('active')
-	})
-}
-
-const defaultSlide = () => {
-	serviceSlideNumber.innerText = serviceSliderObject.main.number
-	serviceSlideTitle.innerText = serviceSliderObject.main.title
-	serivceSlideText.innerText = serviceSliderObject.main.text
-	serviceSlideTitleSpan.innerText = serviceSliderObject.main.tech
-	serviceSlides.style.backgroundColor = `${serviceSliderObject.main.bgc}`
-}
-
-serviceSlideBtns.forEach(btn => {
-	btn.addEventListener('mouseover', () => {
-		btnRemoveClass(serviceSlideBtns)
-
-		for (const [key, value] of Object.entries(serviceSliderObject)) {
-			if (btn.value === key) {
-				serviceSlideTitle.innerText = value.title
-				serivceSlideText.innerText = value.text
-				serviceSlideNumber.innerText = value.number
-				serviceSlideTitleSpan.innerText = value.tech
-				serviceSlides.style.backgroundColor = `${value.bgc}`
-				btn.classList.add('active')
-			}
-		}
-	})
-	btn.addEventListener('mouseleave', () => {
-		defaultSlide()
-	})
-})
-
-// Service carousel
-
-// const serviceSlider = document.querySelector('.service__content-box')
-// const serviceBtn = document.querySelectorAll('[data-service-button]')
-// let contentWidth = 1600
-
-// serviceBtn.forEach(button => {
-// 	button.addEventListener('click', () => {
-// 		const counterService = button.dataset.serviceButton === 'next' ? 1 : -1
-
-// 		const servicePos = document.querySelectorAll('.service__position')
-
-// 		servicePos.forEach((slide, index) => {
-// 			const indexSlide = serviceSlider.querySelector(`[data-service-${index}]`)
-
-// 			let newSlide = [...servicePos].indexOf(indexSlide) + counterService
-
-// 			if (newSlide < 0) newSlide = servicePos.length - 1
-// 			if (newSlide > servicePos.length - 1) newSlide = 0
-
-// 			servicePos[newSlide].dataset[`service-${index}`] = true
-// 			delete indexSlide.dataset[`service-${index}`]
-// 		})
-// 	})
-// })
-
-// const serviceMobileBtns = document.querySelectorAll('[data-service-mobileBtn]')
-// const serviceMobileList = document.querySelector('[data-mobile-carousel-list]')
-
-// serviceMobileBtns.forEach(button => {
-// 	button.addEventListener('click', () => {
-// 		let counterMobileService = button.dataset.serviceMobilebtn === 'next' ? 1 : -1
-
-// 		const mobileServicePos = document.querySelectorAll('.service__mobile-card-box')
-
-// 		mobileServicePos.forEach((post, index) => {
-// 			const mobileServiceIndex = serviceMobileList.querySelector(`[data-mobile-service-${index}]`)
-
-// 			let newMobileServiceIndex = [...mobileServicePos].indexOf(mobileServiceIndex) + counterMobileService
-
-// 			if (newMobileServiceIndex < 0) newMobileServiceIndex = mobileServicePos.length - 1
-// 			if (newMobileServiceIndex > mobileServicePos.length - 1) newMobileServiceIndex = 0
-
-// 			mobileServicePos[newMobileServiceIndex].dataset[`mobileService-${index}`] = true
-// 			delete mobileServiceIndex.dataset[`mobileService-${index}`]
-// 		})
-// 	})
-// })
-
-// window.addEventListener('resize', () => {
-// 	let insetWindowWidth = window.innerWidth
-// 	let boxWidth = insetWindowWidth / contentWidth
-// 	serviceSlider.style.transform = boxWidth >= 1 ? 'scale(1)' : `scale(${boxWidth})`
-// })
-// window.addEventListener('load', () => {
-// 	let insetWindowWidth = window.innerWidth
-// 	let boxWidth = insetWindowWidth / contentWidth
-// 	serviceSlider.style.transform = boxWidth >= 1 ? 'scale(1)' : `scale(${boxWidth})`
-// })
 
 // News carousel
 
@@ -497,32 +344,32 @@ newsBtns.forEach(btn => {
 
 // Offer section slider
 
-const buttons = document.querySelectorAll('[data-section-btn]')
-const sectionContainer = document.querySelector('[data-section-container]')
-const centerSection = document.querySelector('.offer__about-us')
-const btnOfferPrev = document.querySelector('.offer__slide-btn--prev')
-const btnOfferNext = document.querySelector('.offer__slide-btn--next')
-const spanNext = document.querySelector('.offer__slide-btns span')
+// const buttons = document.querySelectorAll('[data-section-btn]')
+// const sectionContainer = document.querySelector('[data-section-container]')
+// const centerSection = document.querySelector('.offer__about-us')
+// const btnOfferPrev = document.querySelector('.offer__slide-btn--prev')
+// const btnOfferNext = document.querySelector('.offer__slide-btn--next')
+// const spanNext = document.querySelector('.offer__slide-btns span')
 
-buttons.forEach(button => {
-	button.addEventListener('click', () => {
-		const counter = button.dataset.sectionBtn === 'next' ? 1 : -1
+// buttons.forEach(button => {
+// 	button.addEventListener('click', () => {
+// 		const counter = button.dataset.sectionBtn === 'next' ? 1 : -1
 
-		const offerList = document.querySelectorAll('.offer__section')
+// 		const offerList = document.querySelectorAll('.offer__section')
 
-		offerList.forEach((slide, index) => {
-			const offerIndex = sectionContainer.querySelector(`[data-section-${index}]`)
+// 		offerList.forEach((slide, index) => {
+// 			const offerIndex = sectionContainer.querySelector(`[data-section-${index}]`)
 
-			let newIndex = [...offerList].indexOf(offerIndex) + counter
+// 			let newIndex = [...offerList].indexOf(offerIndex) + counter
 
-			if (newIndex < 0) newIndex = offerList.length - 1
-			if (newIndex > offerList.length - 1) newIndex = 0
+// 			if (newIndex < 0) newIndex = offerList.length - 1
+// 			if (newIndex > offerList.length - 1) newIndex = 0
 
-			offerList[newIndex].dataset[`section-${index}`] = true
-			delete offerIndex.dataset[`section-${index}`]
-		})
-	})
-})
+// 			offerList[newIndex].dataset[`section-${index}`] = true
+// 			delete offerIndex.dataset[`section-${index}`]
+// 		})
+// 	})
+// })
 
 //offer section mobile slider
 
@@ -771,17 +618,22 @@ const validatorError = (input, msg) => {
 const fileValidatorError = (input, msg) => {
 	const formBox = input.parentElement
 	const erroMsg = fileErrorPopup.querySelector('span')
+	const bodyError = document.querySelector('.contact')
 	erroMsg.innerText = msg
 	formBox.classList.add('error')
 	fileErrorPopup.classList.add('error')
 	sendFormBtn.classList.add('error')
+	bodyError.classList.add('error')
 }
 
 const clearValidatorError = input => {
 	const formBox = input.parentElement
+	const bodyError = document.querySelector('.contact')
 	formBox.classList.remove('error')
 	fileErrorPopup.classList.remove('error')
 	sendFormBtn.classList.remove('error')
+	bodyError.classList.remove('error')
+
 }
 
 const checkFormValue = input => {

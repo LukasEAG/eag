@@ -888,7 +888,9 @@ textarea::placeholder {
 	}
 }
 
-
+#contact {
+	position: relative;
+}
 .contact {
 	position: relative;
 	display: flex;
@@ -898,6 +900,12 @@ textarea::placeholder {
 	width: 100%;
 	background-color: $eag-black;
 	overflow: hidden;
+
+	&.error {
+		filter: blur(2px);
+		pointer-events: none;
+	}
+
 
 	&__body {
 		position: relative;
@@ -924,6 +932,8 @@ textarea::placeholder {
 		}
 	}
 
+
+	
 	&__body-logo-mobile {
 		display: none;
 	}
@@ -1047,7 +1057,7 @@ textarea::placeholder {
 		& input,
 		textarea {
 			font-family: 'Roboto Mono', sans-serif;
-			font-size: 1.2rem;
+			font-size: 1rem;
 		}
 
 		& input,
@@ -1127,7 +1137,7 @@ textarea::placeholder {
 
 		& ::placeholder {
 			color: $eag-white;
-			font-size: 1rem;
+			font-size: .9rem;
 			text-transform: uppercase;
 		}
 	}
@@ -1288,7 +1298,7 @@ textarea::placeholder {
 		background-color: rgba(#000, $alpha: 0.7);
 
 		& .error-msg {
-			font-size: 1.2rem;
+			font-size: .8rem;
 			color: $eag-white;
 			visibility: hidden;
 		}
@@ -1307,7 +1317,7 @@ textarea::placeholder {
 
 		& ::placeholder {
 			color: $eag-white;
-			font-size: 1rem;
+			font-size: .9rem;
 			text-transform: uppercase;
 		}
 	}
@@ -1337,7 +1347,7 @@ textarea::placeholder {
 		text-align: center;
 		text-transform: uppercase;
 		color: $eag-white;
-		background-color: rgba($eag-red, 0.7);
+		background-color: rgba($eag-red, 0.9);
 		z-index: 5;
 
 		& button {
@@ -1382,10 +1392,6 @@ textarea::placeholder {
 		pointer-events: auto;
 	}
 
-	&__attachments-container.error {
-		filter: blur(2px);
-		pointer-events: none;
-	}
 
 	&__attachments-input {
 		display: none;
