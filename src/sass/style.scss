@@ -1779,6 +1779,19 @@ textarea::placeholder {
 	}
 }
 
+.privacypolicy {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: $eag-white;
+	transform: translateX(0%);
+	transition: transform 0.4s;
+	z-index: 10;
+
+}
+
 @keyframes slider-header-f {
 	0% {
 		transform: translate3d(0, 0, 0);
