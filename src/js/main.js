@@ -299,7 +299,6 @@ const offerObject = {
 	},
 }
 
-
 offerBtns.forEach(btn => {
 	btn.addEventListener('click', () => {
 		offerBtns.forEach(otherBtn => {
@@ -315,7 +314,6 @@ offerBtns.forEach(btn => {
 		}
 	})
 })
-
 
 // News carousel
 
@@ -453,44 +451,44 @@ newsBtns.forEach(btn => {
 
 //Questions Accordeon
 
-const accordeon = document.querySelector('.questions__box-lists')
-const accordeonBtns = document.querySelectorAll('.questions__accordeon-box-content')
+// const accordeon = document.querySelector('.questions__box-lists')
+// const accordeonBtns = document.querySelectorAll('.questions__accordeon-box-content')
 
-function openAccordeonItems() {
-	if (this.nextElementSibling.classList.contains('show-acc')) {
-		this.nextElementSibling.classList.remove('show-acc')
-		this.lastElementChild.classList.remove('active')
-	} else {
-		closeAccordeonItems()
-		this.nextElementSibling.classList.toggle('show-acc')
-		this.lastElementChild.classList.toggle('active')
-	}
-}
+// function openAccordeonItems() {
+// 	if (this.nextElementSibling.classList.contains('show-acc')) {
+// 		this.nextElementSibling.classList.remove('show-acc')
+// 		this.lastElementChild.classList.remove('active')
+// 	} else {
+// 		closeAccordeonItems()
+// 		this.nextElementSibling.classList.toggle('show-acc')
+// 		this.lastElementChild.classList.toggle('active')
+// 	}
+// }
 
-const closeAccordeonItems = () => {
-	const allActiveItems = document.querySelectorAll('.questions__accordeon-info')
-	allActiveItems.forEach(item => item.classList.remove('show-acc'))
-	accordeonBtns.forEach(btn => {
-		btn.lastElementChild.classList.remove('active')
-	})
-}
+// const closeAccordeonItems = () => {
+// 	const allActiveItems = document.querySelectorAll('.questions__accordeon-info')
+// 	allActiveItems.forEach(item => item.classList.remove('show-acc'))
+// 	accordeonBtns.forEach(btn => {
+// 		btn.lastElementChild.classList.remove('active')
+// 	})
+// }
 
-const clickOutsideAccordeon = e => {
-	if (
-		e.target.classList.contains('target') ||
-		e.target.classList.contains('questions__accordeon-info') ||
-		e.target.classList.contains('questions__accordeon-info-text')
-	)
-		return
+// const clickOutsideAccordeon = e => {
+// 	if (
+// 		e.target.classList.contains('target') ||
+// 		e.target.classList.contains('questions__accordeon-info') ||
+// 		e.target.classList.contains('questions__accordeon-info-text')
+// 	)
+// 		return
 
-	closeAccordeonItems()
-}
+// 	closeAccordeonItems()
+// }
 
-accordeonBtns.forEach(btn => {
-	btn.addEventListener('click', openAccordeonItems)
-})
+// accordeonBtns.forEach(btn => {
+// 	btn.addEventListener('click', openAccordeonItems)
+// })
 
-window.addEventListener('click', clickOutsideAccordeon)
+// window.addEventListener('click', clickOutsideAccordeon)
 
 // Contact form budget
 
@@ -633,7 +631,6 @@ const clearValidatorError = input => {
 	fileErrorPopup.classList.remove('error')
 	sendFormBtn.classList.remove('error')
 	bodyError.classList.remove('error')
-
 }
 
 const checkFormValue = input => {
@@ -839,6 +836,66 @@ closeFilePopup.addEventListener('click', e => {
 	clearValidatorError(userFile)
 })
 
+// Questions accordeon
+
+const faqAccordeon = document.querySelector('.faq__box-lists')
+const faqAccordeonBtns = document.querySelectorAll('.faq__accordeon-box-content')
+
+function openAccordeonItems() {
+	if (this.nextElementSibling.classList.contains('show-acc')) {
+		this.nextElementSibling.classList.remove('show-acc')
+		this.lastElementChild.classList.remove('active')
+	} else {
+		closeAccordeonItems()
+		this.nextElementSibling.classList.toggle('show-acc')
+		this.lastElementChild.classList.toggle('active')
+	}
+}
+
+const closeAccordeonItems = () => {
+	const allActiveItems = document.querySelectorAll('.faq__accordeon-info')
+	allActiveItems.forEach(item => item.classList.remove('show-acc'))
+	faqAccordeonBtns.forEach(btn => {
+		btn.lastElementChild.classList.remove('active')
+	})
+}
+
+const clickOutsideAccordeon = e => {
+	if (
+		e.target.classList.contains('target') ||
+		e.target.classList.contains('faq__accordeon-info') ||
+		e.target.classList.contains('faq__accordeon-info-text')
+	)
+		return
+
+	closeAccordeonItems()
+}
+
+faqAccordeonBtns.forEach(btn => {
+	btn.addEventListener('click', openAccordeonItems)
+})
+
+window.addEventListener('click', clickOutsideAccordeon)
+
+// faq
+
+const faqBody = document.querySelector('.faq')
+const faqOpenBtn = document.querySelectorAll('[data-faq-btn]')
+const faqCloseBtn = document.querySelector('[data-faq-close-btn]')
+
+faqOpenBtn.forEach(btn => {
+	btn.addEventListener('click', e => {
+		e.preventDefault()
+		faqBody.classList.add('active')
+		body.classList.add('stop-scrolling')
+	})
+})
+
+faqCloseBtn.addEventListener('click', () => {
+	faqBody.classList.remove('active')
+	body.classList.remove('stop-scrolling')
+
+})
 //Section observer
 const sections = document.querySelectorAll('[data-observ]')
 

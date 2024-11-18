@@ -234,6 +234,24 @@
 				width: 100%;
 			}
 		}
+
+
+		.faq {
+			&__head {
+				margin: 2rem 2rem 4rem;
+			}
+			&__body-title {
+				font-size: 1.6rem;
+			}
+			&__box-lists {
+				flex-direction: column;
+				gap: 5rem
+			}
+
+			&__accordeon-box {
+				align-items: center;
+			}
+		}
 	}
 
 	@media (max-width: 769px) {
@@ -426,6 +444,30 @@
 				& img {
 					max-width: 150px;
 				}
+			}
+		}
+
+		.faq {
+			&__head-logo {
+				& img {
+					max-width: 100px;
+				}
+			}
+			&__body-title {
+				font-size: 1.2rem;
+			}
+
+
+			&__accordeon-box-content, &__accordeon-info-text {
+				font-size: 1.2rem;
+				& span {
+					font-size: 1.2rem;
+				}
+			}
+
+
+			&__accordeon-box, &__box-lists {
+				gap: 3rem;
 			}
 		}
 	}
