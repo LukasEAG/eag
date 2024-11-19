@@ -1398,7 +1398,7 @@ textarea::placeholder {
 		border: none;
 		border-radius: 3px;
 		cursor: pointer;
-		transition: color;
+		transition: color 0.4s, background-color 0.4s;
 
 		&:hover {
 			background-color: $eag-white;
@@ -1640,7 +1640,6 @@ textarea::placeholder {
 		justify-content: space-between;
 		max-width: 1800px;
 		width: 100%;
-	
 	}
 
 	&__head-logo {
@@ -1780,6 +1779,7 @@ textarea::placeholder {
 }
 
 .privacypolicy {
+	padding: 0 2rem;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -1789,7 +1789,92 @@ textarea::placeholder {
 	transform: translateX(-120%);
 	transition: transform 0.4s;
 	z-index: 10;
+	overflow: scroll;
 
+	&.active {
+		transform: translateX(0);
+	}
+
+	&__head {
+		margin: 10rem auto 0; 
+		display: flex;
+		justify-content: flex-end;
+		max-width: 900px;
+	}
+	&__head-logo {
+		max-width: 200px;
+		height: 100%;
+
+		& img {
+			max-width: 150px;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__head-btns {
+		position: absolute;
+		top: 2rem;
+		right: 4rem;
+		padding: 1rem;
+		background-color: transparent;
+		color: $eag-black;
+		border: none;
+		font-size: 2.2rem;
+		cursor: pointer;
+		transition: color 0.4s;
+
+		& button {
+			background-color: transparent;
+		color: $eag-black;
+		border: none;
+		font-size: 2.2rem;
+		cursor: pointer;
+		transition: color 0.4s;
+		}
+
+		& button:hover {
+			color: $eag-red;
+		}
+	}
+
+	&__body {
+		margin: 0 auto;
+		padding-bottom: 4rem;
+		max-width: 900px;
+		width: 100%;
+		font-family: 'Roboto Mono';
+
+		& h2 {
+			margin-bottom: 2rem;
+			font-size: 2.6rem;
+			text-transform: uppercase;
+		}
+
+		& h3 {
+			font-size: 2rem;
+		}
+
+		& li,
+		span {
+			font-size: 1.2rem;
+		}
+
+		& li {
+			list-style: none;
+		}
+	}
+
+	&__main-ul {
+		margin-left: 2rem;
+	}
+
+	&__submain-ul {
+		margin-left: 3.6rem;
+		& li {
+			list-style: disc;
+		}
+	}
 }
 
 @keyframes slider-header-f {

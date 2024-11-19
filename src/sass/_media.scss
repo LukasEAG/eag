@@ -364,6 +364,14 @@
 				align-self: center;
 			}
 		}
+
+		.privacypolicy {
+			
+			&__head {
+				margin: 4rem auto;
+				justify-content: flex-start;
+			}
+		}
 	}
 	@media (max-width: 565px) {
 		.header {
@@ -470,6 +478,8 @@
 				gap: 3rem;
 			}
 		}
+
+		
 	}
 	@media (max-width: 480px) {
 		.header {
@@ -581,6 +591,27 @@
 		.contact {
 			&__body-more {
 				grid-template-columns: 1fr;
+			}
+		}
+
+		.privacypolicy {
+			
+			&__head-btns {
+				top: 1rem;
+				right: 1rem;
+			}
+
+			&__body {
+				& h2 {
+					font-size: 2.2rem;
+				}
+				& h3 {
+					font-size: 1.8rem;
+				}
+			}
+
+			&__main-ul {
+				margin-left: 0;
 			}
 		}
 	}

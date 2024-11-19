@@ -896,6 +896,26 @@ faqCloseBtn.addEventListener('click', () => {
 	body.classList.remove('stop-scrolling')
 
 })
+
+// Privacypolicy 
+
+const privacyBody = document.querySelector('.privacypolicy')
+const privacyOpenBtn = document.querySelectorAll('[data-privacy-btn]')
+const privacyCloseBtn = document.querySelector('[data-privacy-close-btn]')
+
+privacyOpenBtn.forEach(btn => {
+	btn.addEventListener('click', e => {
+		e.preventDefault()
+		privacyBody.classList.add('active')
+		body.classList.add('stop-scrolling')
+	})
+})
+
+privacyCloseBtn.addEventListener('click', () => {
+	privacyBody.classList.remove('active')
+	body.classList.remove('stop-scrolling')
+})
+
 //Section observer
 const sections = document.querySelectorAll('[data-observ]')
 
