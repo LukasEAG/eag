@@ -241,6 +241,7 @@
 				margin: 2rem 2rem 4rem;
 			}
 			&__body-title {
+				align-self: flex-end;
 				font-size: 1.6rem;
 			}
 			&__box-lists {
@@ -250,6 +251,13 @@
 
 			&__accordeon-box {
 				align-items: center;
+			}
+		}
+
+		.privacypolicy {
+			&__head {
+				margin: 2rem auto 4rem;
+				justify-content: flex-start;
 			}
 		}
 	}
@@ -365,13 +373,7 @@
 			}
 		}
 
-		.privacypolicy {
-			
-			&__head {
-				margin: 4rem auto;
-				justify-content: flex-start;
-			}
-		}
+		
 	}
 	@media (max-width: 565px) {
 		.header {
@@ -478,7 +480,13 @@
 				gap: 3rem;
 			}
 		}
-
+		.privacypolicy {
+			&__head-logo {
+				& img {
+					max-width: 100px;
+				}
+			}
+		}
 		
 	}
 	@media (max-width: 480px) {
@@ -596,10 +604,7 @@
 
 		.privacypolicy {
 			
-			&__head-btns {
-				top: 1rem;
-				right: 1rem;
-			}
+		
 
 			&__body {
 				& h2 {

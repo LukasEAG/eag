@@ -1661,7 +1661,7 @@ textarea::placeholder {
 		background-color: transparent;
 		color: $eag-white;
 		border: none;
-		font-size: 2.2rem;
+		font-size: 2.6rem;
 		cursor: pointer;
 		transition: color 0.4s;
 
@@ -1763,11 +1763,10 @@ textarea::placeholder {
 	&__accordeon-info {
 		display: none;
 		position: relative;
-		max-width: 400px;
+		max-width: 450px;
 	}
 
 	&__accordeon-info-text {
-		// display: none;
 		margin-bottom: 2em;
 		font-size: 1.4rem;
 		color: $eag-white;
@@ -1817,18 +1816,12 @@ textarea::placeholder {
 		top: 2rem;
 		right: 4rem;
 		padding: 1rem;
+
+		& button {
 		background-color: transparent;
 		color: $eag-black;
 		border: none;
-		font-size: 2.2rem;
-		cursor: pointer;
-		transition: color 0.4s;
-
-		& button {
-			background-color: transparent;
-		color: $eag-black;
-		border: none;
-		font-size: 2.2rem;
+		font-size: 2.6rem;
 		cursor: pointer;
 		transition: color 0.4s;
 		}
