@@ -1,0 +1,221 @@
+@use '../sass/colors' as *;
+
+.faq {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: $eag-black;
+	transform: translateX(-120%);
+	transition: transform 0.4s;
+	z-index: 10;
+
+	&.active {
+		transform: translateX(0);
+		overflow: scroll;
+	}
+
+	& h2,
+	span,
+	p {
+		font-family: 'Roboto Mono';
+	}
+
+	&__box {
+		margin: 0 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	&__head {
+		margin: 6rem 2rem 2rem;
+		display: flex;
+		justify-content: space-between;
+		max-width: 1800px;
+		width: 100%;
+	}
+
+	&__head-logo {
+		max-width: 200px;
+		height: 100%;
+
+		& img {
+			max-width: 150px;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 4rem;
+		padding: 1rem;
+		background-color: transparent;
+		color: $eag-white;
+		border: none;
+		font-size: 2.6rem;
+		cursor: pointer;
+		transition: color 0.4s;
+
+		&:hover {
+			color: $eag-red;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		max-width: 1250px;
+	}
+
+	&__body-title {
+		margin-bottom: 4rem;
+		align-self: flex-start;
+		max-width: 400px;
+		color: $eag-white;
+		font-size: 2.4rem;
+
+		& h2 {
+			display: inline-block;
+			padding: 1.6rem 0.8rem;
+			border: 1px solid $eag-white;
+			font-weight: 400;
+		}
+	}
+
+	&__box-lists {
+		padding-bottom: 6rem;
+		display: flex;
+		justify-content: center;
+		gap: 5rem;
+		width: 100%;
+	}
+
+	&__accordeon-box {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5rem;
+		width: 100%;
+
+		& span {
+			color: $eag-white;
+		}
+	}
+
+	&__accordeon-box-content {
+		margin-top: 1rem;
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		max-width: 650px;
+		cursor: pointer;
+
+		& span {
+			margin: auto 0;
+			font-size: 1.4rem;
+			max-width: 500px;
+			width: 100%;
+		}
+
+		& i {
+			margin-right: 1rem;
+			padding: 1.2rem;
+			font-size: 2.2rem;
+			font-style: normal;
+			letter-spacing: -2px;
+			color: $eag-red;
+			border-radius: 8px;
+			background: rgb(36, 36, 36);
+			background: linear-gradient(180deg, rgba(36, 36, 36, 1) 20%, rgba(0, 0, 0, 0.8) 93%);
+		}
+	}
+
+	&__accordeon-btn {
+		padding: 0.2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 50px;
+		width: 100%;
+		font-size: 2.6rem;
+		color: $eag-white;
+		background-color: transparent;
+		border: none;
+		transform: rotate(0);
+		transition: transform 0.4s, color 0.4s;
+		cursor: pointer;
+	}
+	.active {
+		transform: rotate(45deg);
+		color: $eag-red;
+	}
+
+	&__accordeon-info {
+		display: none;
+		position: relative;
+		max-width: 450px;
+	}
+
+	&__accordeon-info-text {
+		margin-bottom: 2em;
+		font-size: 1.4rem;
+		color: $eag-white;
+	}
+
+	.show-acc {
+		display: block;
+	}
+}
+
+@media (max-width: 992px) {
+	.faq {
+		&__head {
+			margin: 2rem 2rem 4rem;
+		}
+		&__body-title {
+			align-self: flex-end;
+			font-size: 1.6rem;
+		}
+		&__box-lists {
+			flex-direction: column;
+			gap: 5rem;
+		}
+
+		&__accordeon-box {
+			align-items: center;
+		}
+	}
+}
+
+@media (max-width: 565px) {
+	.faq {
+		&__head-logo {
+			& img {
+				max-width: 100px;
+			}
+		}
+		&__body-title {
+			font-size: 1.2rem;
+		}
+
+		&__accordeon-box-content,
+		&__accordeon-info-text {
+			font-size: 1.2rem;
+			& span {
+				font-size: 1.2rem;
+			}
+		}
+
+		&__accordeon-box,
+		&__box-lists {
+			gap: 3rem;
+		}
+	}
+}

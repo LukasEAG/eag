@@ -916,6 +916,32 @@ privacyCloseBtn.addEventListener('click', () => {
 	body.classList.remove('stop-scrolling')
 })
 
+// Job 
+
+const jobBody = document.querySelector('.job')
+const jobOpenBtn = document.querySelectorAll('[data-job-btn]')
+const jobCloseBtn = document.querySelector('[data-job-closeBtn') 
+const jobAgreeBtn = document.querySelector('[data-job-agreementBtn]')
+const jobAgreeStar = document.querySelector('[data-job-star]')
+
+jobOpenBtn.forEach(btn => {
+	btn.addEventListener('click', e => {
+		e.preventDefault()
+		jobBody.classList.add('active')
+		body.classList.add('stop-scrolling')
+	})
+})
+
+jobCloseBtn.addEventListener('click', () => {
+	jobBody.classList.remove('active')
+	body.classList.remove('stop-scrolling')
+})
+
+jobAgreeBtn.addEventListener('click', () => {
+	jobAgreeStar.classList.toggle('checked')
+	jobAgreeBtn.toggleAttribute('data-job-agree')
+} )
+
 //Section observer
 const sections = document.querySelectorAll('[data-observ]')
 

@@ -1,0 +1,273 @@
+@use '../sass/colors' as *;
+
+.job {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transform: scale(0);
+	pointer-events: none;
+	transition: transform .4s, opacity .4s;
+	overflow: scroll;
+	z-index: 10;
+
+	&.active {
+		opacity: 1;
+		transform: scale(1);
+		pointer-events: all;
+	}
+
+	& label,
+	span,
+	h3 {
+		font-family: 'Roboto mono';
+		color: $eag-white;
+	}
+
+	& label,
+	span {
+		font-size: 1.2rem;
+	}
+
+	&__container {
+		padding: 6rem 2rem 0;
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		min-height: 100vh;
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(../img/realisation1.png);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			content: '';
+			z-index: -5;
+		}
+	}
+	&__logo {
+		max-width: 170px;
+		width: 100%;
+
+		& img {
+			max-width: 150px;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__form {
+		margin-top: 4rem;
+		max-width: 600px;
+	}
+
+	&__form-title {
+		margin-bottom: 4rem;
+		& h3 {
+			font-size: 1.6rem;
+			font-weight: 200;
+			line-height: 3rem;
+		}
+	}
+
+	&__form-namePhone,
+	&__form-mailCity,
+	&__form-prevJobFutureJob,
+	&__form-langLicense {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	&__form-name,
+	&__form-phone,
+	&__form-mail,
+	&__form-city,
+	&__form-prevJob,
+	&__form-futureJob,
+	&__form-jobLanguage,
+	&__form-license,
+	&__form-aboutYou {
+		margin: 0 0.2rem 2.6rem;
+		display: flex;
+		flex-direction: column;
+		max-width: 200px;
+		width: 100%;
+
+		& label {
+			margin-bottom: 0.6rem;
+		}
+
+		& input {
+			height: 25px;
+		}
+
+		& textarea {
+			resize: none;
+			width: 100%;
+			height: 120px;
+		}
+	}
+
+	&__form-aboutYou,
+	&__form-btn {
+		margin: 0 auto;
+		align-self: center;
+		max-width: 500px;
+	}
+
+	&__form-agrement {
+		margin: 0 auto;
+		max-width: 500px;
+	}
+
+	&__form-selectContact {
+		margin: 0.5rem 0 1rem;
+		& span {
+			font-size: 1rem;
+			color: $eag-red;
+		}
+	}
+
+	&__form-checkAgrement {
+		margin: 1rem 0 1.6rem;
+
+		& button {
+			display: flex;
+			align-items: center;
+			gap: 0.4rem;
+			color: $eag-white;
+			font-size: 1.4rem;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+		}
+
+		& svg {
+			&.checked {
+				stroke: $eag-red;
+				fill: $eag-red;
+			}
+		}
+	}
+
+	&__form-btn {
+		margin: 3rem auto;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__sendFormBtn {
+		padding: 1rem 4rem;
+		font-size: 1.6rem;
+		color: $eag-white;
+		background-color: $eag-red;
+		border: none;
+		transition: background-color 0.4s, color 0.4s;
+		cursor: pointer;
+
+		&:hover {
+			color: $eag-black;
+			background-color: $eag-white;
+		}
+	}
+
+	&__others-btns {
+		max-width: 170px;
+		width: 100%;
+	}
+
+	&__close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 4rem;
+		padding: 1rem;
+
+		& button {
+			background-color: transparent;
+			color: $eag-white;
+			border: none;
+			font-size: 2.6rem;
+			cursor: pointer;
+			transition: color 0.4s;
+
+			&:hover {
+				color: $eag-red;
+			}
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.job {
+		&__container {
+			padding: 2rem 2rem 0;
+		}
+
+		&__logo {
+			width: auto;
+			& img {
+				position: absolute;
+			}
+		}
+
+		&__form {
+			margin-top: 10rem;
+		}
+
+		&__others-btns {
+			width: auto;
+		}
+	}
+}
+
+@media (max-width: 565px) {
+	.job {
+		&__logo {
+			& img {
+				max-width: 100px;
+			}
+		}
+
+		&__form {
+			margin-top: 8rem;
+		}
+
+		&__form-title {
+			& h3 {
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.job {
+		&__form-namePhone,
+		&__form-mailCity,
+		&__form-prevJobFutureJob,
+		&__form-langLicense {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+
+		&__form-name,
+		&__form-phone,
+		&__form-mail,
+		&__form-city,
+		&__form-prevJob,
+		&__form-futureJob,
+		&__form-jobLanguage,
+		&__form-license,
+		&__form-aboutYou {
+			max-width: none;
+		}
+	}
+}

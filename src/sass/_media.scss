@@ -180,7 +180,6 @@
 				display: none;
 			}
 
-
 			&__mobile-form-container {
 				width: 100%;
 			}
@@ -232,32 +231,6 @@
 
 			&__form-btns {
 				width: 100%;
-			}
-		}
-
-
-		.faq {
-			&__head {
-				margin: 2rem 2rem 4rem;
-			}
-			&__body-title {
-				align-self: flex-end;
-				font-size: 1.6rem;
-			}
-			&__box-lists {
-				flex-direction: column;
-				gap: 5rem
-			}
-
-			&__accordeon-box {
-				align-items: center;
-			}
-		}
-
-		.privacypolicy {
-			&__head {
-				margin: 2rem auto 4rem;
-				justify-content: flex-start;
 			}
 		}
 	}
@@ -372,8 +345,6 @@
 				align-self: center;
 			}
 		}
-
-		
 	}
 	@media (max-width: 565px) {
 		.header {
@@ -419,7 +390,6 @@
 			&__context-text {
 				padding: 0;
 				min-height: 200px;
-
 			}
 		}
 
@@ -456,38 +426,6 @@
 				}
 			}
 		}
-
-		.faq {
-			&__head-logo {
-				& img {
-					max-width: 100px;
-				}
-			}
-			&__body-title {
-				font-size: 1.2rem;
-			}
-
-
-			&__accordeon-box-content, &__accordeon-info-text {
-				font-size: 1.2rem;
-				& span {
-					font-size: 1.2rem;
-				}
-			}
-
-
-			&__accordeon-box, &__box-lists {
-				gap: 3rem;
-			}
-		}
-		.privacypolicy {
-			&__head-logo {
-				& img {
-					max-width: 100px;
-				}
-			}
-		}
-		
 	}
 	@media (max-width: 480px) {
 		.header {
@@ -589,7 +527,7 @@
 
 			&__context-text {
 				min-height: 250px;
-				
+
 				& p {
 					font-size: 1.8rem;
 				}
@@ -599,24 +537,6 @@
 		.contact {
 			&__body-more {
 				grid-template-columns: 1fr;
-			}
-		}
-
-		.privacypolicy {
-			
-		
-
-			&__body {
-				& h2 {
-					font-size: 2.2rem;
-				}
-				& h3 {
-					font-size: 1.8rem;
-				}
-			}
-
-			&__main-ul {
-				margin-left: 0;
 			}
 		}
 	}
