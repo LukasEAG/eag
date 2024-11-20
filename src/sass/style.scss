@@ -371,12 +371,14 @@ textarea::placeholder {
 .realisation {
 	position: relative;
 	display: block;
-	overflow: hidden;
+	height: calc(100vh - 65px);
 	background-image: url(../img/realisation10.png);
 	background-position: center;
 	background-size: cover;
 	font-family: 'Roboto Mono', sans-serif;
-	height: calc(100vh - 65px);
+	transition: background-image 0.3s ease-in-out, opacity 0.3s ease-in-out;
+	opacity: 1;
+	overflow: hidden;
 
 	&::after {
 		position: absolute;
@@ -649,6 +651,7 @@ textarea::placeholder {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	
 
 		& p {
 			max-width: 930px;
@@ -658,6 +661,12 @@ textarea::placeholder {
 			font-weight: 600;
 			text-align: justify;
 		}
+	}
+
+	&__context-text-p {
+		opacity: 1;
+		transform: translateX(0);
+		transition: transform 0.4s ease, opacity .2s ease-in-out;
 	}
 }
 
@@ -1601,10 +1610,6 @@ textarea::placeholder {
 		}
 	}
 }
-
-
-
-
 
 @keyframes slider-header-f {
 	0% {

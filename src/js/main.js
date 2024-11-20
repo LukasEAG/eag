@@ -253,7 +253,13 @@ realisationBtns.forEach(btn => {
 
 		for (const [key, value] of Object.entries(realisationObject)) {
 			if (btn.value === key) {
-				realisation.style.backgroundImage = `url(${value.img})`
+
+				realisation.style.opacity = '0'
+				setTimeout(() => {
+					realisation.style.backgroundImage = `url(${value.img})`
+					realisation.style.opacity = '1'
+
+				}, 300)
 				btn.dataset.realisationBtn = true
 			}
 		}
@@ -306,7 +312,24 @@ offerBtns.forEach(btn => {
 		})
 		for (const [key, value] of Object.entries(offerObject)) {
 			if (btn.value === key) {
-				offerContextText.innerText = value.text
+
+				offerContextText.style.transform = 'translateX(200%)'
+
+				setTimeout(() => {
+
+					offerContextText.style.opacity = '0'
+					offerContextText.style.transform = 'translateX(-200%)'
+				}, 200)
+
+				offerContextText.style.opacity = '0'
+
+				setTimeout(() => {
+					
+					offerContextText.style.opacity = '1'
+					offerContextText.style.transform = 'translateX(0)'
+					offerContextText.innerText = value.text
+				}, 400)
+
 				offerNumber.innerText = value.number
 				offerNumberBorder.style.border = `7px solid ${value.color}`
 				btn.style.backgroundColor = `${value.color}`
