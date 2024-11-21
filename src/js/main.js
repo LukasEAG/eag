@@ -1,3 +1,16 @@
+// Dynamic height
+
+const headerHeight = document.querySelector('.header')
+
+const dynamicHeight = () => {
+	const vh = window.innerHeight * 0.01 
+	headerHeight.style.setProperty('--vh', `${vh}px`)
+}
+
+dynamicHeight()
+window.addEventListener('resize', dynamicHeight())
+
+
 //Navbar
 
 document.addEventListener('DOMContentLoaded', function () {

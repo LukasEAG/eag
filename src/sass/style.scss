@@ -78,7 +78,7 @@ textarea::placeholder {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	height: 100dvh;
+	height: calc(var(--vh) * 100);
 	font-family: 'Roboto Mono';
 
 	&__head {
