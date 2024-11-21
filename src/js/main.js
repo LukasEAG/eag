@@ -3,12 +3,13 @@
 const headerHeight = document.querySelector('.header')
 
 const dynamicHeight = () => {
-	const vh = window.innerHeight * 0.01 
+	const vh = window.innerHeight
 	headerHeight.style.setProperty('--vh', `${vh}px`)
 }
 
 dynamicHeight()
-window.addEventListener('resize', dynamicHeight())
+window.addEventListener('resize', dynamicHeight)
+screen.orientation.addEventListener('change', dynamicHeight)
 
 
 //Navbar
@@ -69,13 +70,23 @@ menuCloseBtn.forEach(btn => {
 		menuList.classList.remove('hide')
 	})
 })
+
+const openAboutOrFaq = (item) => {
+	if (item.hasAttribute('data-aboutUs-btn')) {
+		menuList.classList.add('hide')
+		aboutUs.classList.add('active')
+		menuCloseBtn.forEach(btn => btn.classList.add('hide-btn'))
+		menuReturnBtn.classList.add('show-btn')
+	} else  if (item.hasAttribute('data-faq-btn')){
+		faqBody.classList.add('active')
+	}
+	
+
+}
 menuItems.forEach(item => {
 	item.addEventListener('click', () => {
-		if (item.classList.contains('about-us-btn')) {
-			menuList.classList.add('hide')
-			aboutUs.classList.add('active')
-			menuCloseBtn.forEach(btn => btn.classList.add('hide-btn'))
-			menuReturnBtn.classList.add('show-btn')
+		if (item.hasAttribute('data-aboutUs-btn')|| item.hasAttribute('data-faq-btn')) {
+			openAboutOrFaq(item)
 		} else {
 			mobileMenu.classList.remove('active')
 			menuOpenBtns.forEach(btn => btn.classList.remove('hide-btn'))
@@ -919,17 +930,25 @@ const faqBody = document.querySelector('.faq')
 const faqOpenBtn = document.querySelectorAll('[data-faq-btn]')
 const faqCloseBtn = document.querySelector('[data-faq-close-btn]')
 
+const openFaq = () => {
+	faqBody.classList.add('active')
+	body.classList.add('stop-scrolling')
+}
+
+const closeFaq = () => {
+	faqBody.classList.remove('active')
+	body.classList.remove('stop-scrolling')
+}
+ 
 faqOpenBtn.forEach(btn => {
 	btn.addEventListener('click', e => {
 		e.preventDefault()
-		faqBody.classList.add('active')
-		body.classList.add('stop-scrolling')
+		openFaq()
 	})
 })
 
 faqCloseBtn.addEventListener('click', () => {
-	faqBody.classList.remove('active')
-	body.classList.remove('stop-scrolling')
+	closeFaq()
 
 })
 
