@@ -42,7 +42,8 @@
 	&__web-menu-btn {
 		display: flex;
 		justify-content: flex-end;
-		width: calc(50% + 83px);
+		width: 100%;
+		max-width: 960px;
 	}
 	&__menu-btn {
 		display: flex;
@@ -90,7 +91,7 @@
 
 		& img {
 			width: 120px;
-			height: 46px;
+			height: auto;
 		}
 	}
 
@@ -325,68 +326,22 @@
 	}
 
 	&__more-btns {
-		margin-right: 5rem;
 		display: flex;
 		justify-content: flex-end;
-		width: 50%;
+		max-width: 960px;
+		width: 100%;
 		height: auto;
 	}
 
-	&__more-lang-btn {
-		padding: 0.2em;
-		font-size: 2.6rem;
-		background-color: transparent;
-		color: $eag-white;
-		border-radius: 5px;
-		border: none;
-		transition: background-color 0.4s, color 0.4s;
-		cursor: pointer;
+	&__langBtn-box {
+		max-width: 80px;
+		width: 100%;
 	}
 
-	&__more-lang-btn:hover {
-		color: $eag-black;
-		background-color: $eag-white;
-	}
 
-	&__lang-list {
-		position: absolute;
-		top: 65px;
-		right: 0;
-		transform: translateY(-150%);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 25vh;
-		width: 20%;
-		opacity: 0;
-		transition: transform 0.4s, opacity 0.4s;
-		transition-delay: opacity 0.4s;
-		z-index: -2;
-	}
+	
 
-	&__lang-btn {
-		margin: 1em 0;
-		padding: 1em 2em;
-		width: 60%;
-		background-color: $eag-blue;
-		color: $eag-white;
-		border: none;
-		border-radius: 5px;
-		font-size: 1.4rem;
-		text-transform: uppercase;
-		transition: background-color 0.4s, color 0.4s;
-		cursor: pointer;
-	}
-
-	&__lang-btn:hover {
-		background-color: rgba($eag-black, $alpha: 0.4);
-	}
-
-	.active-lang {
-		transform: translateY(0);
-		opacity: 1;
-	}
+	
 
 	.show-btn {
 		opacity: 1;
@@ -398,13 +353,100 @@
 	}
 }
 
-@media (max-width: 1200px) {
-	.nav {
-		&__lang-list {
-			width: 25%;
+.lang {
+	&__open-btn {
+		padding: 0.2em;
+		font-size: 2.6rem;
+		background-color: transparent;
+		color: $eag-white;
+		border-radius: 5px;
+		border: none;
+		transition: background-color 0.4s, color 0.4s;
+		cursor: pointer;
+
+		&.hide {
+			opacity: 0;
+			pointer-events: none;
 		}
 	}
+	
+	&__open-btn:hover {
+		color: $eag-black;
+		background-color: $eag-white;
+	}
+
+	&__btns-list {
+		padding: 4rem 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		max-width: 360px;
+		height: 100%;
+		min-height: 100vh;
+		transform: translateY(-150%);
+		opacity: 0;
+		background-color: rgba($color: $eag-black, $alpha: .9);
+		transition: transform 0.4s, opacity 0.4s;
+		transition-delay: opacity 0.4s;
+		z-index: 10;
+
+		
+	}
+
+	
+
+	&__btn-item {
+		margin: 2rem 0;
+		padding: 1em 2em;
+		width: 100%;
+		max-width: 230px;
+		background-color: transparent;
+		color: $eag-white;
+		border: none;
+		border-radius: 5px;
+		font-size: 1.4rem;
+		font-family: "Roboto Mono";
+		letter-spacing: .6rem;
+		text-transform: uppercase;
+		transition: background-color 0.4s, color 0.4s;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $eag-white;
+			color: $eag-black;
+		}
+	}
+
+	&__close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 4rem;
+		padding: 1rem;
+		background-color: transparent;
+		color: $eag-white;
+		border: none;
+		font-size: 2.2rem;
+		cursor: pointer;
+		transition: color 0.4s;
+
+		&:hover {
+			color: $eag-red;
+		}
+	}
+
+	
 }
+
+.active-lang {
+	transform: translateY(0);
+	opacity: 1;
+}
+
 
 @media (max-width: 992px) {
 	.nav {
@@ -415,7 +457,6 @@
 			font-size: 2.2rem;
 		}
 
-		&__more-lang-btn,
 		&__menu-close-btn {
 			font-size: 2rem;
 		}
@@ -461,14 +502,6 @@
 			margin-left: 4rem;
 		}
 
-		&__more-btns {
-			margin-right: 1rem;
-		}
-
-		&__lang-list {
-			top: 65px;
-			width: 35%;
-		}
 	}
 }
 
@@ -503,9 +536,9 @@
 			right: 2rem;
 		}
 
-		&__menu-more-btn &__more-lang-btn {
-			display: none;
-		}
+		// &__menu-more-btn &__more-lang-btn {
+		// 	display: none;
+		// }
 	
 
 		&__about-us {
@@ -525,9 +558,6 @@
 			}
 		}
 
-		&__lang-list {
-			width: 52%;
-		}
 	}
 }
 @media (max-width: 458px) {
@@ -539,10 +569,6 @@
 		&__mobile-menu-btns {
 			width: 15%;
 		}
-	
-		&__lang-list {
-			width: 62%;
-		}
 
 		&__about-us-content {
 			& h3 {
@@ -553,13 +579,6 @@
 			& p {
 				font-size: 1.2rem;
 			}
-		}
-	}
-}
-@media (max-width: 378px) {
-	.nav {
-		&__lang-list {
-			width: 75%;
 		}
 	}
 }

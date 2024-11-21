@@ -14,7 +14,6 @@ dynamicHeight()
 window.addEventListener('resize', () => {
 	const currentWidth = window.innerWidth
 	const currentHeight = window.innerHeight
-	console.log(currentWidth, lastWidth);
 	if (Math.abs(currentWidth - lastWidth) > 100 || Math.abs(currentHeight - lastHeight) < 30)  {
 		dynamicHeight()
 		lastWidth = currentWidth
@@ -67,7 +66,8 @@ menuOpenBtns.forEach(btn =>
 		//btn.classList.add('hide-btn')
 		//menuCloseBtn.forEach(btn => btn.classList.add('show-btn'))
 		body.classList.add('stop-scrolling')
-		langList.classList.remove('active-lang')
+		closeLang()
+
 	})
 )
 
@@ -97,10 +97,14 @@ menuItems.forEach(item => {
 	item.addEventListener('click', () => {
 		if (item.hasAttribute('data-aboutUs-btn') || item.hasAttribute('data-faq-btn')) {
 			openAboutOrFaq(item)
+			closeLang()
+
 		} else {
 			mobileMenu.classList.remove('active')
 			menuOpenBtns.forEach(btn => btn.classList.remove('hide-btn'))
 			menuCloseBtn.forEach(btn => btn.classList.add('show-btn'))
+			langList.classList.remove('active-lang')
+
 			body.classList.remove('stop-scrolling')
 		}
 	})
@@ -133,30 +137,39 @@ window.addEventListener('scroll', () => {
 // Multilanguage menu
 const htmlLang = document.querySelector('[lang]')
 
-const multiLangBtns = document.querySelectorAll('.nav__more-lang-btn')
-const langList = document.querySelector('.nav__lang-list')
+const multiLangBtns = document.querySelectorAll('.lang__open-btn')
+const closeLangBtn = document.querySelector('.lang__close-btn')
+const langList = document.querySelector('.lang__btns-list')
 
 multiLangBtns.forEach(btn => {
 	btn.addEventListener('click', () => {
-		langList.classList.toggle('active-lang')
-		mobileMenu.classList.remove('active')
-		menuOpenBtns.forEach(btn => btn.classList.remove('hide-btn'))
+		btn.classList.add('hide')
+		langList.classList.add('active-lang')
+		//mobileMenu.classList.remove('active')
+		//menuOpenBtns.forEach(btn => btn.classList.remove('hide-btn'))
 		//menuCloseBtn.classList.remove('show-btn')
-		body.classList.remove('stop-scrolling')
-		menuList.classList.remove('hide')
-		aboutUs.classList.remove('active')
-		menuCloseBtn.forEach(btn => btn.classList.remove('hide-btn'))
-		menuReturnBtn.classList.remove('show-btn')
+		body.classList.add('stop-scrolling')
+		//menuList.classList.remove('hide')
+		//aboutUs.classList.remove('active')
+		//menuCloseBtn.forEach(btn => btn.classList.remove('hide-btn'))
+		//menuReturnBtn.classList.remove('show-btn')
 	})
 })
 
+closeLangBtn.addEventListener('click', () => {
+	closeLang()
+})
+
 const closeLang = () => {
-	langList.classList.toggle('active-lang')
+	langList.classList.remove('active-lang')
+	multiLangBtns.forEach(btn => btn.classList.remove('hide'))
+	body.classList.remove('stop-scrolling')
+	//langList.classList.toggle('active-lang')
 }
 
 // Multilang JSON
 
-const langBtns = document.querySelectorAll('.nav__lang-btn')
+const langBtns = document.querySelectorAll('.lang__btn-item')
 
 let MultiLang = function (url, lang, onload) {
 	this.phrases = {}
@@ -245,7 +258,7 @@ langBtns.forEach(btn =>
 body.addEventListener('load', onLoad())
 langBtns.forEach(btn =>
 	btn.addEventListener('click', () => {
-		langList.classList.remove('active-lang')
+		closeLang()
 	})
 )
 
