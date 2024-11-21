@@ -78,7 +78,7 @@ textarea::placeholder {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	height: calc(var(--vh));
+	height: calc(var(--vh) * 100);
 	font-family: 'Roboto Mono';
 
 	&__head {
@@ -371,7 +371,8 @@ textarea::placeholder {
 .realisation {
 	position: relative;
 	display: block;
-	height: calc(var(--vh) - 65px);
+	height: calc(var(--vh) * 100 - 65px);
+	//height: calc(100vh - 65px);
 	background-image: url(../img/realisation10.png);
 	background-position: center;
 	background-size: cover;
@@ -673,7 +674,8 @@ textarea::placeholder {
 .news {
 	position: relative;
 	overflow-x: hidden;
-	height: calc(var(--vh) - 65px);
+	 height: calc(var(--vh) * 100 - 65px);
+	//height: calc(100vh - 65px);
 
 	&::before {
 		position: absolute;

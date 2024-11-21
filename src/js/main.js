@@ -1,16 +1,28 @@
 // Dynamic height
 const body = document.querySelector('body')
+let lastWidth = window.innerWidth;
+let lastHeight = window.innerHeight;
 
-const headerHeight = document.querySelector('.header')
 
 const dynamicHeight = () => {
-	const vh = window.innerHeight
+	const vh = window.innerHeight * 0.01
 	body.style.setProperty('--vh', `${vh}px`)
 }
 
 dynamicHeight()
-//window.addEventListener('resize', dynamicHeight)
+
+window.addEventListener('resize', () => {
+	const currentWidth = window.innerWidth
+	const currentHeight = window.innerHeight
+	console.log(currentWidth, lastWidth);
+	if (Math.abs(currentWidth - lastWidth) > 100 || Math.abs(currentHeight - lastHeight) < 30)  {
+		dynamicHeight()
+		lastWidth = currentWidth
+		lastHeight = currentHeight
+	} 
+})
 screen.orientation.addEventListener('change', dynamicHeight)
+
 
 
 //Navbar
@@ -71,21 +83,19 @@ menuCloseBtn.forEach(btn => {
 	})
 })
 
-const openAboutOrFaq = (item) => {
+const openAboutOrFaq = item => {
 	if (item.hasAttribute('data-aboutUs-btn')) {
 		menuList.classList.add('hide')
 		aboutUs.classList.add('active')
 		menuCloseBtn.forEach(btn => btn.classList.add('hide-btn'))
 		menuReturnBtn.classList.add('show-btn')
-	} else  if (item.hasAttribute('data-faq-btn')){
+	} else if (item.hasAttribute('data-faq-btn')) {
 		faqBody.classList.add('active')
 	}
-	
-
 }
 menuItems.forEach(item => {
 	item.addEventListener('click', () => {
-		if (item.hasAttribute('data-aboutUs-btn')|| item.hasAttribute('data-faq-btn')) {
+		if (item.hasAttribute('data-aboutUs-btn') || item.hasAttribute('data-faq-btn')) {
 			openAboutOrFaq(item)
 		} else {
 			mobileMenu.classList.remove('active')
@@ -277,12 +287,10 @@ realisationBtns.forEach(btn => {
 
 		for (const [key, value] of Object.entries(realisationObject)) {
 			if (btn.value === key) {
-
 				realisation.style.opacity = '0'
 				setTimeout(() => {
 					realisation.style.backgroundImage = `url(${value.img})`
 					realisation.style.opacity = '1'
-
 				}, 300)
 				btn.dataset.realisationBtn = true
 			}
@@ -336,11 +344,9 @@ offerBtns.forEach(btn => {
 		})
 		for (const [key, value] of Object.entries(offerObject)) {
 			if (btn.value === key) {
-
 				offerContextText.style.transform = 'translateX(200%)'
 
 				setTimeout(() => {
-
 					offerContextText.style.opacity = '0'
 					offerContextText.style.transform = 'translateX(-200%)'
 				}, 200)
@@ -348,7 +354,6 @@ offerBtns.forEach(btn => {
 				offerContextText.style.opacity = '0'
 
 				setTimeout(() => {
-					
 					offerContextText.style.opacity = '1'
 					offerContextText.style.transform = 'translateX(0)'
 					offerContextText.innerText = value.text
@@ -939,7 +944,7 @@ const closeFaq = () => {
 	faqBody.classList.remove('active')
 	body.classList.remove('stop-scrolling')
 }
- 
+
 faqOpenBtn.forEach(btn => {
 	btn.addEventListener('click', e => {
 		e.preventDefault()
@@ -949,10 +954,9 @@ faqOpenBtn.forEach(btn => {
 
 faqCloseBtn.addEventListener('click', () => {
 	closeFaq()
-
 })
 
-// Privacypolicy 
+// Privacypolicy
 
 const privacyBody = document.querySelector('.privacypolicy')
 const privacyOpenBtn = document.querySelectorAll('[data-privacy-btn]')
@@ -971,11 +975,11 @@ privacyCloseBtn.addEventListener('click', () => {
 	body.classList.remove('stop-scrolling')
 })
 
-// Job 
+// Job
 
 const jobBody = document.querySelector('.job')
 const jobOpenBtn = document.querySelectorAll('[data-job-btn]')
-const jobCloseBtn = document.querySelector('[data-job-closeBtn') 
+const jobCloseBtn = document.querySelector('[data-job-closeBtn')
 const jobAgreeBtn = document.querySelector('[data-job-agreementBtn]')
 const jobAgreeStar = document.querySelector('[data-job-star]')
 
@@ -995,7 +999,7 @@ jobCloseBtn.addEventListener('click', () => {
 jobAgreeBtn.addEventListener('click', () => {
 	jobAgreeStar.classList.toggle('checked')
 	jobAgreeBtn.toggleAttribute('data-job-agree')
-} )
+})
 
 //Section observer
 const sections = document.querySelectorAll('[data-observ]')
