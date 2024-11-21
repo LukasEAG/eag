@@ -371,7 +371,7 @@ textarea::placeholder {
 .realisation {
 	position: relative;
 	display: block;
-	height: calc(100vh - 65px);
+	height: calc(var(--vh) - 65px);
 	background-image: url(../img/realisation10.png);
 	background-position: center;
 	background-size: cover;
@@ -673,7 +673,7 @@ textarea::placeholder {
 .news {
 	position: relative;
 	overflow-x: hidden;
-	height: calc(100vh - 65px);
+	height: calc(var(--vh) - 65px);
 
 	&::before {
 		position: absolute;

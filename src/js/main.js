@@ -1,14 +1,15 @@
 // Dynamic height
+const body = document.querySelector('body')
 
 const headerHeight = document.querySelector('.header')
 
 const dynamicHeight = () => {
 	const vh = window.innerHeight
-	headerHeight.style.setProperty('--vh', `${vh}px`)
+	body.style.setProperty('--vh', `${vh}px`)
 }
 
 dynamicHeight()
-window.addEventListener('resize', dynamicHeight)
+//window.addEventListener('resize', dynamicHeight)
 screen.orientation.addEventListener('change', dynamicHeight)
 
 
@@ -46,7 +47,6 @@ const webMenuBtn = document.querySelector('.nav__menu-btn')
 const menuList = document.querySelector('.nav__menu-items')
 const aboutUs = document.querySelector('.nav__about-us')
 const menuReturnBtn = document.querySelector('.nav__menu-return-btn')
-const body = document.querySelector('body')
 const siteMAboutUs = document.querySelector('.siteMap-AboutUs')
 
 menuOpenBtns.forEach(btn =>
