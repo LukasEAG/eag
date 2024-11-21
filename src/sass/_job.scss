@@ -11,6 +11,7 @@
 	pointer-events: none;
 	transition: transform .4s, opacity .4s;
 	overflow: scroll;
+	background-color: $eag-black;
 	z-index: 10;
 
 	&.active {
