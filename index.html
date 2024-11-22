@@ -67,7 +67,7 @@
                         <li class="nav__menu-item"><a href="">Demo</a></li>
                     </ul>
                     <div class="nav__menu-more-btn">
-                        <button class="lang__open-btn">
+                        <button class="lang__open-btn lang__open-btn--menu">
                             <i class="ti ti-world"></i>
                         </button>
 
@@ -137,19 +137,15 @@
             </div>
             <div class="nav__more-btns">
                 <div class="nav__langBtn-box">
-                    <button class="lang__open-btn">
+                    <button class="lang__open-btn lang__open-btn--main">
                         <i class="ti ti-world"></i>
                     </button>
                 </div>
 
             </div>
-            <div class="lang__btns-list">
-                <button class="lang__btn-item" value="pl">🇵🇱 Polski</button>
-                <button class="lang__btn-item" value="en">🇺🇸 English</button>
-                <button class="lang__btn-item" value="de">🇩🇪 Deutsch</button>
-                <button class="lang__close-btn">X</button>
-            </div>
+           
         </div>
+     
     </div>
 </nav>
 
@@ -213,6 +209,14 @@
         </div>
 
     </header>
+    <div class="lang">
+        <div class="lang__btns-list">
+            <button class="lang__btn-item" value="pl">🇵🇱 Polski</button>
+            <button class="lang__btn-item" value="en">🇺🇸 English</button>
+            <button class="lang__btn-item" value="de">🇩🇪 Deutsch</button>
+            <button class="lang__close-btn">X</button>
+        </div>
+    </div>
     <main>
 
         <section id="realisation-text">
@@ -612,6 +616,9 @@
 
                 <div class="faq__head-menu">
                     <button class="faq__close-btn" data-faq-close-btn>x</button>
+                    <button class="lang__open-btn lang__open-btn--faq">
+                        <i class="ti ti-world"></i>
+                    </button>
                 </div>
             </div>
             <div class="faq__body">
@@ -748,7 +755,10 @@
                 <img src="./dist/img/logoEAGbiale.png" alt="">
             </div>
             <div class="privacypolicy__head-btns">
-                <button data-privacy-close-btn>x</button>
+                <button class="privacypolicy__close-btn" data-privacy-close-btn>x</button>
+                <button class="lang__open-btn lang__open-btn--privacy">
+                    <i class="ti ti-world"></i>
+                </button>
             </div>
         </div>
         <div class="privacypolicy__body">
@@ -1086,8 +1096,11 @@
                 </div>
             </div>
             <div class="job__others-btns">
-                <div class="job__close-btn">
-                    <button data-job-closeBtn>x</button>
+                <div class="job__menu-btns">
+                    <button class="job__close-btn" data-job-closeBtn>x</button>
+                    <button class="lang__open-btn lang__open-btn--job">
+                        <i class="ti ti-world"></i>
+                    </button>
                 </div>
             </div>
         </div>

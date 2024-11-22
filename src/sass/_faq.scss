@@ -49,21 +49,30 @@
 		}
 	}
 
+	&__head-menu {
+		& button {
+			background-color: transparent;
+			color: $eag-white;
+			transition: color 0.4s;
+
+		}
+
+		& button:hover {
+				color: $eag-red;
+			}
+		}
+
 	&__close-btn {
 		position: absolute;
 		top: 2rem;
 		right: 4rem;
 		padding: 1rem;
-		background-color: transparent;
-		color: $eag-white;
+		
 		border: none;
 		font-size: 2.6rem;
 		cursor: pointer;
-		transition: color 0.4s;
 
-		&:hover {
-			color: $eag-red;
-		}
+		
 	}
 
 	&__body {

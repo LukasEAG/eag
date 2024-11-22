@@ -1,0 +1,175 @@
+@use '../sass/colors' as *;
+
+.lang {
+	position: fixed;
+	z-index: 100;
+	&__open-btn {
+		display: flex;
+		padding: 0.3rem;
+		font-size: 2.6rem;
+		border-radius: 5px;
+		border: none;
+		
+		cursor: pointer;
+
+		&.hide {
+			opacity: 0;
+			pointer-events: none;
+		}
+
+        &--main {
+            background-color: transparent;
+            color: $eag-white;
+            transition: background-color 0.4s, color 0.4s;
+
+            &:hover {
+                color: $eag-black;
+                background-color: $eag-white;
+            }
+        }
+
+		&--menu {
+			position: absolute;
+			padding: 1rem;
+			top: 2rem;
+			right: 15rem;
+            background-color: transparent;
+            color: $eag-white;
+            transition: background-color 0.4s, color 0.4s;
+
+            &:hover {
+                color: $eag-black;
+                background-color: $eag-white;
+            }
+		}
+
+        &--faq, &--privacy, &--job {
+            position: absolute;
+            top: 2.4rem;
+            right: 10rem;
+            padding: 1rem;
+        }
+
+        // &--privacy {
+        //     position: absolute;
+        //     top: 2.4rem;
+        //     right: 10rem;
+        //     padding: 1rem;
+        // }
+        // &--job {
+        //     position: absolute;
+        //     top: 2.4rem;
+        //     right: 10rem;
+        //     padding: 1rem;
+        // }
+	}
+
+	&__btns-list {
+		padding: 4rem 0;
+		position: fixed;
+		top: 0;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		max-width: 360px;
+		height: 100%;
+		min-height: 100vh;
+		transform: translateY(-150%);
+		opacity: 0;
+		background-color: rgba($color: $eag-black, $alpha: 0.9);
+		transition: transform 0.4s, opacity 0.4s;
+		transition-delay: opacity 0.4s;
+		z-index: 100;
+	}
+
+	&__btn-item {
+		margin: 2rem 0;
+		padding: 1em 2em;
+		width: 100%;
+		max-width: 230px;
+		background-color: transparent;
+		color: $eag-white;
+		border: none;
+		border-radius: 5px;
+		font-size: 1.4rem;
+		font-family: 'Roboto Mono';
+		letter-spacing: 0.6rem;
+		text-transform: uppercase;
+		transition: background-color 0.4s, color 0.4s;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $eag-white;
+			color: $eag-black;
+		}
+	}
+
+	&__close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 4rem;
+		padding: 1rem;
+		background-color: transparent;
+		color: $eag-white;
+		border: none;
+		font-size: 2.2rem;
+		cursor: pointer;
+		transition: color 0.4s;
+
+		&:hover {
+			color: $eag-red;
+		}
+	}
+}
+
+.active-lang {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+@media (max-width: 992px) {
+
+	.lang {
+		&__btns-list {
+			width: 50%;
+			max-width: none;
+		}
+
+		&__open-btn {
+
+			&--menu {
+				right: 12rem;
+			}
+		}	
+	}
+}
+
+@media (max-width: 769px) {
+    .lang {
+		&__open-btn {
+			font-size: 2.4rem;
+		}
+	}
+}
+
+@media (max-width: 568px) {
+    .lang {
+		&__open-btn {
+
+			&--menu {
+				right: 8rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 458px) {
+    .lang {
+		&__btns-list {
+			width: 100%;
+		}
+	}
+}
