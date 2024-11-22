@@ -423,11 +423,17 @@ textarea::placeholder {
 		margin-left: 2rem;
 		display: flex;
 		align-self: flex-start;
+		flex-wrap: nowrap;
 		& span {
 			display: flex;
 			text-transform: uppercase;
 			color: $eag-red;
 		}
+	}
+
+	&__list-body {
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	&__btn {
