@@ -249,11 +249,12 @@ function refreshLabels() {
 	}
 }
 
-langBtns.forEach(btn =>
-	btn.addEventListener('click', e => {
-		langSelectChange(e.target)
-	})
-)
+// ======================== Uruchomić po dodaniu wszystkich języków ==========================
+// langBtns.forEach(btn =>
+// 	btn.addEventListener('click', e => {
+// 		langSelectChange(e.target)
+// 	})
+// )
 
 body.addEventListener('load', onLoad())
 langBtns.forEach(btn =>

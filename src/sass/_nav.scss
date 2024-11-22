@@ -110,6 +110,8 @@
 		&.hide {
 			transform: translateX(150%);
 		}
+
+		
 	}
 
 	&__menu-item {
@@ -122,6 +124,10 @@
 		border-radius: 5px;
 		background-color: transparent;
 		transition: background-color 0.4s, color 0.4s;
+
+		&:last-of-type {
+			pointer-events: none;
+		}
 
 		& a {
 			display: block;
