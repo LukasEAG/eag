@@ -134,6 +134,7 @@
 			text-transform: uppercase;
 			color: $eag-white;
 			transition: background-color 0.4s, color 0.4s;
+			cursor: pointer;
 
 			&::after,
 			a::before {

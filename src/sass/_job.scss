@@ -137,6 +137,7 @@
 	}
 
 	&__form-checkAgrement {
+		display: flex;
 		margin: 1rem 0 1.6rem;
 
 		& button {
@@ -151,6 +152,7 @@
 		}
 
 		& svg {
+			stroke: $eag-white;
 			&.checked {
 				stroke: $eag-red;
 				fill: $eag-red;

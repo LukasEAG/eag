@@ -1,8 +1,7 @@
 // Dynamic height
 const body = document.querySelector('body')
-let lastWidth = window.innerWidth;
-let lastHeight = window.innerHeight;
-
+let lastWidth = window.innerWidth
+let lastHeight = window.innerHeight
 
 const dynamicHeight = () => {
 	const vh = window.innerHeight * 0.01
@@ -14,15 +13,13 @@ dynamicHeight()
 window.addEventListener('resize', () => {
 	const currentWidth = window.innerWidth
 	const currentHeight = window.innerHeight
-	if (Math.abs(currentWidth - lastWidth) > 100 || Math.abs(currentHeight - lastHeight) < 30)  {
+	if (Math.abs(currentWidth - lastWidth) > 100 || Math.abs(currentHeight - lastHeight) < 30) {
 		dynamicHeight()
 		lastWidth = currentWidth
 		lastHeight = currentHeight
-	} 
+	}
 })
 screen.orientation.addEventListener('change', dynamicHeight)
-
-
 
 //Navbar
 
@@ -67,7 +64,6 @@ menuOpenBtns.forEach(btn =>
 		//menuCloseBtn.forEach(btn => btn.classList.add('show-btn'))
 		body.classList.add('stop-scrolling')
 		closeLang()
-
 	})
 )
 
@@ -98,7 +94,6 @@ menuItems.forEach(item => {
 		if (item.hasAttribute('data-aboutUs-btn') || item.hasAttribute('data-faq-btn')) {
 			openAboutOrFaq(item)
 			closeLang()
-
 		} else {
 			mobileMenu.classList.remove('active')
 			menuOpenBtns.forEach(btn => btn.classList.remove('hide-btn'))
@@ -250,11 +245,11 @@ function refreshLabels() {
 }
 
 // ======================== Uruchomić po dodaniu wszystkich języków ==========================
-// langBtns.forEach(btn =>
-// 	btn.addEventListener('click', e => {
-// 		langSelectChange(e.target)
-// 	})
-// )
+langBtns.forEach(btn =>
+	btn.addEventListener('click', e => {
+		langSelectChange(e.target)
+	})
+)
 
 body.addEventListener('load', onLoad())
 langBtns.forEach(btn =>
@@ -325,31 +320,103 @@ const offerObject = {
 	},
 	multimedia: {
 		number: '01',
-		text: 'Tworzymy wielowymiarowe doznania poprzez zastosowanie nowoczesnych rozwiązań multimedialnych. Nasze projekcje, mappingi i prezentacje wideo są zaprojektowane tak, aby wzbudzać silne emocje i zaskakiwać uczestników.',
+		pl: {
+			text: 'Tworzymy wielowymiarowe doznania poprzez zastosowanie nowoczesnych rozwiązań multimedialnych. Nasze projekcje, mappingi i prezentacje wideo są zaprojektowane tak, aby wzbudzać silne emocje i zaskakiwać uczestników.',
+		},
+		en: {
+			text: 'We create multidimensional experiences through the use of modern multimedia solutions. Our projections, mappings and video presentations are designed to arouse strong emotions and surprise participants.',
+		},
+		de: {
+			text: 'Wir schaffen multidimensionale Erlebnisse durch den Einsatz moderner Multimedia-Lösungen. Unsere Projektionen, Mappings und Videopräsentationen sollen starke Emotionen wecken und die Teilnehmer überraschen.',
+		},
+
 		color: '#d61f32cc',
 	},
 
 	planning: {
 		number: '02',
-		text: 'Oferujemy wsparcie organizacyjne na każdym etapie procesu planowania wydarzenia. Pomagamy w doborze lokalizacji, dostawców, planowaniu harmonogramu, co przekłada się na zmniejszenie obciążenia organizacyjnego dla klienta.',
+		pl: {
+			text: 'Oferujemy wsparcie organizacyjne na każdym etapie procesu planowania wydarzenia. Pomagamy w doborze lokalizacji, dostawców, planowaniu harmonogramu, co przekłada się na zmniejszenie obciążenia organizacyjnego dla klienta.',
+		},
+		en: {
+			text: 'We offer organizational support at every stage of the event planning process. We help in selecting locations, suppliers, and planning the schedule, which translates into a reduction in the organizational burden for the client.',
+		},
+		de: {
+			text: 'Wir bieten organisatorische Unterstützung in jeder Phase des Veranstaltungsplanungsprozesses. Wir helfen bei der Auswahl von Standorten, Lieferanten und der Planung des Zeitplans, was zu einer Reduzierung des organisatorischen Aufwands für den Kunden führt.',
+		},
+
 		color: '#AC8BC7',
 	},
 	scean: {
 		number: '03',
-		text: 'Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się spektakularne. Oferujemy doskonałe oświetlenie, nagłośnienie i efekty specjalne, dostosowane do charakteru danego eventu.',
+		pl: {
+			text: 'Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się spektakularne. Oferujemy doskonałe oświetlenie, nagłośnienie i efekty specjalne, dostosowane do charakteru danego eventu.',
+		},
+		en: {
+			text: 'We provide professional technical solutions that make every event spectacular. We offer excellent lighting, sound and special effects, adapted to the nature of the event.',
+		},
+		de: {
+			text: 'Wir bieten professionelle technische Lösungen, die jede Veranstaltung spektakulär machen. Wir bieten hervorragende Beleuchtung, Tonanlage und Spezialeffekte, angepasst an die Art einer bestimmten Veranstaltung.',
+		},
 		color: '#E46C31',
 	},
 	scenography: {
 		number: '04',
-		text: 'Nasze zespoły projektowe pracują nad kreacją scenografii, która w pełni odzwierciedli charakter i tematykę imprezy. Dbamy o każdy detal, aby stworzyć przestrzeń, która przykuje uwagę i wywoła silne wrażenia.',
+		pl: {
+			text: 'Nasze zespoły projektowe pracują nad kreacją scenografii, która w pełni odzwierciedli charakter i tematykę imprezy. Dbamy o każdy detal, aby stworzyć przestrzeń, która przykuje uwagę i wywoła silne wrażenia.',
+		},
+		en: {
+			text: 'Our design teams work on creating a scenography that fully reflects the nature and theme of the event. We take care of every detail to create a space that will attract attention and create strong impressions.',
+		},
+		de: {
+			text: 'Unsere Designteams arbeiten an der Erstellung eines Bühnenbildes, das die Art und das Thema der Veranstaltung vollständig widerspiegelt. Wir kümmern uns um jedes Detail, um einen Raum zu schaffen, der Aufmerksamkeit erregt und starke Eindrücke hervorruft.',
+		},
 		color: '#E9B86B',
 	},
 	booking: {
 		number: '05',
-		text: 'Współpracujemy z najbardziej utalentowanymi artystami, aby dostarczyć niezapomniane występy na każdej scenie. Od muzycznych gwiazd po utalentowanych performerów - zadbamy o to, by każdy artysta idealnie wpasował się w koncepcję wydarzenia.',
+		pl: {
+			text: 'Współpracujemy z najbardziej utalentowanymi artystami, aby dostarczyć niezapomniane występy na każdej scenie. Od muzycznych gwiazd po utalentowanych performerów - zadbamy o to, by każdy artysta idealnie wpasował się w koncepcję wydarzenia.',
+		},
+		en: {
+			text: 'We work with the most talented artists to deliver unforgettable performances on every stage. From music stars to talented performers, we will make sure that each artist fits perfectly into the event concept.',
+		},
+		de: {
+			text: 'Wir arbeiten mit den talentiertesten Künstlern zusammen, um auf jeder Bühne unvergessliche Auftritte zu liefern. Vom Musicalstar bis zum talentierten Künstler – wir sorgen dafür, dass jeder Künstler perfekt zum Veranstaltungskonzept passt.',
+		},
 		color: '#6280C2',
 	},
 }
+
+
+
+const observerConfig = {
+	attributes: true,
+	chlidlist: false,
+	subtree: false,
+}
+
+const dynamicLangChange = (mutationList, languageObserver) => {
+	for (const mutation of mutationList) {
+		if (mutation.type === 'attributes') {
+			for (const [key, value] of Object.entries(offerObject))
+				if (offerContextText.dataset.btnClicked == key) {
+					offerContextText.innerText = value[htmlLang.lang].text
+				}
+		}
+	}
+}
+
+const languageObserver = new MutationObserver(dynamicLangChange)
+
+languageObserver.observe(htmlLang, observerConfig)
+
+
+window.addEventListener('load', () => {
+	offerContextText.innerText = offerObject.multimedia['pl'].text
+	offerContextText.setAttribute('data-btn-clicked', 'multimedia')
+})
+
 
 offerBtns.forEach(btn => {
 	btn.addEventListener('click', () => {
@@ -359,6 +426,7 @@ offerBtns.forEach(btn => {
 		for (const [key, value] of Object.entries(offerObject)) {
 			if (btn.value === key) {
 				offerContextText.style.transform = 'translateX(200%)'
+				offerContextText.dataset.btnClicked = `${btn.value}`
 
 				setTimeout(() => {
 					offerContextText.style.opacity = '0'
@@ -370,7 +438,7 @@ offerBtns.forEach(btn => {
 				setTimeout(() => {
 					offerContextText.style.opacity = '1'
 					offerContextText.style.transform = 'translateX(0)'
-					offerContextText.innerText = value.text
+					offerContextText.innerText = value[htmlLang.lang].text
 				}, 400)
 
 				offerNumber.innerText = value.number
@@ -860,7 +928,8 @@ async function sendFormBackend(e) {
 	formData.append('topic', userTopic.value)
 	formData.append('message', userMsg.value)
 
-	const request = await fetch('/api/sendmail', {
+	//const request = await fetch('/api/sendmail', {
+	const request = await fetch('http://localhost:8000/app.php', {
 		method: 'POST',
 		body: formData,
 	})

@@ -6,72 +6,74 @@
             </div>
             <div class="job__form">
                 <div class="job__form-title">
-                    <h3>Jesteś technikiem? Realizatorem? Scenografem?
-                        Stolarzem ? lub po prostu zawsze marzyłeś o pracy w rozrywce?
+                    <h3 data-lang="job-title">Jesteś technikiem? Realizatorem? Scenografem?
+                        Stolarzem? lub po prostu zawsze marzyłeś o pracy w rozrywce?
                         Zostaw nam swoje informacje o sobie a być może odezwiemy się właśnie do Ciebie. </h3>
                 </div>
                 <div class="job__form-form">
                     <div class="job__form-namePhone">
                         <div class="job__form-name">
-                            <label for="name">Imię i nazwisko</label>
+                            <label for="name" data-lang="job-name">Imię i nazwisko</label>
                             <input type="text" name="name" id="name">
                         </div>
                         <div class="job__form-phone">
-                            <label for="phone">Numer Telefonu</label>
+                            <label for="phone" data-lang="job-phone">Numer Telefonu</label>
                             <input type="text" name="phone" id="phone">
                         </div>
                     </div>
                     <div class="job__form-mailCity">
                         <div class="job__form-mail">
-                            <label for="mail">Adres email</label>
+                            <label for="mail" data-lang="job-mail">Adres email</label>
                             <input type="text" name="mail" id="mail">
                         </div>
                         <div class="job__form-city">
-                            <label for="city">Miasto w którym mieszkasz</label>
+                            <label for="city" data-lang="job-city">Miasto w którym mieszkasz</label>
                             <input type="text" name="city" id="city">
                         </div>
                     </div>
                     <div class="job__form-prevJobFutureJob">
                         <div class="job__form-prevJob">
-                            <label for="prevJob">Stanowiska które pełniłeś w innych firmach</label>
+                            <label for="prevJob" data-lang="job-position">Stanowiska które pełniłeś w innych firmach</label>
                             <input type="text" name="prevJob" id="prevJob">
                         </div>
                         <div class="job__form-futureJob">
-                            <label for="futureJob">Gdzie chciałbyś współpracować w EAG</label>
+                            <label for="futureJob" data-lang="job-position-app">Gdzie chciałbyś współpracować w EAG</label>
                             <input type="text" name="futureJob" id="futureJob">
                         </div>
                     </div>
                     <div class="job__form-langLicense">
                         <div class="job__form-jobLanguage">
-                            <label for="jobLanguage">Języki</label>
+                            <label for="jobLanguage" data-lang="job-lang">Języki</label>
                             <input type="text" name="jobLanguage" id="jobLanguage">
                         </div>
                         <div class="job__form-license">
-                            <label for="jobLicense">Uprawnienia</label>
+                            <label for="jobLicense" data-lang="job-skills">Uprawnienia</label>
                             <input type="text" name="joblicense" id="joblicense">
                         </div>
                     </div>
                     <div class="job__form-aboutYou">
-                        <label for="aboutYou">Napisz dla kogo i przy jakich projektach pracowałeś ?</label>
+                        <label for="aboutYou" data-lang="job-about-you">Napisz dla kogo i przy jakich projektach pracowałeś ?</label>
                         <textarea name="aboutYou" id="aboutYou"></textarea>
                     </div>
                 </div>
                 <div class="job__form-agrement">
                     <div class="job__form-selectContact">
-                        <span>*ważne EAG zastrzega sobie prawo do kontaktu  tylko i wyłącznie z wybranymi osobami. </span>
+                        <span data-lang="job-star">*ważne EAG zastrzega sobie prawo do kontaktu  tylko i wyłącznie z wybranymi osobami. </span>
                     </div>
                     <div class="job__form-checkAgrement">
-                        <button data-job-agreementBtn><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="sharp" stroke-linejoin="sharp" class="icon icon-tabler icons-tabler-outline icon-tabler-star" data-job-star>
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="sharp" stroke-linejoin="sharp" class="icon icon-tabler icons-tabler-outline icon-tabler-star" data-job-star>
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
-                          </svg>Zaznacz gwiazdkę na zgodę.</button>
+                          </svg >
+                          <button data-job-agreementBtn  data-lang="job-star-btn">Zaznacz gwiazdkę na zgodę.</button>
                     </div>
                     <div class="job__form-agreeText">
-                        <span>Wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w formularzu powyżej dla firmy EAG z siedzibą Os. Powstańców Warszawy 6m/147 61-656 Poznań dla potrzeb niezbędnych do realizacji procesu rejestracji. Podanie danych osobowych jest niezbędne do realizacji procesu rejestracyjnego. Konsekwencją niepodania danych osobowych jest brak możliwości rejestracji w serwisie  EAG CREW Spot.*</span>
+                        <span data-lang="job-info">Wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w formularzu powyżej dla firmy EAG z siedzibą Os. Powstańców Warszawy 6m/147 61-656 Poznań dla potrzeb niezbędnych do realizacji procesu rejestracji. Podanie danych osobowych jest niezbędne do realizacji procesu rejestracyjnego. Konsekwencją niepodania danych osobowych jest brak możliwości rejestracji w serwisie  EAG CREW Spot.*</span>
                     </div>
                 </div>
                 <div class="job__form-btn">
-                    <button class="job__sendFormBtn">
+                    <button class="job__sendFormBtn" data-lang="job-send-btn">
                         Wyślij zgłoszenie
                     </button>
                 </div>
