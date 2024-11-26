@@ -318,23 +318,9 @@ const offerObject = {
 	main: {
 		color: '#b9b9c2',
 	},
-	multimedia: {
-		number: '01',
-		pl: {
-			text: 'Tworzymy wielowymiarowe doznania poprzez zastosowanie nowoczesnych rozwiązań multimedialnych. Nasze projekcje, mappingi i prezentacje wideo są zaprojektowane tak, aby wzbudzać silne emocje i zaskakiwać uczestników.',
-		},
-		en: {
-			text: 'We create multidimensional experiences through the use of modern multimedia solutions. Our projections, mappings and video presentations are designed to arouse strong emotions and surprise participants.',
-		},
-		de: {
-			text: 'Wir schaffen multidimensionale Erlebnisse durch den Einsatz moderner Multimedia-Lösungen. Unsere Projektionen, Mappings und Videopräsentationen sollen starke Emotionen wecken und die Teilnehmer überraschen.',
-		},
-
-		color: '#d61f32cc',
-	},
 
 	planning: {
-		number: '02',
+		number: '01',
 		pl: {
 			text: 'Oferujemy wsparcie organizacyjne na każdym etapie procesu planowania wydarzenia. Pomagamy w doborze lokalizacji, dostawców, planowaniu harmonogramu, co przekłada się na zmniejszenie obciążenia organizacyjnego dla klienta.',
 		},
@@ -348,7 +334,7 @@ const offerObject = {
 		color: '#AC8BC7',
 	},
 	scean: {
-		number: '03',
+		number: '02',
 		pl: {
 			text: 'Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się spektakularne. Oferujemy doskonałe oświetlenie, nagłośnienie i efekty specjalne, dostosowane do charakteru danego eventu.',
 		},
@@ -359,6 +345,21 @@ const offerObject = {
 			text: 'Wir bieten professionelle technische Lösungen, die jede Veranstaltung spektakulär machen. Wir bieten hervorragende Beleuchtung, Tonanlage und Spezialeffekte, angepasst an die Art einer bestimmten Veranstaltung.',
 		},
 		color: '#E46C31',
+	},
+
+	multimedia: {
+		number: '03',
+		pl: {
+			text: 'Tworzymy wielowymiarowe doznania poprzez zastosowanie nowoczesnych rozwiązań multimedialnych. Nasze projekcje, mappingi i prezentacje wideo są zaprojektowane tak, aby wzbudzać silne emocje i zaskakiwać uczestników.',
+		},
+		en: {
+			text: 'We create multidimensional experiences through the use of modern multimedia solutions. Our projections, mappings and video presentations are designed to arouse strong emotions and surprise participants.',
+		},
+		de: {
+			text: 'Wir schaffen multidimensionale Erlebnisse durch den Einsatz moderner Multimedia-Lösungen. Unsere Projektionen, Mappings und Videopräsentationen sollen starke Emotionen wecken und die Teilnehmer überraschen.',
+		},
+
+		color: '#d61f32cc',
 	},
 	scenography: {
 		number: '04',
@@ -413,8 +414,8 @@ languageObserver.observe(htmlLang, observerConfig)
 
 
 window.addEventListener('load', () => {
-	offerContextText.innerText = offerObject.multimedia['pl'].text
-	offerContextText.setAttribute('data-btn-clicked', 'multimedia')
+	offerContextText.innerText = offerObject.planning['pl'].text
+	offerContextText.setAttribute('data-btn-clicked', 'planning')
 })
 
 

@@ -602,7 +602,7 @@ textarea::placeholder {
 		position: absolute;
 		right: 10%;
 		top: 27%;
-		border: 7px solid #d61f32cc;
+		border: 7px solid #AC8BC7;
 
 		& p {
 			position: relative;
@@ -644,10 +644,19 @@ textarea::placeholder {
 		margin-bottom: 3.4rem;
 		max-width: 680px;
 
-		& button:first-of-type {
-			max-width: 132px;
-			background-color: #d61f32cc;
+		& button {
+
+			&:first-of-type {
+				background-color: #AC8BC7;
+
+			}
+
+			&:last-of-type {
+				max-width: 132px;
+			}
 		}
+
+		
 	}
 	&__context-btn-row2 {
 		max-width: 530px;
