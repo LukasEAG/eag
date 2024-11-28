@@ -7,11 +7,6 @@
 	max-height: 65px;
 	z-index: 10;
 
-	// a[href^='tel'] {
-	// 	color: inherit;
-	// 	text-decoration: none;
-	// }
-
 	&.show {
 		background-color: rgba($color: $eag-black, $alpha: 0.95);
 	}
@@ -117,7 +112,7 @@
 	&__menu-item {
 		position: relative;
 		font-size: 3.4rem;
-		font-family: 'Roboto Mono';
+		font-family: 'Roboto Mono', monospace;
 		font-weight: 400;
 		text-align: left;
 		list-style: none;
@@ -208,7 +203,7 @@
 		display: flex;
 		justify-content: space-around;
 		height: 30%;
-		font-family: 'Roboto Mono';
+		font-family: 'Roboto Mono', monospace;
 
 		& h3 {
 			margin-bottom: 1em;
@@ -276,32 +271,20 @@
 			margin-bottom: 5rem;
 			font-size: 3.4rem;
 			font-weight: 600;
-			font-family: 'Roboto Mono';
+			font-family: 'Roboto Mono', monospace;
 			text-transform: uppercase;
 			color: $eag-white;
 		}
 
 		& p {
 			font-size: 1.6rem;
-			font-family: 'Manrope';
+			font-family: 'Manrope', sans-serif;
 			line-height: 1.6;
 			text-align: justify;
 			color: $eag-white;
 		}
 	}
-	// &__about-us-return {
-	// 	position: absolute;
-	// 	right: 4rem;
-	// 	top: 2rem;
 
-	// 	& button {
-	// 		font-size: 3rem;
-	// 		border: none;
-	// 		background-color: transparent;
-	// 		color: $eag-white;
-	// 		cursor: pointer;
-	// 	}
-	// }
 
 	&__mobile-menu-btns {
 		display: none;
@@ -318,13 +301,6 @@
 		transition: background-color 0.4s, color 0.4s;
 		cursor: pointer;
 
-		// &--close {
-		// 	position: absolute;
-		// 	background-color: $eag-white;
-		// 	color: $eag-black;
-		// 	opacity: 0;
-		// 	pointer-events: none;
-		// }
 	}
 
 	&__mobile-menu-btn:hover {

@@ -60,8 +60,6 @@ const siteMAboutUs = document.querySelector('.siteMap-AboutUs')
 menuOpenBtns.forEach(btn =>
 	btn.addEventListener('click', () => {
 		mobileMenu.classList.add('active')
-		//btn.classList.add('hide-btn')
-		//menuCloseBtn.forEach(btn => btn.classList.add('show-btn'))
 		body.classList.add('stop-scrolling')
 		closeLang()
 	})
@@ -70,7 +68,6 @@ menuOpenBtns.forEach(btn =>
 menuCloseBtn.forEach(btn => {
 	btn.addEventListener('click', () => {
 		mobileMenu.classList.remove('active')
-		// menuOpenBtns.forEach(btn => btn.classList.remove('hide-btn'))
 		btn.classList.remove('show-btn')
 		body.classList.remove('stop-scrolling')
 		mobileMenu.classList.remove('active')
@@ -140,14 +137,8 @@ multiLangBtns.forEach(btn => {
 	btn.addEventListener('click', () => {
 		btn.classList.add('hide')
 		langList.classList.add('active-lang')
-		//mobileMenu.classList.remove('active')
-		//menuOpenBtns.forEach(btn => btn.classList.remove('hide-btn'))
-		//menuCloseBtn.classList.remove('show-btn')
 		body.classList.add('stop-scrolling')
-		//menuList.classList.remove('hide')
-		//aboutUs.classList.remove('active')
-		//menuCloseBtn.forEach(btn => btn.classList.remove('hide-btn'))
-		//menuReturnBtn.classList.remove('show-btn')
+	
 	})
 })
 
@@ -159,7 +150,6 @@ const closeLang = () => {
 	langList.classList.remove('active-lang')
 	multiLangBtns.forEach(btn => btn.classList.remove('hide'))
 	body.classList.remove('stop-scrolling')
-	//langList.classList.toggle('active-lang')
 }
 
 // Multilang JSON
@@ -389,8 +379,6 @@ const offerObject = {
 	},
 }
 
-
-
 const observerConfig = {
 	attributes: true,
 	chlidlist: false,
@@ -412,12 +400,10 @@ const languageObserver = new MutationObserver(dynamicLangChange)
 
 languageObserver.observe(htmlLang, observerConfig)
 
-
 window.addEventListener('load', () => {
 	offerContextText.innerText = offerObject.planning['pl'].text
 	offerContextText.setAttribute('data-btn-clicked', 'planning')
 })
-
 
 offerBtns.forEach(btn => {
 	btn.addEventListener('click', () => {
@@ -475,155 +461,6 @@ newsBtns.forEach(btn => {
 	})
 })
 
-// Offer section slider
-
-// const buttons = document.querySelectorAll('[data-section-btn]')
-// const sectionContainer = document.querySelector('[data-section-container]')
-// const centerSection = document.querySelector('.offer__about-us')
-// const btnOfferPrev = document.querySelector('.offer__slide-btn--prev')
-// const btnOfferNext = document.querySelector('.offer__slide-btn--next')
-// const spanNext = document.querySelector('.offer__slide-btns span')
-
-// buttons.forEach(button => {
-// 	button.addEventListener('click', () => {
-// 		const counter = button.dataset.sectionBtn === 'next' ? 1 : -1
-
-// 		const offerList = document.querySelectorAll('.offer__section')
-
-// 		offerList.forEach((slide, index) => {
-// 			const offerIndex = sectionContainer.querySelector(`[data-section-${index}]`)
-
-// 			let newIndex = [...offerList].indexOf(offerIndex) + counter
-
-// 			if (newIndex < 0) newIndex = offerList.length - 1
-// 			if (newIndex > offerList.length - 1) newIndex = 0
-
-// 			offerList[newIndex].dataset[`section-${index}`] = true
-// 			delete offerIndex.dataset[`section-${index}`]
-// 		})
-// 	})
-// })
-
-//offer section mobile slider
-
-// const offerMobileContainers = document.querySelector('[data-section-container]')
-
-// const offerMobileSlides = Array.from(offerMobileContainers.querySelectorAll('.offer__section'))
-
-// let isDragging = false
-// let startPos = 0
-// let currentTranslate = 0
-// let prevTranslate = 0
-// let currentIndex = 0
-
-// offerMobileSlides.forEach((slide, index) => {
-// 	slide.addEventListener('dragstart', e => e.preventDefault())
-
-// 	slide.addEventListener('touchstart', touchStart(index))
-// 	slide.addEventListener('touchend', touchEnd)
-// 	slide.addEventListener('touchmove', touchMove)
-// })
-
-// window.oncontextmenu = function (event) {
-// 	event.preventDefault()
-// 	event.stopPropagation()
-// 	return false
-// }
-
-// function touchStart(index) {
-// 	return function (event) {
-// 		currentIndex = index
-// 		startPos = getPositionX(event)
-// 		isDragging = true
-// 	}
-// }
-
-// function touchEnd() {
-// 	isDragging = false
-
-// 	const movedBy = currentTranslate - prevTranslate
-
-// 	if (movedBy <= -100) {
-// 		currentIndex = 1
-// 		setPositionByIndex()
-// 	} else if (movedBy >= 100) {
-// 		currentIndex = -1
-// 		setPositionByIndex()
-// 	}
-// 	return
-// }
-
-// function touchMove(event) {
-// 	if (isDragging) {
-// 		const currentPosition = getPositionX(event)
-// 		currentTranslate = prevTranslate + currentPosition - startPos
-// 	}
-// }
-
-// function getPositionX(event) {
-// 	return event.touches[0].clientX
-// }
-
-// function setSliderPosition() {
-// 	offerMobileSlides.forEach((slider, index) => {
-// 		const mobileSlideIndex = document.querySelector(`[data-section-${index}]`)
-
-// 		let newMobileIndex = [...offerMobileSlides].indexOf(mobileSlideIndex) + currentIndex
-
-// 		if (newMobileIndex < 0) newMobileIndex = offerMobileSlides.length - 1
-// 		if (newMobileIndex > offerMobileSlides.length - 1) newMobileIndex = 0
-
-// 		offerMobileSlides[newMobileIndex].dataset[`section-${index}`] = true
-// 		delete mobileSlideIndex.dataset[`section-${index}`]
-// 	})
-// }
-
-// function setPositionByIndex() {
-// 	currentTranslate = currentIndex * -window.innerWidth
-// 	prevTranslate = currentTranslate
-// 	setSliderPosition()
-// }
-
-//Questions Accordeon
-
-// const accordeon = document.querySelector('.questions__box-lists')
-// const accordeonBtns = document.querySelectorAll('.questions__accordeon-box-content')
-
-// function openAccordeonItems() {
-// 	if (this.nextElementSibling.classList.contains('show-acc')) {
-// 		this.nextElementSibling.classList.remove('show-acc')
-// 		this.lastElementChild.classList.remove('active')
-// 	} else {
-// 		closeAccordeonItems()
-// 		this.nextElementSibling.classList.toggle('show-acc')
-// 		this.lastElementChild.classList.toggle('active')
-// 	}
-// }
-
-// const closeAccordeonItems = () => {
-// 	const allActiveItems = document.querySelectorAll('.questions__accordeon-info')
-// 	allActiveItems.forEach(item => item.classList.remove('show-acc'))
-// 	accordeonBtns.forEach(btn => {
-// 		btn.lastElementChild.classList.remove('active')
-// 	})
-// }
-
-// const clickOutsideAccordeon = e => {
-// 	if (
-// 		e.target.classList.contains('target') ||
-// 		e.target.classList.contains('questions__accordeon-info') ||
-// 		e.target.classList.contains('questions__accordeon-info-text')
-// 	)
-// 		return
-
-// 	closeAccordeonItems()
-// }
-
-// accordeonBtns.forEach(btn => {
-// 	btn.addEventListener('click', openAccordeonItems)
-// })
-
-// window.addEventListener('click', clickOutsideAccordeon)
 
 // Contact form budget
 
@@ -704,6 +541,7 @@ hideFileInput.addEventListener('change', () => {
 
 const attachmentsBtns = document.querySelectorAll('[data-attachments-btns')
 const attachemntsInfoBox = document.querySelector('[data-attachments-info-box]')
+const attachmentsInfo = document.querySelector('[data-attachments-info]')
 
 attachmentsBtns.forEach(btn =>
 	btn.addEventListener('click', e => {
@@ -713,6 +551,7 @@ attachmentsBtns.forEach(btn =>
 			attachemntsInfoBox.classList.add('show-items')
 		} else if (btn.dataset.attachmentsBtns === 'close') {
 			attachemntsInfoBox.classList.remove('show-items')
+
 		}
 	})
 )
@@ -734,10 +573,13 @@ const userTopic = document.querySelector('#topic')
 const userMsg = document.querySelector('#message')
 const userFile = document.querySelector('#fileInput')
 const contactForm = document.querySelector('.contact__form')
-const contactFormPopup = document.querySelector('.contact__popup')
+const contactFormPopup = document.querySelector('.contact__popup-box')
+//const contactFormPopupBox = document.querySelector('.contact__popup-box')
 const closeFormPopup = document.querySelector('[data-btn-popup]')
 const fileErrorPopup = document.querySelector('[data-file-popup]')
 const closeFilePopup = document.querySelector('[data-btn-filePopup]')
+const bodyError = document.querySelector('.contact')
+
 const checkedArray = []
 
 const validatorError = (input, msg) => {
@@ -751,7 +593,6 @@ const validatorError = (input, msg) => {
 const fileValidatorError = (input, msg) => {
 	const formBox = input.parentElement
 	const erroMsg = fileErrorPopup.querySelector('span')
-	const bodyError = document.querySelector('.contact')
 	erroMsg.innerText = msg
 	formBox.classList.add('error')
 	fileErrorPopup.classList.add('error')
@@ -761,7 +602,6 @@ const fileValidatorError = (input, msg) => {
 
 const clearValidatorError = input => {
 	const formBox = input.parentElement
-	const bodyError = document.querySelector('.contact')
 	formBox.classList.remove('error')
 	fileErrorPopup.classList.remove('error')
 	sendFormBtn.classList.remove('error')
@@ -874,30 +714,37 @@ const dataSend = status => {
 	const message = contactFormPopup.querySelector('span')
 	if (status === 200) {
 		message.textContent = 'Wiadomość wysłana poprawnie '
-		contactForm.classList.add('show')
+		//contactForm.classList.add('show')
 		contactFormPopup.classList.add('show')
+		bodyError.classList.add('error')
 	} else {
 		message.textContent = 'Błąd wysyłania wiadmości spróbuj ponownie'
-		contactForm.classList.add('show')
+		//contactForm.classList.add('show')
 		contactFormPopup.classList.add('show')
+		bodyError.classList.add('error')
+
 	}
 }
 
 const checkBackendValid = data => {
-	const backendData = data.msg.errors
+	console.log(data)
+	const backendData = data
 
-	backendData.forEach(element => {
-		if (element.path === 'name') {
+	for (const [key, value] of Object.entries(backendData))
+		if ('name' == key) {
 			checkFormUser(userName, 3)
-		} else if (element.path === 'email') {
+		} else if ('email' == key) {
 			checkFormEmail(userEmail, 1)
-		} else if (element.path === 'topic') {
+		} else if ('topic' == key) {
 			checkFormTopic(userTopic, 5)
-		} else if (element.path === 'message') {
+		} else if ('message' == key) {
 			checkFormMsg(userMsg, 10)
+		} else if ('files' == key) {
+			fileValidatorError(userFile, value)
 		}
-		checkFormValue([userName, userEmail, userTopic, userMsg])
-	})
+	checkFormValue([userName, userEmail, userTopic, userMsg])
+
+ckFormValue([userName, userEmail, userTopic, userMsg])
 }
 
 const sendFormValidator = e => {
@@ -917,7 +764,7 @@ async function sendFormBackend(e) {
 	const formData = new FormData()
 
 	for (let i = 0; i < userFile.files.length; i++) {
-		formData.append('files', userFile.files[i])
+		formData.append('files[]', userFile.files[i])
 	}
 
 	formData.append('name', userName.value)
@@ -930,15 +777,14 @@ async function sendFormBackend(e) {
 	formData.append('message', userMsg.value)
 
 	//const request = await fetch('/api/sendmail', {
-	const request = await fetch('http://localhost:8000/app.php', {
+	const request = await fetch('http://localhost:8080/webform.php', {
 		method: 'POST',
 		body: formData,
 	})
 		.then(res => res.json())
 		.then(data => {
-			console.log(data)
 			if (data.status === 400) {
-				checkBackendValid(data)
+				checkBackendValid(data.msg)
 			} else if (data.status === 200) {
 				checkFormValue([userName, userEmail, userTopic, userMsg])
 				dataSend(data.status)
@@ -962,14 +808,22 @@ clearFormBtn.addEventListener('click', e => {
 })
 
 closeFormPopup.addEventListener('click', () => {
-	contactForm.classList.remove('show')
+	//contactForm.classList.remove('show')
 	contactFormPopup.classList.remove('show')
+	bodyError.classList.remove('error')
+
 	clearForm()
 })
 
 closeFilePopup.addEventListener('click', e => {
 	e.preventDefault()
 	clearValidatorError(userFile)
+
+	userFile.value = ''
+	const clearFileList = fileUploadLabel.querySelectorAll('li')
+	clearFileList.forEach(file => {
+		file.remove()
+	})
 })
 
 // Questions accordeon
@@ -1085,24 +939,6 @@ jobAgreeBtn.addEventListener('click', () => {
 	jobAgreeBtn.toggleAttribute('data-job-agree')
 })
 
-//Section observer
-const sections = document.querySelectorAll('[data-observ]')
-
-const observer = new IntersectionObserver(
-	entries => {
-		entries.forEach(entry => {
-			entry.target.classList.toggle('observ', entry.isIntersecting)
-			//if (entry.isIntersecting) observer.unobserve(entry.target)
-		})
-	},
-	{
-		threshold: 0.5,
-	}
-)
-
-sections.forEach(section => {
-	observer.observe(section)
-})
 
 // Footer current year
 

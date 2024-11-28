@@ -14,6 +14,24 @@
 	background-color: $eag-black;
 	z-index: 10;
 
+	& h2 {
+		padding: 2rem 3rem;
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 250px;
+		width: 100%;
+		color: $eag-white;
+		background-color: rgba($color: $eag-black, $alpha: .9);
+		font-size: 2rem;
+		font-family: "roboto mono", monospace;
+		font-weight: 300;
+		border-radius: 1rem;
+		z-index: 10;
+	}
+
 	&.active {
 		opacity: 1;
 		transform: scale(1);
@@ -23,7 +41,7 @@
 	& label,
 	span,
 	h3 {
-		font-family: 'Roboto mono';
+		font-family: 'Roboto mono', monospace;
 		color: $eag-white;
 	}
 
@@ -67,6 +85,8 @@
 	&__form {
 		margin-top: 4rem;
 		max-width: 600px;
+		filter: blur(.5rem);
+		pointer-events: none;
 	}
 
 	&__form-title {
