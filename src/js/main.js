@@ -234,7 +234,6 @@ function refreshLabels() {
 	}
 }
 
-// ======================== Uruchomić po dodaniu wszystkich języków ==========================
 langBtns.forEach(btn =>
 	btn.addEventListener('click', e => {
 		langSelectChange(e.target)
@@ -326,7 +325,7 @@ const offerObject = {
 	scean: {
 		number: '02',
 		pl: {
-			text: 'Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się spektakularne. Oferujemy doskonałe oświetlenie, nagłośnienie i efekty specjalne, dostosowane do charakteru danego eventu.',
+			text: 'Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się spektakularne. Oferujemy doskonałe oświetlenie, nagłośnienie i\u00a0efekty specjalne, dostosowane do charakteru danego eventu.',
 		},
 		en: {
 			text: 'We provide professional technical solutions that make every event spectacular. We offer excellent lighting, sound and special effects, adapted to the nature of the event.',
@@ -340,7 +339,7 @@ const offerObject = {
 	multimedia: {
 		number: '03',
 		pl: {
-			text: 'Tworzymy wielowymiarowe doznania poprzez zastosowanie nowoczesnych rozwiązań multimedialnych. Nasze projekcje, mappingi i prezentacje wideo są zaprojektowane tak, aby wzbudzać silne emocje i zaskakiwać uczestników.',
+			text: 'Tworzymy wielowymiarowe doznania poprzez zastosowanie nowoczesnych rozwiązań multimedialnych. Nasze projekcje, mappingi i\u00a0prezentacje wideo są zaprojektowane tak, aby wzbudzać silne emocje i\u00a0zaskakiwać uczestników.',
 		},
 		en: {
 			text: 'We create multidimensional experiences through the use of modern multimedia solutions. Our projections, mappings and video presentations are designed to arouse strong emotions and surprise participants.',
@@ -354,7 +353,7 @@ const offerObject = {
 	scenography: {
 		number: '04',
 		pl: {
-			text: 'Nasze zespoły projektowe pracują nad kreacją scenografii, która w pełni odzwierciedli charakter i tematykę imprezy. Dbamy o każdy detal, aby stworzyć przestrzeń, która przykuje uwagę i wywoła silne wrażenia.',
+			text: 'Nasze zespoły projektowe pracują nad kreacją scenografii, która w\u00a0pełni odzwierciedli charakter i\u00a0tematykę imprezy. Dbamy o\u00a0każdy detal, aby stworzyć przestrzeń, która przykuje uwagę i\u00a0wywoła silne wrażenia.',
 		},
 		en: {
 			text: 'Our design teams work on creating a scenography that fully reflects the nature and theme of the event. We take care of every detail to create a space that will attract attention and create strong impressions.',
@@ -367,7 +366,7 @@ const offerObject = {
 	booking: {
 		number: '05',
 		pl: {
-			text: 'Współpracujemy z najbardziej utalentowanymi artystami, aby dostarczyć niezapomniane występy na każdej scenie. Od muzycznych gwiazd po utalentowanych performerów - zadbamy o to, by każdy artysta idealnie wpasował się w koncepcję wydarzenia.',
+			text: 'Współpracujemy z najbardziej utalentowanymi artystami, aby dostarczyć niezapomniane występy na każdej scenie. Od muzycznych gwiazd po utalentowanych performerów - zadbamy o\u00a0to, by każdy artysta idealnie wpasował się w\u00a0koncepcję wydarzenia.',
 		},
 		en: {
 			text: 'We work with the most talented artists to deliver unforgettable performances on every stage. From music stars to talented performers, we will make sure that each artist fits perfectly into the event concept.',
@@ -776,8 +775,7 @@ async function sendFormBackend(e) {
 	formData.append('topic', userTopic.value)
 	formData.append('message', userMsg.value)
 
-	//const request = await fetch('/api/sendmail', {
-	const request = await fetch('http://localhost:8080/webform.php', {
+	const request = await fetch('/api/webform', {
 		method: 'POST',
 		body: formData,
 	})

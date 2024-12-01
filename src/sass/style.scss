@@ -583,6 +583,12 @@ textarea::placeholder {
 		grid-auto-flow: dense;
 		//max-width: 1400px;
 		z-index: 5;
+
+		& img {
+			transition: transform .5s ease-in-out;
+		}
+
+	
 	}
 
 	&__gallery-vstretch {
@@ -669,6 +675,7 @@ textarea::placeholder {
 
 		& p {
 			max-width: 930px;
+			min-height: 9rem;
 			font-size: 1.8rem;
 			line-height: 3rem;
 			font-family: 'Manrope', sans-serif;
