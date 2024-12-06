@@ -14,24 +14,6 @@
 	background-color: $eag-black;
 	z-index: 10;
 
-	& h2 {
-		padding: 2rem 3rem;
-		position: absolute;
-		display: block;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		max-width: 250px;
-		width: 100%;
-		color: $eag-white;
-		background-color: rgba($color: $eag-black, $alpha: .9);
-		font-size: 2rem;
-		font-family: "roboto mono", monospace;
-		font-weight: 300;
-		border-radius: 1rem;
-		z-index: 10;
-	}
-
 	&.active {
 		opacity: 1;
 		transform: scale(1);
@@ -85,8 +67,10 @@
 	&__form {
 		margin-top: 4rem;
 		max-width: 600px;
-		filter: blur(.5rem);
-		pointer-events: none;
+
+		&.popup {
+			pointer-events: none;
+		}
 	}
 
 	&__form-title {
@@ -127,12 +111,36 @@
 
 		& input {
 			height: 25px;
+
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
 		}
 
 		& textarea {
 			resize: none;
 			width: 100%;
 			height: 120px;
+		}
+
+		& textarea,
+		input {
+			outline: none;
+			background-color: $eag-white;
+			color: black;
+			font-family: 'Roboto mono', monospace;
+
+			&::placeholder {
+				color: $eag-white;
+				font-size: 1rem;
+			}
+
+			&.error {
+				background-color: rgba($color: $eag-red, $alpha: 0.9);
+				color: $eag-white;
+			}
 		}
 	}
 
@@ -143,7 +151,7 @@
 		max-width: 500px;
 	}
 
-	&__form-agrement {
+	&__form-agreement {
 		margin: 0 auto;
 		max-width: 500px;
 	}
@@ -156,19 +164,34 @@
 		}
 	}
 
-	&__form-checkAgrement {
+	&__form-checkAgreement {
 		display: flex;
-		margin: 1rem 0 1.6rem;
+		align-items: center;
 
-		& button {
+		& button,
+		span {
 			display: flex;
 			align-items: center;
 			gap: 0.4rem;
 			color: $eag-white;
-			font-size: 1.4rem;
 			background-color: transparent;
 			border: none;
+		}
+
+		& button {
+			font-size: 1.4rem;
 			cursor: pointer;
+		}
+
+		& span {
+			margin: 1rem 0 1.6rem 2rem;
+			font-size: 1rem;
+			color: $eag-red;
+			opacity: 0;
+
+			&.error {
+				opacity: 1;
+			}
 		}
 
 		& svg {
@@ -178,6 +201,13 @@
 				fill: $eag-red;
 			}
 		}
+	}
+
+	&__form-checkAgreement-box {
+		margin: 1rem 0 1.6rem;
+		display: flex;
+		flex-direction: row;
+		cursor: pointer;
 	}
 
 	&__form-btn {
@@ -207,7 +237,6 @@
 	}
 
 	&__menu-btns {
-
 		& button {
 			background-color: transparent;
 			color: $eag-white;
@@ -218,7 +247,7 @@
 			}
 		}
 	}
-	&__close-btn{
+	&__close-btn {
 		position: absolute;
 		top: 2rem;
 		right: 4rem;
@@ -226,9 +255,51 @@
 		border: none;
 		font-size: 2.6rem;
 		cursor: pointer;
-		
+	}
 
-		
+	&__validation-popup {
+		display: none;
+		position: absolute;
+		padding: 0 2rem;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 450px;
+		width: 100%;
+		max-height: 200px;
+		height: 100%;
+
+		&.show {
+			display: block;
+		}
+	}
+
+	&__validation-popup-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		background-color: rgba($color: $eag-black, $alpha: 0.9);
+		border-radius: 0.5rem;
+	}
+
+	&__validation-popup-closeBtn {
+		margin-top: 5rem;
+		padding: 0.5rem 2rem;
+		font-family: 'Roboto mono', monospace;
+		color: $eag-white;
+		background-color: $eag-red;
+		border: none;
+		border-radius: 0.2rem;
+		cursor: pointer;
+		transition: background-color 0.4s, color 0.4s;
+
+		&:hover {
+			background-color: $eag-white;
+			color: $eag-black;
+		}
 	}
 }
 
@@ -271,6 +342,19 @@
 			& h3 {
 				font-size: 1.2rem;
 			}
+		}
+
+		&__form-checkAgreement {
+			flex-direction: column;
+			align-items: flex-start;
+
+			& span {
+				margin: 1rem 0 3rem;
+			}
+		}
+
+		&__form-checkAgreement-box {
+			margin: 1rem 0 0;
 		}
 	}
 }

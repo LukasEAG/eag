@@ -138,7 +138,6 @@ multiLangBtns.forEach(btn => {
 		btn.classList.add('hide')
 		langList.classList.add('active-lang')
 		body.classList.add('stop-scrolling')
-	
 	})
 })
 
@@ -460,7 +459,6 @@ newsBtns.forEach(btn => {
 	})
 })
 
-
 // Contact form budget
 
 const budgetBoxFrom = document.querySelector('.contact__budget-box--from')
@@ -550,7 +548,6 @@ attachmentsBtns.forEach(btn =>
 			attachemntsInfoBox.classList.add('show-items')
 		} else if (btn.dataset.attachmentsBtns === 'close') {
 			attachemntsInfoBox.classList.remove('show-items')
-
 		}
 	})
 )
@@ -618,7 +615,7 @@ const checkFormValue = input => {
 }
 
 const checkFormUser = (input, min) => {
-	const reUser = /[A-Za-z]+/
+	const reUser = /^[a-zA-ZąęćłńóśźżĄĘĆŁŃÓŚŹŻ\s]+$/
 	if (input.value.length < min) {
 		validatorError(input, `Pole musi zawierać min. ${min} znaki`)
 	} else if (!reUser.test(input.value)) {
@@ -721,12 +718,10 @@ const dataSend = status => {
 		//contactForm.classList.add('show')
 		contactFormPopup.classList.add('show')
 		bodyError.classList.add('error')
-
 	}
 }
 
 const checkBackendValid = data => {
-	console.log(data)
 	const backendData = data
 
 	for (const [key, value] of Object.entries(backendData))
@@ -743,7 +738,6 @@ const checkBackendValid = data => {
 		}
 	checkFormValue([userName, userEmail, userTopic, userMsg])
 
-ckFormValue([userName, userEmail, userTopic, userMsg])
 }
 
 const sendFormValidator = e => {
@@ -918,6 +912,7 @@ const jobOpenBtn = document.querySelectorAll('[data-job-btn]')
 const jobCloseBtn = document.querySelector('[data-job-closeBtn')
 const jobAgreeBtn = document.querySelector('[data-job-agreementBtn]')
 const jobAgreeStar = document.querySelector('[data-job-star]')
+const jobAgreeErrpr = document.querySelector('.job__form-checkAgreement-box span')
 
 jobOpenBtn.forEach(btn => {
 	btn.addEventListener('click', e => {
@@ -933,10 +928,20 @@ jobCloseBtn.addEventListener('click', () => {
 })
 
 jobAgreeBtn.addEventListener('click', () => {
-	jobAgreeStar.classList.toggle('checked')
-	jobAgreeBtn.toggleAttribute('data-job-agree')
-})
 
+	if (jobAgreeStar.classList.contains('checked')) {
+
+		jobAgreeBtn.removeAttribute('data-job-agree')
+		jobAgreeStar.classList.remove('checked')
+	} else {
+		
+		jobAgreeStar.classList.add('checked')
+		jobAgreeBtn.setAttribute('data-job-agree', 'true')
+
+
+	}
+
+})
 
 // Footer current year
 

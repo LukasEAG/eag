@@ -4,7 +4,6 @@
             <div class="job__logo">
                 <img src="./dist/img/logoEAGbiale.png" alt="logo firmy EAG składające sie z liter E, A oraz G">
             </div>
-            <h2>Już wkrótce ...</h2>
             <div class="job__form">
                 <div class="job__form-title">
                     <h3 data-lang="job-title">Jesteś technikiem? Realizatorem? Scenografem?
@@ -14,12 +13,12 @@
                 <div class="job__form-form">
                     <div class="job__form-namePhone">
                         <div class="job__form-name">
-                            <label for="name" data-lang="job-name">Imię i nazwisko</label>
-                            <input type="text" name="name" id="name">
+                            <label for="username" data-lang="job-name">Imię i nazwisko</label>
+                            <input type="text" name="username" id="username">
                         </div>
                         <div class="job__form-phone">
                             <label for="phone" data-lang="job-phone">Numer Telefonu</label>
-                            <input type="text" name="phone" id="phone">
+                            <input type="number" name="phone" id="phone">
                         </div>
                     </div>
                     <div class="job__form-mailCity">
@@ -57,17 +56,20 @@
                         <textarea name="aboutYou" id="aboutYou"></textarea>
                     </div>
                 </div>
-                <div class="job__form-agrement">
+                <div class="job__form-agreement">
                     <div class="job__form-selectContact">
                         <span data-lang="job-star">*ważne EAG zastrzega sobie prawo do kontaktu  tylko i wyłącznie z wybranymi osobami. </span>
                     </div>
-                    <div class="job__form-checkAgrement">
-                        
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="sharp" stroke-linejoin="sharp" class="icon icon-tabler icons-tabler-outline icon-tabler-star" data-job-star>
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
-                          </svg >
-                          <button data-job-agreementBtn  data-lang="job-star-btn">Zaznacz gwiazdkę na zgodę.</button>
+                    <div class="job__form-checkAgreement" >
+                        <div class="job__form-checkAgreement-box" data-job-agreementBtn>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="sharp" stroke-linejoin="sharp" class="icon icon-tabler icons-tabler-outline icon-tabler-star" data-job-star>
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                              </svg >
+                              <button   data-lang="job-star-btn">Zaznacz gwiazdkę na zgodę.</button>
+                        </div>
+                       
+                          <span >Aby wysłać zgłoszenie zaznacz gwiazdkę</span>
                     </div>
                     <div class="job__form-agreeText">
                         <span data-lang="job-info">Wyrażam zgodę na przetwarzanie moich danych osobowych zawartych w formularzu powyżej dla firmy EAG z siedzibą Os. Powstańców Warszawy 6m/147 61-656 Poznań dla potrzeb niezbędnych do realizacji procesu rejestracji. Podanie danych osobowych jest niezbędne do realizacji procesu rejestracyjnego. Konsekwencją niepodania danych osobowych jest brak możliwości rejestracji w serwisie  EAG CREW Spot.*</span>
@@ -77,6 +79,12 @@
                     <button class="job__sendFormBtn" data-lang="job-send-btn">
                         Wyślij zgłoszenie
                     </button>
+                </div>
+            </div>
+            <div class="job__validation-popup">
+                <div class="job__validation-popup-box">
+                    <span></span>
+                    <button class="job__validation-popup-closeBtn">Zamknij</button>
                 </div>
             </div>
             <div class="job__others-btns">
