@@ -185,7 +185,7 @@ textarea::placeholder {
 		overflow: hidden;
 		max-width: none;
 
-		& h3 {
+		& h2 {
 			padding: 0.7rem 3.2rem;
 			font-size: 1.1rem;
 			font-weight: 800;
@@ -960,7 +960,7 @@ textarea::placeholder {
 
 	&__body-logo {
 		position: absolute;
-		top: 2rem;
+		top: 4rem;
 		left: 2rem;
 		width: 17%;
 
@@ -986,7 +986,8 @@ textarea::placeholder {
 
 		& a,
 		li {
-			margin: 0.3rem 0;
+			margin:  .6rem 0;
+			max-width: 170px;
 			font-size: 1.2rem;
 			text-transform: uppercase;
 			font-family: 'Roboto Mono', monospace;
@@ -1000,7 +1001,7 @@ textarea::placeholder {
 	}
 
 	&__body-title {
-		margin: 7rem 0 5rem;
+		margin: 10rem 0 2rem;
 		& h2,
 		span {
 			padding: 0.8em 0;
@@ -1604,7 +1605,7 @@ textarea::placeholder {
 	&__body-span {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: flex-end;
 		max-width: 320px;
 		width: 100%;
 

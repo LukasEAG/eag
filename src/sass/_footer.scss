@@ -65,9 +65,11 @@ footer {
 		justify-content: flex-end;
 		font-size: 1.2rem;
 		color: $eag-white;
+		letter-spacing: .1rem;
 
 		& a {
-			color: $eag-red;
+			font-weight: 800;
+			color: #de3d48;;
 		}
 	}
 }

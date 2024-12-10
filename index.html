@@ -38,7 +38,7 @@
 
             </div>
             <div class="nav__web-menu-btn">
-                <button class="nav__menu-btn nav__mobile-menu-btn--open">
+                <button class="nav__menu-btn nav__mobile-menu-btn--open" aria-label="Menu button">
                     <i class="ti ti-menu-2"></i>
                 </button>
             </div>
@@ -60,19 +60,19 @@
                         <li class="nav__menu-item"><a>Demo</a></li>
                     </ul>
                     <div class="nav__menu-more-btn">
-                        <button class="lang__open-btn lang__open-btn--menu">
+                        <button class="lang__open-btn lang__open-btn--menu" aria-label="Change language button">
                             <i class="ti ti-world"></i>
                         </button>
 
                     </div>
                     <div class="nav__menu-more-btn">
-                        <button class="nav__menu-close-btn nav__mobile-menu-btn--close">
+                        <button class="nav__menu-close-btn nav__mobile-menu-btn--close" aria-label="close menu button">
                             X
                         </button>
 
                     </div>
                     <div class="nav__menu-more-btn">
-                        <button class="nav__menu-return-btn">
+                        <button class="nav__menu-return-btn" aria-label="return to menu button">
                             <i class="ti ti-circle-arrow-left"></i>
                         </button>
 
@@ -120,14 +120,9 @@
 
             </div>
 
-            <div class="nav__mobile-menu-btns">
-                <button class="nav__mobile-menu-btn nav__mobile-menu-btn--open">
-                    <i class="ti ti-menu-2"></i>
-                </button>
-            </div>
             <div class="nav__more-btns">
                 <div class="nav__langBtn-box">
-                    <button class="lang__open-btn lang__open-btn--main">
+                    <button class="lang__open-btn lang__open-btn--main" aria-label="Change language button">
                         <i class="ti ti-world"></i>
                     </button>
                 </div>
@@ -161,7 +156,7 @@
         </div>
         <div class="header__info-slider ">
             <div class="header__slider-container wrapper-section">
-                <h3>Live</h3>
+                <h2>Live</h2>
                 <div class="header__slider-box header__slider-box--first ">
                     <span data-lang="header-concert">Koncerty</span>
                     <span>/</span>
@@ -201,10 +196,10 @@
     </header>
     <div class="lang">
         <div class="lang__btns-list">
-            <button class="lang__btn-item" value="pl">🇵🇱 Polski</button>
-            <button class="lang__btn-item" value="en">🇺🇸 English</button>
-            <button class="lang__btn-item" value="de">🇩🇪 Deutsch</button>
-            <button class="lang__close-btn">X</button>
+            <button class="lang__btn-item" value="pl" aria-label="Polish laguage button">🇵🇱 Polski</button>
+            <button class="lang__btn-item" value="en" aria-label="English laguage button">🇺🇸 English</button>
+            <button class="lang__btn-item" value="de" aria-label="Deutsch laguage button">🇩🇪 Deutsch</button>
+            <button class="lang__close-btn" aria-label="Close languages section">X</button>
         </div>
     </div>
     <main>
@@ -238,19 +233,19 @@
 
                         <div class="realisation__list-head">
                             <span><button value="one" class="realisation__btn" data-realisation-btn="true"
-                                    data-lang="realisation-btn">Realizacje</button>:</span>
+                                    data-lang="realisation-btn" aria-label="Realisation section">Realizacje</button>:</span>
                         </div>
                         <div class="realisation__list-body">
                             <button value="two" class="realisation__btn" data-realisation-btn
-                                data-lang="event-btn">event</button>
+                                data-lang="event-btn" aria-label="Event section">event</button>
                             <button value="three" data-realisation-btn class="realisation__btn"
-                                data-lang="concert-btn">kocnerty</button>
+                                data-lang="concert-btn" aria-label="Concert section">kocnerty</button>
                             <button value="four" data-realisation-btn class="realisation__btn"
-                                data-lang="promotion-btn">promocja</button>
+                                data-lang="promotion-btn" aria-label="Promotion section">promocja</button>
                             <button value="five" data-realisation-btn class="realisation__btn"
-                                data-lang="galas-btn">gala</button>
+                                data-lang="galas-btn" aria-label="Galas section">gala</button>
                             <button value="six" data-realisation-btn class="realisation__btn"
-                                data-lang="banquets-btn">bankiety</button>
+                                data-lang="banquets-btn" aria-label="Banquiet section">bankiety</button>
                         </div>
 
                     </div>
@@ -310,17 +305,17 @@
                 </div>
                 <div class="offer__context-btns">
                     <div class="offer__context-btn-row1">
-                        <button value="planning" class="offer__context-btn" data-lang="offer-plannin-btn">Planowanie i
+                        <button value="planning" class="offer__context-btn" data-lang="offer-plannin-btn" aria-label="Planning section">Planowanie i
                             produkcja</button>
-                        <button value="scean" class="offer__context-btn" data-lang="offer-scene-btn">Technika
+                        <button value="scean" class="offer__context-btn" data-lang="offer-scene-btn" aria-label="Scean section">Technika
                             sceniczna</button>
                         <button value="multimedia" class="offer__context-btn"
-                            data-lang="offer-multimedia-btn">Multimedia</button>
+                            data-lang="offer-multimedia-btn" aria-label="Multimedia section">Multimedia</button>
                     </div>
                     <div class="offer__context-btn-row2">
                         <button value="scenography" class="offer__context-btn"
-                            data-lang="offer-scenography-btn">Scenografia</button>
-                        <button value="booking" class="offer__context-btn" data-lang="offer-booking-btn">Booking i
+                            data-lang="offer-scenography-btn" aria-label="Scenography section">Scenografia</button>
+                        <button value="booking" class="offer__context-btn" data-lang="offer-booking-btn" aria-label="Booking section">Booking i
                             hospitality</button>
                     </div>
                 </div>
@@ -384,18 +379,18 @@
                                 target="_blank"><img data-news-5 class="news__position position-right"
                                     src="./dist/img/newspost4.png" alt="Posta z instagrama EAG Production"></a>
                             <div class="news__carousel-btns news__carousel-btns--prev">
-                                <button class="news__carousel-btn news__carousel-btn--left" data-news-btn="prev">
+                                <button class="news__carousel-btn news__carousel-btn--left" data-news-btn="prev" aria-label="Previouse News">
                                     <i class="ti ti-chevron-left"></i></button>
                             </div>
                             <div class="news__carousel-btns news__carousel-btns--next">
-                                <button class="news__carousel-btn news__carousel-btn--right" data-news-btn="next"><i
+                                <button class="news__carousel-btn news__carousel-btn--right" data-news-btn="next" aria-label="Next News"><i
                                         class="ti ti-chevron-right"></i></button>
                             </div>
                         </div>
                         <div class="news__socials">
                             <div class="news__socials-box">
 
-                                <button class="news__socials-btn">X</button>
+                                <button class="news__socials-btn" aria-label="X News">X</button>
                             </div>
                         </div>
                     </div>
@@ -487,7 +482,7 @@
                                     multiple
                                     accept='image/jpeg, image/png, application/pdf'>
                                 <div class="contact__attachments-box">
-                                    <button class="contact__attachments-btn" data-lang="contact-add-file">Dodaj
+                                    <button class="contact__attachments-btn" data-lang="contact-add-file" aria-label="Add attachments">Dodaj
                                     </button>
                                     <ul class="contact__attachments-label" data-lang="contact-selected-files">
                                         Nie
@@ -499,10 +494,10 @@
                                 </div>
                                 <div class="contact__attachments-info" data-attachments-info>
                                     <button class="contact__attachments-info-btn" data-attachments-btns="open"><i
-                                            class="ti ti-info-circle"></i></button>
+                                            class="ti ti-info-circle" aria-label="attachments info"></i></button>
                                     <div class="contact__attachments-info-items" data-attachments-info-box>
                                         <button class="contact__attachments-close-btn show-items
-                                        " data-attachments-btns="close"><i class="ti ti-x"></i></button>
+                                        " data-attachments-btns="close" aria-label="Close attachments info"><i class="ti ti-x"></i></button>
                                         <div>
                                             <span data-lang="contact-allowed-files">Dozwolone rozszerzenia
                                                 plików:</span><span>
@@ -535,10 +530,10 @@
 
                     </form>
                     <div class="contact__form-btns">
-                        <button class="contact__form-btn contact__form-btn--send" data-lang="btn-send">Wyślij
+                        <button class="contact__form-btn contact__form-btn--send" data-lang="btn-send" aria-label="Send form button">Wyślij
                         </button>
                         <button class="contact__form-btn contact__form-btn--clear"
-                            data-lang="btn-clear">Wyczyść</button>
+                            data-lang="btn-clear" aria-label="Clear form button">Wyczyść</button>
                     </div>
                 </div>
 
@@ -577,9 +572,9 @@
                         </div>
                         <div class="contact__body-more-socials">
                             <h3 data-lang="our-socials">Złap nas na socialach</h3>
-                            <a href="https://x.com/eagproduction?s=21" target="_blank">X</a>
-                            <a href="https://www.instagram.com/eagproduction/" target="_blank">Instagram</a>
-                            <a href="https://pl.linkedin.com/company/eagproduction" target="_blank">Linked in</a>
+                            <a href="https://x.com/eagproduction?s=21" target="_blank" aria-label="Link to our X platform account">X</a>
+                            <a href="https://www.instagram.com/eagproduction/" target="_blank" aria-label="Link to our Instagram platform account">Instagram</a>
+                            <a href="https://pl.linkedin.com/company/eagproduction" target="_blank" aria-label="Link to our Linked In platform account">Linked in</a>
                         </div>
                     </div>
                     <div data-observ id="desktopFormContainer">
@@ -588,11 +583,11 @@
                     <div class="contact__body-span">
                         <div class="contact__body-socials">
                             <div class="contact__socials-box">
-                                <a href="https://www.instagram.com/eagproduction/" target="_blank"><i
+                                <a href="https://www.instagram.com/eagproduction/" target="_blank" aria-label="Link to our X platform account"><i
                                         class="ti ti-brand-instagram"></i></a>
-                                <a href="https://x.com/eagproduction?s=21" target="_blank"><i
+                                <a href="https://x.com/eagproduction?s=21" target="_blank" aria-label="Link to our Instagram platform account"><i
                                         class="ti ti-brand-x"></i></a>
-                                <a href="https://pl.linkedin.com/company/eagproduction" target="_blank"><i
+                                <a href="https://pl.linkedin.com/company/eagproduction" target="_blank" aria-label="Link to our Linked In platform account"><i
                                         class="ti ti-brand-linkedin"></i></a>
                             </div>
                         </div>
@@ -608,7 +603,7 @@
                 <div class="contact__popup-box">
 
                     <span></span>
-                    <button data-btn-popup>Zakmnij</button>
+                    <button data-btn-popup aria-label="Close popup button">Zakmnij</button>
                 </div>
             </div>
             <div class="contact__attachments-popup " data-file-popup>
@@ -631,7 +626,7 @@
 
                 <div class="faq__head-menu">
                     <button class="faq__close-btn" data-faq-close-btn>x</button>
-                    <button class="lang__open-btn lang__open-btn--faq">
+                    <button class="lang__open-btn lang__open-btn--faq" aria-label="Open language section">
                         <i class="ti ti-world"></i>
                     </button>
                 </div>
@@ -770,8 +765,8 @@
                 <img src="./dist/img/logoEAGbiale.png" alt="">
             </div>
             <div class="privacypolicy__head-btns">
-                <button class="privacypolicy__close-btn" data-privacy-close-btn>x</button>
-                <button class="lang__open-btn lang__open-btn--privacy">
+                <button class="privacypolicy__close-btn" data-privacy-close-btn aria-label="Close privacy-policy">x</button>
+                <button class="lang__open-btn lang__open-btn--privacy" aria-label="Open language section">
                     <i class="ti ti-world"></i>
                 </button>
             </div>
@@ -1081,7 +1076,7 @@
                             <input type="text" name="jobLanguage" id="jobLanguage">
                         </div>
                         <div class="job__form-license">
-                            <label for="jobLicense" data-lang="job-skills">Uprawnienia</label>
+                            <label for="joblicense" data-lang="job-skills">Uprawnienia</label>
                             <input type="text" name="joblicense" id="joblicense">
                         </div>
                     </div>
@@ -1100,7 +1095,7 @@
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
                               </svg >
-                              <button   data-lang="job-star-btn">Zaznacz gwiazdkę na zgodę.</button>
+                              <button   data-lang="job-star-btn" aria-label="Confirm RODO agree">Zaznacz gwiazdkę na zgodę.</button>
                         </div>
                        
                           <span >Aby wysłać zgłoszenie zaznacz gwiazdkę</span>
@@ -1110,7 +1105,7 @@
                     </div>
                 </div>
                 <div class="job__form-btn">
-                    <button class="job__sendFormBtn" data-lang="job-send-btn">
+                    <button class="job__sendFormBtn" data-lang="job-send-btn" aria-label="Send job form">
                         Wyślij zgłoszenie
                     </button>
                 </div>
@@ -1118,13 +1113,13 @@
             <div class="job__validation-popup">
                 <div class="job__validation-popup-box">
                     <span></span>
-                    <button class="job__validation-popup-closeBtn">Zamknij</button>
+                    <button class="job__validation-popup-closeBtn" aria-label="Close job popup">Zamknij</button>
                 </div>
             </div>
             <div class="job__others-btns">
                 <div class="job__menu-btns">
-                    <button class="job__close-btn" data-job-closeBtn>x</button>
-                    <button class="lang__open-btn lang__open-btn--job">
+                    <button class="job__close-btn" data-job-closeBtn aria-label="Close privacy-policy">x</button>
+                    <button class="lang__open-btn lang__open-btn--job" aria-label="Open language section">
                         <i class="ti ti-world"></i>
                     </button>
                 </div>
