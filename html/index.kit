@@ -371,10 +371,10 @@
                                 <div class="contact__attachments-box">
                                     <button class="contact__attachments-btn" data-lang="contact-add-file" aria-label="Add attachments">Dodaj
                                     </button>
-                                    <ul class="contact__attachments-label" data-lang="contact-selected-files">
+                                    <span class="contact__attachments-label" data-lang="contact-selected-files">
                                         Nie
                                         wybrano
-                                        żadnych plików</ul>
+                                        żadnych plików</>
                                     <a href="https://wetransfer.com/" target="_blank"
                                         class="contact__attachments-wetransfer"><img src="./dist/img/weTransfer.svg"
                                             alt="Logo strony WeTransfer"></a>
@@ -443,18 +443,19 @@
                         </div>
                         <div class="contact__body-faq">
                             <h3>FAQ</h3>
-                            <a data-faq-btn data-lang="faq">Pytania i odpowiedz</a>
-                            <a data-privacy-btn data-lang="privacy-policy">Polityka prywatności</a>
+                            <button data-faq-btn data-lang="faq">Pytania i odpowiedz</button>
+                           <button data-privacy-btn data-lang="privacy-policy">Polityka prywatności</button>
+                           
                         </div>
                         <div class="contact__body-site-map">
                             <h3 data-lang="site-map">Mapa strony</h3>
                             <ul class="contact__site-list">
-                                <li><a href="#home" data-lang="home">Home</a></li>
-                                <li><a class="siteMap-AboutUs" data-lang="about-us">O nas</a>
+                                <li><button><a href="#home" data-lang="home">Home</a></button></li>
+                                <li><button class="siteMap-AboutUs" data-lang="about-us">O nas</button>
                                 </li>
-                                <li><a>Demo</a></li>
-                                <li><a data-job-btn data-lang="job">Praca</a></li>
-                                <li><a href="#contact" data-lang="contact">Kontakt</a></li>
+                                <li><button>Demo</button></li>
+                                <li><button data-job-btn data-lang="job">Praca </button></li>
+                                <li><button><a href="#contact" data-lang="contact">Kontakt</a></button></li>
                             </ul>
                         </div>
                         <div class="contact__body-more-socials">
