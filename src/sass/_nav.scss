@@ -1,4 +1,5 @@
 @use '../sass/colors' as *;
+@use '../sass/fonts' as *;
 
 .nav {
 	position: fixed;
@@ -7,13 +8,31 @@
 	max-height: 65px;
 	z-index: 10;
 
+	& a, button, h3 {
+		font-family: "Roboto Mono", monospace;
+	}
+
+	& svg {
+		width: 28px;
+		height: 28px;
+	}
+
 	&.show {
 		background-color: rgba($color: $eag-black, $alpha: 0.95);
 	}
 
+	&__navbar,
+	&__web-menu-btn,
+	&__menu-btn,
+	&__menu-box,
+	&__menu-logo,
+	&__menu-items,
+	&__menu-more-btn {
+		display: flex;
+	}
+
 	&__navbar {
 		position: relative;
-		display: flex;
 		align-items: center;
 		justify-content: center;
 		height: 65px;
@@ -25,6 +44,7 @@
 		left: 1em;
 
 		& img {
+			aspect-ratio: 3 / 1;
 			width: 90px;
 			height: 31px;
 		}
@@ -35,27 +55,26 @@
 	}
 
 	&__web-menu-btn {
-		display: flex;
 		justify-content: flex-end;
 		width: calc(100% + 26px);
 		max-width: 995px;
 	}
 	&__menu-btn {
-		display: flex;
 		padding: 0.3rem;
 		background-color: transparent;
 		color: $eag-white;
 		font-size: 2.8rem;
-		text-transform: uppercase;
-		font-family: 'Manrope', sans-serif;
 		border: none;
 		border-radius: 5px;
 		cursor: pointer;
 		transition: background-color 0.4s, color 0.4s;
-	}
-	&__menu-btn:hover {
-		background-color: $eag-white;
-		color: $eag-black;
+
+		&:hover {
+			background-color: $eag-white;
+			color: $eag-black;
+		}
+
+		
 	}
 
 	&__menu {
@@ -72,18 +91,17 @@
 
 	&__menu-box {
 		position: relative;
-		display: flex;
 		justify-content: space-around;
 		height: 60%;
 	}
 
 	&__menu-logo {
 		margin-top: 10rem;
-		display: flex;
 		justify-content: center;
 		width: 20%;
 
 		& img {
+			aspect-ratio: 3 / 1;
 			width: 120px;
 			height: auto;
 		}
@@ -92,7 +110,6 @@
 	&__menu-items {
 		position: relative;
 		top: 7rem;
-		display: flex;
 		flex-wrap: wrap;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -118,7 +135,6 @@
 		button {
 			display: block;
 			font-size: 3.4rem;
-			font-family: 'Roboto Mono', monospace;
 			font-weight: 400;
 			text-transform: uppercase;
 			text-align: left;
@@ -154,7 +170,6 @@
 	}
 
 	&__menu-more-btn {
-		display: flex;
 		justify-content: center;
 		align-items: center;
 		width: 5%;
@@ -169,7 +184,7 @@
 		background-color: transparent;
 		color: $eag-white;
 		border: none;
-		font-size: 2.2rem;
+		font-size: 2.4rem;
 		cursor: pointer;
 		transition: color 0.4s;
 
@@ -202,8 +217,6 @@
 		display: flex;
 		justify-content: space-around;
 		height: 30%;
-		font-family: 'Roboto Mono', monospace;
-
 
 		& h3 {
 			margin-bottom: 1em;
@@ -212,13 +225,13 @@
 			color: $eag-red;
 		}
 
-		& a, & button {
+		& a,
+		& button {
 			display: block;
 			margin-bottom: 0.3em;
 			font-size: 1.6rem;
 			text-transform: uppercase;
 			text-decoration: none;
-			font-family: 'Roboto Mono', monospace;
 			border: none;
 			background-color: transparent;
 			color: rgb(152, 152, 154);
@@ -274,7 +287,6 @@
 			margin-bottom: 5rem;
 			font-size: 3.4rem;
 			font-weight: 600;
-			font-family: 'Roboto Mono', monospace;
 			text-transform: uppercase;
 			color: $eag-white;
 		}
@@ -285,6 +297,7 @@
 			line-height: 1.6;
 			text-align: justify;
 			color: $eag-white;
+			font-weight: 300;
 		}
 	}
 
@@ -363,7 +376,8 @@
 				font-size: 1.6rem;
 			}
 
-			& a, & button {
+			& a,
+			& button {
 				font-size: 1.2rem;
 			}
 		}
@@ -440,7 +454,8 @@
 			align-content: center;
 			height: 50%;
 
-			& a, & button {
+			& a,
+			& button {
 				font-size: 1.2rem;
 			}
 		}

@@ -12,6 +12,7 @@
 	transition: transform 0.4s, opacity 0.4s;
 	overflow: scroll;
 	background-color: $eag-black;
+	font-family: 'Roboto mono', monospace;
 	z-index: 10;
 
 	&.active {
@@ -22,8 +23,8 @@
 
 	& label,
 	span,
-	h3 {
-		font-family: 'Roboto mono', monospace;
+	h3, button {
+		font-family: inherit;
 		color: $eag-white;
 	}
 
@@ -58,6 +59,7 @@
 		width: 100%;
 
 		& img {
+			aspect-ratio:  3 / 1;
 			max-width: 150px;
 			width: 100%;
 			height: auto;
@@ -130,7 +132,6 @@
 			outline: none;
 			background-color: $eag-white;
 			color: black;
-			font-family: 'Roboto mono', monospace;
 
 			&::placeholder {
 				color: $eag-white;
@@ -173,7 +174,6 @@
 			display: flex;
 			align-items: center;
 			gap: 0.4rem;
-			color: $eag-white;
 			background-color: transparent;
 			border: none;
 		}
@@ -219,7 +219,6 @@
 	&__sendFormBtn {
 		padding: 1rem 4rem;
 		font-size: 1.6rem;
-		color: $eag-white;
 		background-color: $eag-red;
 		border: none;
 		transition: background-color 0.4s, color 0.4s;
@@ -239,7 +238,6 @@
 	&__menu-btns {
 		& button {
 			background-color: transparent;
-			color: $eag-white;
 			transition: color 0.4s;
 
 			&:hover {
@@ -249,12 +247,17 @@
 	}
 	&__close-btn {
 		position: absolute;
-		top: 2rem;
+		top: 2.7rem;
 		right: 4rem;
 		padding: 1rem;
 		border: none;
 		font-size: 2.6rem;
 		cursor: pointer;
+
+		& svg {
+			width: 28px;
+			height: 28px
+		}
 	}
 
 	&__validation-popup {
@@ -288,8 +291,6 @@
 	&__validation-popup-closeBtn {
 		margin-top: 5rem;
 		padding: 0.5rem 2rem;
-		font-family: 'Roboto mono', monospace;
-		color: $eag-white;
 		background-color: $eag-red;
 		border: none;
 		border-radius: 0.2rem;

@@ -13,9 +13,7 @@ const agreeError = document.querySelector('.job__form-checkAgreement span')
 const validationPopup = document.querySelector('.job__validation-popup')
 const closePopupBtn = document.querySelector('.job__validation-popup-closeBtn')
 const jobForm = document.querySelector('.job__form')
-
 const jobFields = [jobName, jobPhone, jobMail, jobCity, jobPrev, jobFuture, jobLang, jobLicense, jobMsg, agreeError]
-
 const jobFieldMap = {
     name:{field: jobName, length: 3},
     city: {field: jobCity, length: 3},
@@ -35,7 +33,6 @@ const checkJobValue = fields => {
 		}
 	})
 }
-
 const validationLengthAndFormat = (input, min) => {
 	const validSyntax = /^[a-zA-ZąęćłńóśźżĄĘĆŁŃÓŚŹŻ\s]+$/
 	if (input.value.length < min) {
@@ -44,11 +41,9 @@ const validationLengthAndFormat = (input, min) => {
 		validationError(input, 'Nie poprawny format danych')
 	}
 }
-
 const validationEmail = (mail, min) => {
 	const jobMailSytnax =
 		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
 	if (mail.value.length < min) {
 		validationError(mail, `Min. ilość znaków: ${min} `)
 	} else if (!jobMailSytnax.test(mail.value)) {
@@ -63,7 +58,6 @@ const validationPhone = (phone, min) => {
 		validationError(phone, 'Nie poprawny nr. telefonu')
 	}
 }
-
 const validationMsg = (input, min) => {
 	const jobMsg = /[A-Za-z0-9]+/
 	if (input.value.length < min) {
@@ -72,10 +66,7 @@ const validationMsg = (input, min) => {
 		validationError(input, 'Pole nie może składać się wyłącznie ze spacji i znaków interpunkcyjnych')
 	}
 }
-
 const agreeValidation = agree => {
-
-
 	if (!agree.hasAttribute('data-job-agree')) {
 		agreeError.classList.add('error')
 		agreeConfirm.value = false
@@ -84,11 +75,9 @@ const agreeValidation = agree => {
 		agreeConfirm.value = true
 	}
 }
-
 const backendValidation = data => {
 	const backendRes = data
     const backendField = jobFields.slice(0, 8)
-
 	for (const [key, value] of Object.entries(backendRes))
 		if (jobFieldMap[key]) {
             const {field, length} = jobFieldMap[key]
@@ -104,10 +93,8 @@ const backendValidation = data => {
 		} else if ('confirme' == key) {
 			agreeValidation(agreeConfirm)
 		}
-
 	checkJobValue(backendField)
 }
-
 const jobFormPopup = status => {
 	const msg = validationPopup.querySelector('span')
 	if (status === 200) {
@@ -120,28 +107,21 @@ const jobFormPopup = status => {
 		jobForm.classList.add('popup')
 	}
 }
-
 const clearJobForm = () => {
 	jobFields.forEach(field => {
 		field.value = ''
 	})
     jobAgreeStar.classList.remove('checked')
-
-
 }
-
 const checkJobErrors = () => {
 	let countError = 0
-
 	jobFields.forEach(field => {
 		if (field.classList.contains('error')) {
 			countError++
 		}
 	})
-
 	if (countError === 0) return true
 }
-
 const frontendValidation = e => {
 	e.preventDefault()
 	validationLengthAndFormat(jobName, 3)
@@ -156,12 +136,9 @@ const frontendValidation = e => {
 	agreeValidation(agreeConfirm)
 	checkJobErrors()
 }
-
 async function sendJobForm(e) {
 	e.preventDefault()
-
 	const jobData = new FormData()
-
 	jobData.append('name', jobName.value)
 	jobData.append('phone', jobPhone.value)
 	jobData.append('email', jobMail.value)
@@ -172,7 +149,6 @@ async function sendJobForm(e) {
 	jobData.append('skills', jobLicense.value)
 	jobData.append('msg', jobMsg.value)
 	jobData.append('confirme', agreeConfirm.value)
-
 	const request = await fetch('/api/jobform', {
 		method: 'POST',
 		body: jobData,
@@ -189,7 +165,6 @@ async function sendJobForm(e) {
 			}
 		})
 }
-
 const clearValidatonError = field => {
 	field.classList.remove('error')
 	field.placeholder = ''
@@ -200,25 +175,20 @@ const validationError = (field, msg) => {
 	field.classList.add('error')
 	field.placeholder = msg
 }
-
-
 sendJobFormBtn.addEventListener('click', e => {
 	frontendValidation(e)
 	if (checkJobErrors()) {
 		sendJobForm(e)
 	}
 })
-
 jobFields.forEach(field => {
 	field.addEventListener('keydown', () => {
 		clearValidatonError(field)
 	})
 })
-
 closePopupBtn.addEventListener('click', () => {
 	validationPopup.classList.remove('show')
 	jobForm.classList.remove('popup')
-
 	clearJobForm()
 	agreeError.classList.remove('error')
 		agreeConfirm.value = true

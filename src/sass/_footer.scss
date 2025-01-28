@@ -13,7 +13,7 @@ footer {
 	&__box {
 		margin: 0 auto;
 		max-width: 1200px;
-		width: 100%;
+
 	}
 
 	&__brands {
@@ -29,33 +29,25 @@ footer {
 
 	&__brands-box {
 		position: relative;
-	
+		display: flex;
+		will-change: transform;
+		animation: slider-offer 20s linear infinite;
+
+		> * {
+			flex: 0 0 100%;
+		}
 	}
 
 	&__list {
-		position: absolute;
-		left: -1034px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		max-height: 80px;
-		animation-duration: 40s;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;
-
+		transform: translateX(-100%);
 		& img {
 			margin: 0 3.6rem;
 			width: 80px;
-			height: 100%;
-		}
-
-		&--first {
-			animation-name: slider-offer-f;
-			animation-delay: 20s;
-		}
-
-		&--second {
-			animation-name: slider-offer-s;
+			height: auto;
 		}
 	}
 
@@ -65,31 +57,21 @@ footer {
 		justify-content: flex-end;
 		font-size: 1.2rem;
 		color: $eag-white;
-		letter-spacing: .1rem;
+		letter-spacing: 0.1rem;
 
 		& a {
 			font-weight: 800;
-			color: #de3d48;;
+			color: #de3d48;
 		}
 	}
 }
 
-
-@keyframes slider-offer-f {
+@keyframes slider-offer {
 	0% {
-		transform: translate3d(0, 0, 0);
+		transform: translateX(-100);
 	}
-
 	100% {
-		transform: translate3d(2140px, 0, 0);
+		transform: translateX(100%);
 	}
 }
-@keyframes slider-offer-s {
-	0% {
-		transform: translate3d(0, 0, 0);
-	}
 
-	100% {
-		transform: translate3d(2140px, 0, 0);
-	}
-}

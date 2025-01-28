@@ -6,8 +6,8 @@ let lastHeight = window.innerHeight
 const dynamicHeight = () => {
 	const vh = window.innerHeight * 0.01
 	body.style.setProperty('--vh', `${vh}px`)
+	document.querySelector('.header').style.height = `calc(var(--vh) * 100)`
 }
-
 dynamicHeight()
 
 window.addEventListener('resize', () => {
@@ -20,8 +20,6 @@ window.addEventListener('resize', () => {
 	}
 })
 screen.orientation.addEventListener('change', dynamicHeight)
-
-//Navbar
 
 document.addEventListener('DOMContentLoaded', function () {
 	const form = document.getElementById('contactForm')
@@ -39,9 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			form.classList.remove('contact__form-mobile')
 		}
 	}
-
 	moveForm()
-
 	window.addEventListener('resize', moveForm)
 })
 
@@ -64,7 +60,6 @@ menuOpenBtns.forEach(btn =>
 		closeLang()
 	})
 )
-
 menuCloseBtn.forEach(btn => {
 	btn.addEventListener('click', () => {
 		mobileMenu.classList.remove('active')
@@ -75,7 +70,6 @@ menuCloseBtn.forEach(btn => {
 		menuList.classList.remove('hide')
 	})
 })
-
 const openAboutOrFaq = item => {
 	if (item.hasAttribute('data-aboutUs-btn')) {
 		menuList.classList.add('hide')
@@ -96,7 +90,6 @@ menuItems.forEach(item => {
 			menuOpenBtns.forEach(btn => btn.classList.remove('hide-btn'))
 			menuCloseBtn.forEach(btn => btn.classList.add('show-btn'))
 			langList.classList.remove('active-lang')
-
 			body.classList.remove('stop-scrolling')
 		}
 	})
@@ -125,10 +118,7 @@ window.addEventListener('scroll', () => {
 		logoScroll.classList.remove('show')
 	}
 })
-
-// Multilanguage menu
 const htmlLang = document.querySelector('[lang]')
-
 const multiLangBtns = document.querySelectorAll('.lang__open-btn')
 const closeLangBtn = document.querySelector('.lang__close-btn')
 const langList = document.querySelector('.lang__btns-list')
@@ -151,21 +141,15 @@ const closeLang = () => {
 	body.classList.remove('stop-scrolling')
 }
 
-// Multilang JSON
-
 const langBtns = document.querySelectorAll('.lang__btn-item')
 
 let MultiLang = function (url, lang, onload) {
 	this.phrases = {}
-
 	this.selectedLanguage = (lang || navigator.language || navigator.userLanguage).substring(0, 2)
-
 	this.onLoad = onload
-
 	if (typeof url !== 'undefined') {
 		let obj = this
 		let req = new XMLHttpRequest()
-
 		req.open('GET', url, true)
 		req.onreadystatechange = function (evt) {
 			if (evt.target.readyState == 4 && evt.target.status == 200) {
@@ -185,10 +169,8 @@ let MultiLang = function (url, lang, onload) {
 			},
 			false
 		)
-
 		req.send(null)
 	}
-
 	this.setLanguage = function (langcode) {
 		if (!this.phrases.hasOwnProperty(langcode)) {
 			for (let key in this.phrases) {
@@ -198,14 +180,11 @@ let MultiLang = function (url, lang, onload) {
 				}
 			}
 		}
-
 		this.selectedLanguage = langcode
 	}
-
 	this.get = function (key) {
 		let str
 		if (this.phrases[this.selectedLanguage]) str = this.phrases[this.selectedLanguage][key]
-
 		str = str || key
 		return str
 	}
@@ -215,13 +194,11 @@ let multilang
 function onLoad() {
 	multilang = new MultiLang('multilang.json', 'pl')
 }
-
 function langSelectChange(sel) {
 	multilang.setLanguage(sel.value)
 	htmlLang.setAttribute('lang', sel.value)
 	refreshLabels()
 }
-
 function refreshLabels() {
 	let allnodes = document.querySelectorAll('[data-lang]')
 
@@ -232,22 +209,17 @@ function refreshLabels() {
 		}
 	}
 }
-
 langBtns.forEach(btn =>
 	btn.addEventListener('click', e => {
 		langSelectChange(e.target)
 	})
 )
-
 body.addEventListener('load', onLoad())
 langBtns.forEach(btn =>
 	btn.addEventListener('click', () => {
 		closeLang()
 	})
 )
-
-// Realisation
-
 const realisation = document.querySelector('.realisation')
 const realisationBtns = document.querySelectorAll('[data-realisation-btn]')
 
@@ -277,11 +249,9 @@ const clearBtnCheck = btn => {
 		btn.dataset.realisationBtn = undefined
 	})
 }
-
 realisationBtns.forEach(btn => {
 	btn.addEventListener('click', () => {
 		clearBtnCheck(realisationBtns)
-
 		for (const [key, value] of Object.entries(realisationObject)) {
 			if (btn.value === key) {
 				realisation.style.opacity = '0'
@@ -295,7 +265,18 @@ realisationBtns.forEach(btn => {
 	})
 })
 
-//offer
+const hiddenSection = document.querySelectorAll('.hidden')
+
+const handleScroll = () => {
+	hiddenSection.forEach(section => {
+		const spos = section.getBoundingClientRect()
+		if (spos.top < window.innerHeight * 0.75 && spos.bottom > 0) {
+			section.classList.add('visible')
+		}
+	})
+}
+
+window.addEventListener('scroll', handleScroll)
 
 const offerContextText = document.querySelector('.offer__context-text-p')
 const offerNumber = document.querySelector('.offer__context-numb-p')
@@ -306,7 +287,6 @@ const offerObject = {
 	main: {
 		color: '#b9b9c2',
 	},
-
 	planning: {
 		number: '01',
 		pl: {
@@ -318,7 +298,6 @@ const offerObject = {
 		de: {
 			text: 'Wir bieten organisatorische Unterstützung in jeder Phase des Veranstaltungsplanungsprozesses. Wir helfen bei der Auswahl von Standorten, Lieferanten und der Planung des Zeitplans, was zu einer Reduzierung des organisatorischen Aufwands für den Kunden führt.',
 		},
-
 		color: '#AC8BC7',
 	},
 	scean: {
@@ -334,7 +313,6 @@ const offerObject = {
 		},
 		color: '#E46C31',
 	},
-
 	multimedia: {
 		number: '03',
 		pl: {
@@ -376,13 +354,11 @@ const offerObject = {
 		color: '#6280C2',
 	},
 }
-
 const observerConfig = {
 	attributes: true,
 	chlidlist: false,
 	subtree: false,
 }
-
 const dynamicLangChange = (mutationList, languageObserver) => {
 	for (const mutation of mutationList) {
 		if (mutation.type === 'attributes') {
@@ -393,16 +369,12 @@ const dynamicLangChange = (mutationList, languageObserver) => {
 		}
 	}
 }
-
 const languageObserver = new MutationObserver(dynamicLangChange)
-
 languageObserver.observe(htmlLang, observerConfig)
-
 window.addEventListener('load', () => {
 	offerContextText.innerText = offerObject.planning['pl'].text
 	offerContextText.setAttribute('data-btn-clicked', 'planning')
 })
-
 offerBtns.forEach(btn => {
 	btn.addEventListener('click', () => {
 		offerBtns.forEach(otherBtn => {
@@ -410,21 +382,18 @@ offerBtns.forEach(btn => {
 		})
 		for (const [key, value] of Object.entries(offerObject)) {
 			if (btn.value === key) {
-				offerContextText.style.transform = 'translateX(200%)'
 				offerContextText.dataset.btnClicked = `${btn.value}`
 
 				setTimeout(() => {
 					offerContextText.style.opacity = '0'
-					offerContextText.style.transform = 'translateX(-200%)'
-				}, 200)
+				}, 500)
 
 				offerContextText.style.opacity = '0'
 
 				setTimeout(() => {
 					offerContextText.style.opacity = '1'
-					offerContextText.style.transform = 'translateX(0)'
 					offerContextText.innerText = value[htmlLang.lang].text
-				}, 400)
+				}, 500)
 
 				offerNumber.innerText = value.number
 				offerNumberBorder.style.border = `7px solid ${value.color}`
@@ -433,33 +402,22 @@ offerBtns.forEach(btn => {
 		}
 	})
 })
-
-// News carousel
-
 const newsSlider = document.querySelector('.news__carousel')
 const newsBtns = document.querySelectorAll('[data-news-btn]')
-
 newsBtns.forEach(btn => {
 	btn.addEventListener('click', () => {
 		const conuterNews = btn.dataset.newsBtn === 'next' ? 1 : -1
-
 		const newsPos = document.querySelectorAll('.news__position')
-
 		newsPos.forEach((slide, index) => {
 			const newsIndex = newsSlider.querySelector(`[data-news-${index}]`)
-
 			let newNewsIndex = [...newsPos].indexOf(newsIndex) + conuterNews
-
 			if (newNewsIndex < 0) newNewsIndex = newsPos.length - 1
 			if (newNewsIndex > newsPos.length - 1) newNewsIndex = 0
-
 			newsPos[newNewsIndex].dataset[`news-${index}`] = true
 			delete newsIndex.dataset[`news-${index}`]
 		})
 	})
 })
-
-// Contact form budget
 
 const budgetBoxFrom = document.querySelector('.contact__budget-box--from')
 const budgetBoxTo = document.querySelector('.contact__budget-box--to')
@@ -468,15 +426,12 @@ const budgetInputTo = document.querySelector('#budget-to')
 
 budgetInputFrom.addEventListener('focusin', () => {
 	budgetInputFrom.value = ''
-
 	budgetBoxFrom.classList.add('active')
 })
-
 budgetInputTo.addEventListener('focusin', () => {
 	budgetInputTo.value = ''
 	budgetBoxTo.classList.add('active')
 })
-
 budgetInputFrom.addEventListener('focusout', () => {
 	budgetBoxFrom.classList.remove('active')
 	budgetBoxTo.classList.remove('active')
@@ -484,8 +439,6 @@ budgetInputFrom.addEventListener('focusout', () => {
 budgetInputTo.addEventListener('focusout', () => {
 	budgetBoxTo.classList.remove('active')
 })
-
-//Contact form input list
 
 const btnFileUpload = document.querySelector('.contact__attachments-btn')
 const hideFileInput = document.querySelector('.contact__attachments-input')
@@ -495,21 +448,17 @@ btnFileUpload.addEventListener('click', e => {
 	e.preventDefault()
 	hideFileInput.click()
 })
-
 hideFileInput.addEventListener('change', () => {
 	const fileList = hideFileInput.files
 	const fileArray = Array.from(fileList)
 	let bigFile
-
 	fileArray.map(file => {
 		let fileSize = (file.size / 1000000).toFixed(1)
-
 		if (fileSize > 5) {
 			bigFile = true
 			return
 		}
 	})
-
 	if (bigFile === true) {
 		fileValidatorError(userFile, 'Wybrano za duży plik!\nMaksymalna wielkość pliku: 5 MB')
 	} else if (userFile.files.length > 5) {
@@ -533,13 +482,9 @@ hideFileInput.addEventListener('change', () => {
 		})
 	}
 })
-
-//Contact form popup
-
 const attachmentsBtns = document.querySelectorAll('[data-attachments-btns')
 const attachemntsInfoBox = document.querySelector('[data-attachments-info-box]')
 const attachmentsInfo = document.querySelector('[data-attachments-info]')
-
 attachmentsBtns.forEach(btn =>
 	btn.addEventListener('click', e => {
 		e.preventDefault()
@@ -551,8 +496,6 @@ attachmentsBtns.forEach(btn =>
 		}
 	})
 )
-
-// Contact validator
 
 const sendFormBtn = document.querySelector('.contact__form-btn--send')
 const clearFormBtn = document.querySelector('.contact__form-btn--clear')
@@ -570,12 +513,10 @@ const userMsg = document.querySelector('#message')
 const userFile = document.querySelector('#fileInput')
 const contactForm = document.querySelector('.contact__form')
 const contactFormPopup = document.querySelector('.contact__popup-box')
-//const contactFormPopupBox = document.querySelector('.contact__popup-box')
 const closeFormPopup = document.querySelector('[data-btn-popup]')
 const fileErrorPopup = document.querySelector('[data-file-popup]')
 const closeFilePopup = document.querySelector('[data-btn-filePopup]')
 const bodyError = document.querySelector('.contact')
-
 const checkedArray = []
 
 const validatorError = (input, msg) => {
@@ -585,7 +526,6 @@ const validatorError = (input, msg) => {
 	formBox.classList.add('error')
 	input.placeholder = msg
 }
-
 const fileValidatorError = (input, msg) => {
 	const formBox = input.parentElement
 	const erroMsg = fileErrorPopup.querySelector('span')
@@ -595,7 +535,6 @@ const fileValidatorError = (input, msg) => {
 	sendFormBtn.classList.add('error')
 	bodyError.classList.add('error')
 }
-
 const clearValidatorError = input => {
 	const formBox = input.parentElement
 	formBox.classList.remove('error')
@@ -603,7 +542,6 @@ const clearValidatorError = input => {
 	sendFormBtn.classList.remove('error')
 	bodyError.classList.remove('error')
 }
-
 const checkFormValue = input => {
 	input.forEach(element => {
 		if (element.value === '') {
@@ -622,7 +560,6 @@ const checkFormUser = (input, min) => {
 		validatorError(input, 'Nie poprawny format danych')
 	}
 }
-
 const checkFormEmail = (mail, min) => {
 	const reMail =
 		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -633,7 +570,6 @@ const checkFormEmail = (mail, min) => {
 		validatorError(mail, 'Nie poprawny adres e-mail')
 	}
 }
-
 const checkFormTopic = (input, min) => {
 	const reTopic = /[A-Za-z0-9]+/
 	if (input.value.length < min) {
@@ -653,7 +589,6 @@ const checkFormMsg = (input, min) => {
 
 const checkCheckedField = () => {
 	const checkedField = document.querySelectorAll('[data-check-field')
-
 	checkedField.forEach(field => {
 		if (field.checked) {
 			field.value = field.nextElementSibling.innerText
@@ -662,7 +597,6 @@ const checkCheckedField = () => {
 		return checkedArray
 	})
 }
-
 const checkErrors = () => {
 	const validInput = document.querySelectorAll('[data-form-validation]')
 	let countError = 0
@@ -673,10 +607,8 @@ const checkErrors = () => {
 			countError++
 		}
 	})
-
 	if (countError === 0) return true
 }
-
 const clearForm = () => {
 	;[
 		userName,
@@ -705,7 +637,6 @@ const clearForm = () => {
 		file.remove()
 	})
 }
-
 const dataSend = status => {
 	const message = contactFormPopup.querySelector('span')
 	if (status === 200) {
@@ -720,10 +651,8 @@ const dataSend = status => {
 		bodyError.classList.add('error')
 	}
 }
-
 const checkBackendValid = data => {
 	const backendData = data
-
 	for (const [key, value] of Object.entries(backendData))
 		if ('name' == key) {
 			checkFormUser(userName, 3)
@@ -737,9 +666,7 @@ const checkBackendValid = data => {
 			fileValidatorError(userFile, value)
 		}
 	checkFormValue([userName, userEmail, userTopic, userMsg])
-
 }
-
 const sendFormValidator = e => {
 	e.preventDefault()
 	checkFormValue([userName, userEmail, userTopic, userMsg])
@@ -750,16 +677,12 @@ const sendFormValidator = e => {
 	checkCheckedField()
 	checkErrors()
 }
-
 async function sendFormBackend(e) {
 	e.preventDefault()
-
 	const formData = new FormData()
-
 	for (let i = 0; i < userFile.files.length; i++) {
 		formData.append('files[]', userFile.files[i])
 	}
-
 	formData.append('name', userName.value)
 	formData.append('email', userEmail.value)
 	formData.append('checkField', checkedArray)
@@ -792,37 +715,26 @@ sendFormBtn.addEventListener('click', e => {
 		sendFormBackend(e)
 	}
 })
-
 clearFormBtn.addEventListener('click', e => {
 	e.preventDefault()
-
 	clearForm()
 })
-
 closeFormPopup.addEventListener('click', () => {
-	//contactForm.classList.remove('show')
 	contactFormPopup.classList.remove('show')
 	bodyError.classList.remove('error')
-
 	clearForm()
 })
-
 closeFilePopup.addEventListener('click', e => {
 	e.preventDefault()
 	clearValidatorError(userFile)
-
 	userFile.value = ''
 	const clearFileList = fileUploadLabel.querySelectorAll('li')
 	clearFileList.forEach(file => {
 		file.remove()
 	})
 })
-
-// Questions accordeon
-
 const faqAccordeon = document.querySelector('.faq__box-lists')
 const faqAccordeonBtns = document.querySelectorAll('.faq__accordeon-box-content')
-
 function openAccordeonItems() {
 	if (this.nextElementSibling.classList.contains('show-acc')) {
 		this.nextElementSibling.classList.remove('show-acc')
@@ -841,7 +753,6 @@ const closeAccordeonItems = () => {
 		btn.lastElementChild.classList.remove('active')
 	})
 }
-
 const clickOutsideAccordeon = e => {
 	if (
 		e.target.classList.contains('target') ||
@@ -849,18 +760,12 @@ const clickOutsideAccordeon = e => {
 		e.target.classList.contains('faq__accordeon-info-text')
 	)
 		return
-
 	closeAccordeonItems()
 }
-
 faqAccordeonBtns.forEach(btn => {
 	btn.addEventListener('click', openAccordeonItems)
 })
-
 window.addEventListener('click', clickOutsideAccordeon)
-
-// faq
-
 const faqBody = document.querySelector('.faq')
 const faqOpenBtn = document.querySelectorAll('[data-faq-btn]')
 const faqCloseBtn = document.querySelector('[data-faq-close-btn]')
@@ -869,29 +774,22 @@ const openFaq = () => {
 	faqBody.classList.add('active')
 	body.classList.add('stop-scrolling')
 }
-
 const closeFaq = () => {
 	faqBody.classList.remove('active')
 	body.classList.remove('stop-scrolling')
 }
-
 faqOpenBtn.forEach(btn => {
 	btn.addEventListener('click', e => {
 		e.preventDefault()
 		openFaq()
 	})
 })
-
 faqCloseBtn.addEventListener('click', () => {
 	closeFaq()
 })
-
-// Privacypolicy
-
 const privacyBody = document.querySelector('.privacypolicy')
 const privacyOpenBtn = document.querySelectorAll('[data-privacy-btn]')
 const privacyCloseBtn = document.querySelector('[data-privacy-close-btn]')
-
 privacyOpenBtn.forEach(btn => {
 	btn.addEventListener('click', e => {
 		e.preventDefault()
@@ -904,16 +802,12 @@ privacyCloseBtn.addEventListener('click', () => {
 	privacyBody.classList.remove('active')
 	body.classList.remove('stop-scrolling')
 })
-
-// Job
-
 const jobBody = document.querySelector('.job')
 const jobOpenBtn = document.querySelectorAll('[data-job-btn]')
 const jobCloseBtn = document.querySelector('[data-job-closeBtn')
 const jobAgreeBtn = document.querySelector('[data-job-agreementBtn]')
 const jobAgreeStar = document.querySelector('[data-job-star]')
 const jobAgreeErrpr = document.querySelector('.job__form-checkAgreement-box span')
-
 jobOpenBtn.forEach(btn => {
 	btn.addEventListener('click', e => {
 		e.preventDefault()
@@ -921,34 +815,41 @@ jobOpenBtn.forEach(btn => {
 		body.classList.add('stop-scrolling')
 	})
 })
-
 jobCloseBtn.addEventListener('click', () => {
 	jobBody.classList.remove('active')
 	body.classList.remove('stop-scrolling')
 })
-
 jobAgreeBtn.addEventListener('click', () => {
-
 	if (jobAgreeStar.classList.contains('checked')) {
-
 		jobAgreeBtn.removeAttribute('data-job-agree')
 		jobAgreeStar.classList.remove('checked')
 	} else {
-		
 		jobAgreeStar.classList.add('checked')
 		jobAgreeBtn.setAttribute('data-job-agree', 'true')
-
-
 	}
-
 })
 
-// Footer current year
+const goUp = document.querySelector('.go-up')
+const btnGoUp = goUp.querySelector('.go-up__btn')
 
+window.onscroll = () => {
+	btnUpScroll()
+}
+
+const btnUpScroll = () => {
+	document.body.scrollTop || document.documentElement.scrollTop > 1200
+		? goUp.classList.add('show')
+		: goUp.classList.remove('show')
+}
+
+btnGoUp.addEventListener('click', () => {
+	window.scroll({
+		top: 0,
+	})
+})
 const footerYear = document.querySelector('.footer__foot-year')
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear()
 	footerYear.innerText = year
 }
-
 handleCurrentYear()
