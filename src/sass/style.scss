@@ -245,7 +245,7 @@ textarea::placeholder {
 	mix-blend-mode: difference;
 	pointer-events: none;
 	opacity: 0;
-	transition: opacity .4s;
+	transition: opacity 0.4s;
 
 	&__btn {
 		padding: 1rem;
@@ -425,10 +425,10 @@ textarea::placeholder {
 	position: relative;
 	display: block;
 	height: calc(var(--vh) * 100 - 65px);
-	background-image: url(../img/realisation10.png);
+	background-image: url(../img/realisation.jpg);
 	background-position: center;
 	background-size: cover;
-	transition: background-image 0.3s ease-in-out, opacity 0.3s ease-in-out;
+	transition: background-image 0.4s ease-in, opacity 0.2s ease-out;
 	opacity: 1;
 	overflow: hidden;
 
@@ -438,7 +438,7 @@ textarea::placeholder {
 		right: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba($color: $eag-black, $alpha: 0.5);
+		background-color: rgba($color: $eag-black, $alpha: 0.6);
 		content: '';
 	}
 	& button {
@@ -599,13 +599,6 @@ textarea::placeholder {
 			height: 100%;
 			content: '';
 		}
-
-		& img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			border-radius: 5px;
-		}
 	}
 	&__gallery-container {
 		position: relative;
@@ -623,11 +616,36 @@ textarea::placeholder {
 		display: grid;
 		grid-gap: 1rem;
 		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-		grid-auto-rows: minmax(auto, 180px);
+		grid-auto-rows: 180px;
 		grid-auto-flow: dense;
 		z-index: 5;
 		will-change: transform;
 		animation: scrolling 60s linear infinite;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 0.5rem;
+		}
+
+		&::after {
+			display: none;
+			width: 100%;
+			height: 100%;
+			border-radius: 5px;
+			content: '';
+		}
+		&:nth-of-type(odd) {
+			&::after {
+				background-color: $eag-blue;
+			}
+		}
+		&:nth-of-type(even) {
+			&::after {
+				background-color: $eag-red;
+			}
+		}
 	}
 
 	@keyframes scrolling {
@@ -645,6 +663,7 @@ textarea::placeholder {
 	&__gallery-hstretch {
 		grid-column: span 2;
 	}
+
 	&__gallery-bstretch {
 		grid-row: span 2;
 		grid-column: span 2;

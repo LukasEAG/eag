@@ -225,22 +225,22 @@ const realisationBtns = document.querySelectorAll('[data-realisation-btn]')
 
 const realisationObject = {
 	one: {
-		img: './dist/img/realisation10.png',
+		img: './dist/img/realisation.jpg',
 	},
 	two: {
-		img: './dist/img/realisation2.png',
+		img: './dist/img/realisationevent.jpg',
 	},
 	three: {
-		img: './dist/img/realisation3.png',
+		img: './dist/img/realisationconcert.jpg',
 	},
 	four: {
-		img: './dist/img/realisation4.png',
+		img: './dist/img/realisationpromotion.jpg',
 	},
 	five: {
-		img: './dist/img/realisation5.png',
+		img: './dist/img/realisationgala.jpg',
 	},
 	six: {
-		img: './dist/img/realisation6.png',
+		img: './dist/img/realisationbanquets.jpg',
 	},
 }
 
@@ -255,10 +255,10 @@ realisationBtns.forEach(btn => {
 		for (const [key, value] of Object.entries(realisationObject)) {
 			if (btn.value === key) {
 				realisation.style.opacity = '0'
+				realisation.style.backgroundImage = `url(${value.img})`
 				setTimeout(() => {
-					realisation.style.backgroundImage = `url(${value.img})`
 					realisation.style.opacity = '1'
-				}, 300)
+				}, 400)
 				btn.dataset.realisationBtn = true
 			}
 		}
@@ -853,3 +853,4 @@ const handleCurrentYear = () => {
 	footerYear.innerText = year
 }
 handleCurrentYear()
+
