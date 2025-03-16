@@ -1,4 +1,4 @@
-# Event Production Website
+# EAG Event Production Company
 
 Hi, my name is Łukasz and I'm trying to become Frontend-Developer.
 
