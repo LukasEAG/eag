@@ -2,3 +2,4 @@ node_modules
 eagvideo.mp4
 .env
 sitemap.xml
+.DS_store
