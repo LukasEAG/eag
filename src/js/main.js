@@ -225,22 +225,22 @@ const realisationBtns = document.querySelectorAll('[data-realisation-btn]')
 
 const realisationObject = {
 	one: {
-		img: './dist/img/realisation.jpg',
+		img: './dist/img/realisation.webp',
 	},
 	two: {
-		img: './dist/img/realisationevent.jpg',
+		img: './dist/img/realisationevent.webp',
 	},
 	three: {
-		img: './dist/img/realisationconcert.jpg',
+		img: './dist/img/realisationconcert.webp',
 	},
 	four: {
-		img: './dist/img/realisationpromotion.jpg',
+		img: './dist/img/realisationpromotion.webp',
 	},
 	five: {
-		img: './dist/img/realisationgala.jpg',
+		img: './dist/img/realisationgala.webp',
 	},
 	six: {
-		img: './dist/img/realisationbanquets.jpg',
+		img: './dist/img/realisationbanquets.webp',
 	},
 }
 
@@ -278,6 +278,16 @@ const handleScroll = () => {
 
 window.addEventListener('scroll', handleScroll)
 
+const offerGallery = document.querySelector('.offer__gallery')
+
+offerGallery.oncontextmenu = function () {
+	return false;
+ }
+
+ 
+
+
+``
 const offerContextText = document.querySelector('.offer__context-text-p')
 const offerNumber = document.querySelector('.offer__context-numb-p')
 const offerNumberBorder = document.querySelector('.offer__context-numb')
@@ -698,7 +708,7 @@ async function sendFormBackend(e) {
 	})
 		.then(res => res.json())
 		.then(data => {
-			if (data.status === 400) {
+			if (data.status === 400 || data.status === 404) {
 				checkBackendValid(data.msg)
 			} else if (data.status === 200) {
 				checkFormValue([userName, userEmail, userTopic, userMsg])
@@ -847,10 +857,41 @@ btnGoUp.addEventListener('click', () => {
 		top: 0,
 	})
 })
+
+function onClassChange(node, callback) {
+	let lastClassString = node.classList.toString()
+
+	const mutationObserver = new MutationObserver(mutationList => {
+		for (const item of mutationList) {
+			if (item.attributeName === 'class') {
+				const classString = node.classList.toString()
+				if (classString !== lastClassString) {
+					callback(classString)
+					lastClassString = classString
+					break
+				}
+			}
+		}
+	})
+
+	mutationObserver.observe(node, { attributes: true })
+
+	return mutationObserver
+}
+
+const btnUpShowHide = observValue => {
+	if (document.documentElement.scrollTop < 1200) {
+		goUp.classList.remove('show')
+	} else {
+		observValue === 'stop-scrolling' ? goUp.classList.remove('show') : goUp.classList.add('show')
+	}
+}
+
+onClassChange(body, btnUpShowHide)
+
 const footerYear = document.querySelector('.footer__foot-year')
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear()
 	footerYear.innerText = year
 }
 handleCurrentYear()
-
