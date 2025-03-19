@@ -711,14 +711,15 @@ async function sendFormBackend(e) {
 		method: 'POST',
 		body: formData,
 	})
-		.then(res => { 
+		.then(res => {
 			if (res.ok) {
 				return res.json()
 			} else {
 				return dataSend(res.status)
-			}})
+			}
+		})
 		.then(data => {
-			if (data.status === 400 ) {
+			if (data.status === 400) {
 				checkBackendValid(data.msg)
 			} else if (data.status === 200) {
 				checkFormValue([userName, userEmail, userTopic, userMsg])
@@ -727,7 +728,7 @@ async function sendFormBackend(e) {
 				dataSend(data.status)
 			}
 		})
-		.catch(error => dataSend(error));
+		.catch(error => dataSend(error))
 }
 
 sendFormBtn.addEventListener('click', e => {
@@ -888,25 +889,34 @@ const cookieBtns = document.querySelectorAll('[data-cookie-btns]')
 
 const checkCookies = () => {
 	const presentCookie = localStorage.getItem('cookies')
-	presentCookie ? cookieBox.classList.add('hide'): false ;
+	presentCookie ? cookieBox.classList.add('hide') : false
 }
 const handleCookies = () => {
 	localStorage.setItem('cookies', 'true')
 	cookieBox.classList.add('hide')
 }
 
-cookieBtns.forEach( btn => {
+cookieBtns.forEach(btn => {
 	btn.addEventListener('click', handleCookies)
 })
 checkCookies()
 
 const btnPrivacyPolicy = document.querySelectorAll('[data-privacy-btn]')
+let sessionLang = htmlLang.getAttribute('lang')
+
+const sessionLangHendler = () => {
+	let sessionLang = htmlLang.getAttribute('lang')
+	localStorage.setItem('lang', sessionLang)
+}
 btnPrivacyPolicy.forEach(btn => {
 	btn.addEventListener('click', () => {
-		const sessionLang = htmlLang.getAttribute('lang')
-		localStorage.setItem('lang', sessionLang)
+		sessionLangHendler()
 	})
 })
+window.addEventListener('load', () => {
+	localStorage.setItem('lang', sessionLang)
+})
+
 const footerYear = document.querySelector('.footer__foot-year')
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear()
