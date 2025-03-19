@@ -280,14 +280,9 @@ window.addEventListener('scroll', handleScroll)
 
 const offerGallery = document.querySelector('.offer__gallery')
 
-offerGallery.oncontextmenu = function () {
-	return false;
- }
-
- 
-
-
-``
+offerGallery.oncontextmenu = (function () {
+	return false
+})``
 const offerContextText = document.querySelector('.offer__context-text-p')
 const offerNumber = document.querySelector('.offer__context-numb-p')
 const offerNumberBorder = document.querySelector('.offer__context-numb')
@@ -313,13 +308,13 @@ const offerObject = {
 	scean: {
 		number: '02',
 		pl: {
-			text: 'Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się spektakularne. Oferujemy doskonałe oświetlenie, nagłośnienie i\u00a0efekty specjalne, dostosowane do charakteru danego eventu.',
+			text: 'Zapewniamy profesjonalne rozwiązania techniczne, które sprawiają, że każde wydarzenie staje się niezapomniane. Oferujemy najwyższej jakości oświetlenie, nagłośnienie i\u00a0efekty specjalne, idealnie dopasowane do rodzaju eventu.',
 		},
 		en: {
-			text: 'We provide professional technical solutions that make every event spectacular. We offer excellent lighting, sound and special effects, adapted to the nature of the event.',
+			text: 'We provide professional technical solutions that make every event unforgettable. We offer the highest quality lighting, sound and special effects, perfectly matched to the type of event.',
 		},
 		de: {
-			text: 'Wir bieten professionelle technische Lösungen, die jede Veranstaltung spektakulär machen. Wir bieten hervorragende Beleuchtung, Tonanlage und Spezialeffekte, angepasst an die Art einer bestimmten Veranstaltung.',
+			text: 'Wir bieten professionelle technische Lösungen, die jede Veranstaltung unvergesslich machen. Wir bieten Licht-, Ton- und Spezialeffekte höchster Qualität, perfekt abgestimmt auf die Art der Veranstaltung.',
 		},
 		color: '#E46C31',
 	},
@@ -340,13 +335,13 @@ const offerObject = {
 	scenography: {
 		number: '04',
 		pl: {
-			text: 'Nasze zespoły projektowe pracują nad kreacją scenografii, która w\u00a0pełni odzwierciedli charakter i\u00a0tematykę imprezy. Dbamy o\u00a0każdy detal, aby stworzyć przestrzeń, która przykuje uwagę i\u00a0wywoła silne wrażenia.',
+			text: 'Nasze zespoły projektowe tworzą scenografię, która idealnie odzwierciedla charakter imprezy. Dbamy o\u00a0każdy detal, aby stworzyć przestrzeń, która przyciągnie uwagę i\u00a0wywoła niezapomniane wrażenia.',
 		},
 		en: {
-			text: 'Our design teams work on creating a scenography that fully reflects the nature and theme of the event. We take care of every detail to create a space that will attract attention and create strong impressions.',
+			text: 'Our design teams create a scenography that perfectly reflects the nature of the event. We take care of every detail to create a space that will attract attention and create an unforgettable experience.',
 		},
 		de: {
-			text: 'Unsere Designteams arbeiten an der Erstellung eines Bühnenbildes, das die Art und das Thema der Veranstaltung vollständig widerspiegelt. Wir kümmern uns um jedes Detail, um einen Raum zu schaffen, der Aufmerksamkeit erregt und starke Eindrücke hervorruft.',
+			text: 'Unsere Designteams erstellen Szenografien, die den Charakter der Veranstaltung perfekt widerspiegeln. Wir kümmern uns um jedes Detail, um einen Raum zu schaffen, der Aufmerksamkeit erregt und unvergessliche Eindrücke hinterlässt.',
 		},
 		color: '#E9B86B',
 	},
@@ -362,6 +357,19 @@ const offerObject = {
 			text: 'Wir arbeiten mit den talentiertesten Künstlern zusammen, um auf jeder Bühne unvergessliche Auftritte zu liefern. Vom Musicalstar bis zum talentierten Künstler – wir sorgen dafür, dass jeder Künstler perfekt zum Veranstaltungskonzept passt.',
 		},
 		color: '#6280C2',
+	},
+	fair: {
+		number: '06',
+		pl: {
+			text: 'Stworzymy dla Ciebie projekt unikalnego stoiska targowego, które doskonale odda charakter oraz tematykę wydarzenia. Zajmujemy się nie tylko ich projektowaniem, ale także realizacją, dbając o\u00a0każdy detal, aby przestrzeń wyróżniała się, przyciągała uwagę i\u00a0pozostawiała niezapomniane wrażenie.',
+		},
+		en: {
+			text: 'We will create a unique exhibition stand design for you that will perfectly reflect the nature and theme of the event. We not only design them, but also implement them, taking care of every detail so that the space stands out, attracts attention and leaves an unforgettable impression.',
+		},
+		de: {
+			text: 'Wir erstellen für Sie ein einzigartiges Messestanddesign, das den Charakter und das Thema der Veranstaltung perfekt widerspiegelt. Wir entwerfen sie nicht nur, sondern setzen sie auch um, wobei wir auf jedes Detail achten, um den Raum hervorzuheben, Aufmerksamkeit zu erregen und einen unvergesslichen Eindruck zu hinterlassen.',
+		},
+		color: '#6DAF62',
 	},
 }
 const observerConfig = {
@@ -526,7 +534,7 @@ const contactFormPopup = document.querySelector('.contact__popup-box')
 const closeFormPopup = document.querySelector('[data-btn-popup]')
 const fileErrorPopup = document.querySelector('[data-file-popup]')
 const closeFilePopup = document.querySelector('[data-btn-filePopup]')
-const bodyError = document.querySelector('.contact')
+const contact = document.querySelector('.contact')
 const checkedArray = []
 
 const validatorError = (input, msg) => {
@@ -543,14 +551,15 @@ const fileValidatorError = (input, msg) => {
 	formBox.classList.add('error')
 	fileErrorPopup.classList.add('error')
 	sendFormBtn.classList.add('error')
-	bodyError.classList.add('error')
+	contact.classList.add('error')
 }
 const clearValidatorError = input => {
 	const formBox = input.parentElement
 	formBox.classList.remove('error')
 	fileErrorPopup.classList.remove('error')
 	sendFormBtn.classList.remove('error')
-	bodyError.classList.remove('error')
+	contact.classList.remove('formPopup')
+	contact.classList.remove('error')
 }
 const checkFormValue = input => {
 	input.forEach(element => {
@@ -651,14 +660,10 @@ const dataSend = status => {
 	const message = contactFormPopup.querySelector('span')
 	if (status === 200) {
 		message.textContent = 'Wiadomość wysłana poprawnie '
-		//contactForm.classList.add('show')
-		contactFormPopup.classList.add('show')
-		bodyError.classList.add('error')
+		contact.classList.add('formPopup')
 	} else {
-		message.textContent = 'Błąd wysyłania wiadmości spróbuj ponownie'
-		//contactForm.classList.add('show')
-		contactFormPopup.classList.add('show')
-		bodyError.classList.add('error')
+		message.textContent = 'Błąd wysyłania wiadomości spróbuj ponownie'
+		contact.classList.add('formPopup')
 	}
 }
 const checkBackendValid = data => {
@@ -706,9 +711,14 @@ async function sendFormBackend(e) {
 		method: 'POST',
 		body: formData,
 	})
-		.then(res => res.json())
+		.then(res => { 
+			if (res.ok) {
+				return res.json()
+			} else {
+				return dataSend(res.status)
+			}})
 		.then(data => {
-			if (data.status === 400 || data.status === 404) {
+			if (data.status === 400 ) {
 				checkBackendValid(data.msg)
 			} else if (data.status === 200) {
 				checkFormValue([userName, userEmail, userTopic, userMsg])
@@ -717,6 +727,7 @@ async function sendFormBackend(e) {
 				dataSend(data.status)
 			}
 		})
+		.catch(error => dataSend(error));
 }
 
 sendFormBtn.addEventListener('click', e => {
@@ -730,8 +741,7 @@ clearFormBtn.addEventListener('click', e => {
 	clearForm()
 })
 closeFormPopup.addEventListener('click', () => {
-	contactFormPopup.classList.remove('show')
-	bodyError.classList.remove('error')
+	contact.classList.remove('formPopup')
 	clearForm()
 })
 closeFilePopup.addEventListener('click', e => {
@@ -796,21 +806,6 @@ faqOpenBtn.forEach(btn => {
 })
 faqCloseBtn.addEventListener('click', () => {
 	closeFaq()
-})
-const privacyBody = document.querySelector('.privacypolicy')
-const privacyOpenBtn = document.querySelectorAll('[data-privacy-btn]')
-const privacyCloseBtn = document.querySelector('[data-privacy-close-btn]')
-privacyOpenBtn.forEach(btn => {
-	btn.addEventListener('click', e => {
-		e.preventDefault()
-		privacyBody.classList.add('active')
-		body.classList.add('stop-scrolling')
-	})
-})
-
-privacyCloseBtn.addEventListener('click', () => {
-	privacyBody.classList.remove('active')
-	body.classList.remove('stop-scrolling')
 })
 const jobBody = document.querySelector('.job')
 const jobOpenBtn = document.querySelectorAll('[data-job-btn]')
@@ -886,9 +881,32 @@ const btnUpShowHide = observValue => {
 		observValue === 'stop-scrolling' ? goUp.classList.remove('show') : goUp.classList.add('show')
 	}
 }
-
 onClassChange(body, btnUpShowHide)
 
+const cookieBox = document.querySelector('.cookie-alert')
+const cookieBtns = document.querySelectorAll('[data-cookie-btns]')
+
+const checkCookies = () => {
+	const presentCookie = localStorage.getItem('cookies')
+	presentCookie ? cookieBox.classList.add('hide'): false ;
+}
+const handleCookies = () => {
+	localStorage.setItem('cookies', 'true')
+	cookieBox.classList.add('hide')
+}
+
+cookieBtns.forEach( btn => {
+	btn.addEventListener('click', handleCookies)
+})
+checkCookies()
+
+const btnPrivacyPolicy = document.querySelectorAll('[data-privacy-btn]')
+btnPrivacyPolicy.forEach(btn => {
+	btn.addEventListener('click', () => {
+		const sessionLang = htmlLang.getAttribute('lang')
+		localStorage.setItem('lang', sessionLang)
+	})
+})
 const footerYear = document.querySelector('.footer__foot-year')
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear()
